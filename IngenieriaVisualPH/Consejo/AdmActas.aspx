@@ -1,0 +1,154 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Consejo/Consejo.Master" AutoEventWireup="true" CodeBehind="AdmActas.aspx.cs" Inherits="IngenieriaVisualPH.Consejo.Formulario_web1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="server">
+     <style>
+        body {
+            background: rgb(249,244,242);
+            background: linear-gradient(90deg, rgba(249,244,242,1) 0%, rgba(22,27,38,0.8267682072829132) 50%);
+        }
+     </style>
+    <link href="../Diseño/Banner.css" rel="stylesheet" />
+        <script>
+            function DesactivarBoton() {
+             document.getElementById("conta").style.display = "none"
+            document.getElementById("procesando").style.display = "block"
+        }
+        window.onbeforeunload = DesactivarBoton;
+    </script>
+    <div id="procesando" class="ventana" style="border-radius: 7px; display: none">
+        <h5 class="text-light text-center font-weight-bold">Espere un momento por favor....</h5>
+        <img src="../Diseño/Imagenes/oficina.gif" />
+    </div>
+    <div class="container" id="conta">
+        <form id="f2" runat="server">
+        <div class="card-body">
+            <div class="card-title">
+                <h3 class="text-center text-light font-weight-bold">Cargar Acta Reunion de Consejo</h3>
+            </div>
+        </div>
+            <div class="col-xs-6 col-lg-12">
+                <div class="card" style="border-radius: 7px">
+                    <div class="card-body">
+                        <div class="alert alert-warning" runat="server">
+                            <strong>Solo es permitido subir PDF, peso max 2mb</strong>
+                        </div>
+                        <div class="alert alert-danger" runat="server" style="display: none; margin-top: 10px" id="error2">
+                            <strong>Solo es permitido subir PDF</strong>
+                        </div>
+                        <div class="alert alert-success" runat="server" style="display: none; margin-top: 10px" id="div1">
+                            <strong>Cargado Correctamente</strong>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-lg-12">
+                                <p class="font-weight-bold">Nombres de Participantes</p>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
+                                    <asp:TextBox ID="txtnom" runat="server" MaxLength="400" CssClass="form-control" Text=""></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic"
+                                        ErrorMessage="Asigne un Mensaje" ForeColor="Red" ControlToValidate="txtnom" Text="*">
+                                    </asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-lg-6">
+                                <p class="font-weight-bold">Adjuntar Acta en PDF</p>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-paperclip"></i></div>
+                                    <asp:FileUpload ID="f1" runat="server" Font-Bold="true" CssClass="form-control" />
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Display="Dynamic"
+                                        ErrorMessage="Asigne un Mensaje" ForeColor="Red" ControlToValidate="f1" Text="*">
+                                    </asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="col-xs-6 col-lg-4">
+                            <div class="form-group">
+                                <asp:Button ID="btnnot" Style="border-radius: 7px" Font-Bold="true" runat="server" class="btn btn-lg btn-success" Text="Subir Acta" OnClick="btnnot_Click" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="tabsc">
+                <div class="content mt-3">
+                    <div class="animated fadeIn">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <asp:Label ID="Label4" runat="server" BackColor="#339966" Text="Filtrar por Fecha" Font-Bold="True" CssClass="form-control" ForeColor="White"></asp:Label>
+                                    <asp:TextBox ID="txtfechaini" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtDate_TextChanged" TextMode="Date"></asp:TextBox>
+                                    <asp:TextBox ID="txtfechafinal" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtDate_TextChanged" TextMode="Date"></asp:TextBox>
+                                </div>
+                                <div class="col-lg-8">
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="card" style="border-radius: 7px">
+                                        <div class="card-header">
+                                            <strong class="card-title">Tablero de Actas</strong>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table">
+                                                <asp:Repeater ID="r1" runat="server">
+                                                    <HeaderTemplate>
+                                                        <thead class="thead-dark" style="border-radius: 5px">
+                                                            <tr>
+                                                                <th><small>Ver Acta<small></th>
+                                                                <th><small>Fecha de Acta</small></th>
+                                                                <th><small>Nombres de Participantes<small></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <tr>                                                         
+                                                              <td><a href="VerActa.aspx?Id=<%#Eval("Id")%>">
+                                                                <button class="btn btn-lg btn-primary font-weight-bold" type="button" style="border-radius: 5px" title="Ver Acta"><i class="fa fa-download"></i></button>
+                                                            </a></td>
+                                                            <td>
+                                                                <h5 class="text-dark"><i class="fa fa-calendar">&nbsp;<%#Eval("Fecha","{0:d}") %></i></h5>
+                                                            </td>
+                                                            <td>
+                                                                <h5 class="text-dark"><i class="fa fa-clipboard">&nbsp;<%#Eval("Nombres") %></i></h5>
+                                                            </td>
+                                                        </tr>
+                                                    </ItemTemplate>
+                                                    <FooterTemplate>
+                                                        </tbody>
+                                              </table>
+                                                    </FooterTemplate>
+                                                </asp:Repeater>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .animated -->
+            </section>
+      <%--       <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>--%>
+            <script src="..Diseño/assets/js/popper.min.js"></script>
+            <script src="..Diseño/assets/js/plugins.js"></script>
+            <script src="..Diseño/assets/js/main.js"></script>
+
+
+            <script src="..Diseño/assets/js/lib/data-table/datatables.min.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/jszip.min.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/pdfmake.min.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/vfs_fonts.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/buttons.html5.min.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/buttons.print.min.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+            <script src="..Diseño/assets/js/lib/data-table/datatables-init.js"></script>
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#bootstrap-data-table-export').DataTable();
+                });
+            </script>
+            </form>
+        </div>
+</asp:Content>

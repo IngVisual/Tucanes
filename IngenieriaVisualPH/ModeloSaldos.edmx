@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBconjuntoid012Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblSaldos">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Admi" Type="varchar" MaxLength="50" />
+          <Property Name="Favor" Type="varchar" MaxLength="50" />
+          <Property Name="Inter" Type="varchar" MaxLength="50" />
+          <Property Name="Sancion" Type="varchar" MaxLength="50" />
+          <Property Name="Moto" Type="varchar" MaxLength="50" />
+          <Property Name="Carro" Type="varchar" MaxLength="50" />
+          <Property Name="Total" Type="varchar" MaxLength="50" />
+          <Property Name="Juridico" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DBconjuntoid012ModelStoreContainer">
+          <EntitySet Name="tblSaldos" EntityType="Self.tblSaldos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBconjuntoid012Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblSaldo">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Admi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Favor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Inter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sancion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Moto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Carro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Juridico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="IngenieriaVisualPHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblSaldos" EntityType="Self.tblSaldo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBconjuntoid012ModelStoreContainer" CdmEntityContainer="IngenieriaVisualPHEntities">
+          <EntitySetMapping Name="tblSaldos">
+            <EntityTypeMapping TypeName="DBconjuntoid012Model.tblSaldo">
+              <MappingFragment StoreEntitySet="tblSaldos">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Admi" ColumnName="Admi" />
+                <ScalarProperty Name="Favor" ColumnName="Favor" />
+                <ScalarProperty Name="Inter" ColumnName="Inter" />
+                <ScalarProperty Name="Sancion" ColumnName="Sancion" />
+                <ScalarProperty Name="Moto" ColumnName="Moto" />
+                <ScalarProperty Name="Carro" ColumnName="Carro" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Juridico" ColumnName="Juridico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

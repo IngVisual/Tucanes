@@ -1,0 +1,45 @@
+﻿
+.ventana {
+    background: #17202A;
+    color: rgba(255, 255, 255,1);
+    font-family: Arial,Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    min-height: 250px;
+    border-radius: 22px;
+    padding: 33px;
+    position: absolute;
+    top: 18%;
+    left: 39%;
+    text-align: end;
+    display: none;
+}
+.ventana2 {
+    background: #17202A;
+    color: rgba(255, 255, 255,1);
+    font-family: Arial,Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    min-height: 250px;
+    border-radius: 22px;
+    padding: 33px;
+    position: absolute;
+    top: 18%;
+    left: 39%;
+    text-align: end;
+    display: none;
+}
+.ventana3 {
+    background: #17202A;
+    color: rgba(255, 255, 255,1);
+    font-family: Arial,Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    min-height: 250px;
+    border-radius: 22px;
+    padding: 33px;
+    position: absolute;
+    top: 18%;
+    text-align: end;
+    display: none;
+}

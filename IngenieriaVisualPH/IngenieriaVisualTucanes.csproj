@@ -1,0 +1,2721 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{393C62E6-B6F0-47A5-81A8-1650937E903A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IngenieriaVisualPH</RootNamespace>
+    <AssemblyName>IngenieriaVisualPH</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OneSignal.CSharp.SDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OneSignal.CSharp.SDK.0.10\lib\net45\OneSignal.CSharp.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administracion\AdmVerSol.aspx" />
+    <Content Include="Administracion\Documentos_Recibidos.aspx" />
+    <Content Include="Administracion\AutorizacionTrasteo.aspx" />
+    <Content Include="Administracion\AdmCarrusel.aspx" />
+    <Content Include="Administracion\AdmCartelera.aspx" />
+    <Content Include="Administracion\AdmChip.aspx" />
+    <Content Include="Administracion\ExcelFile\3911889.png" />
+    <Content Include="Administracion\AdmActas.aspx" />
+    <Content Include="Administracion\Asamblea.aspx" />
+    <Content Include="Administracion\EliminarActa.aspx" />
+    <Content Include="Administracion\AsambleaVer.aspx" />
+    <Content Include="Administracion\Configuracion.aspx" />
+    <Content Include="Administracion\EditarValor.aspx" />
+    <Content Include="Administracion\EditarDescue.aspx" />
+    <Content Include="Administracion\EditarSC.aspx" />
+    <Content Include="Administracion\EditarChip.aspx" />
+    <Content Include="Administracion\EditarParque.aspx" />
+    <Content Include="Administracion\Estadisticas.aspx" />
+    <Content Include="Administracion\EditarNota.aspx" />
+    <Content Include="Administracion\AdmParqueadero.aspx" />
+    <Content Include="Administracion\EditarParqueadero.aspx" />
+    <Content Include="Administracion\EliminarMsg.aspx" />
+    <Content Include="Administracion\EmailsMasivos.aspx" />
+    <Content Include="Administracion\ReenviarPush.aspx" />
+    <Content Include="Administracion\NotificaPushAppGroup.aspx" />
+    <Content Include="Administracion\VerPDF.aspx" />
+    <Content Include="Administracion\NotificaPushAppID.aspx" />
+    <Content Include="Administracion\NotificaPushApp.aspx" />
+    <Content Include="Administracion\NotificaPush.aspx" />
+    <Content Include="Administracion\TablerosGen.aspx" />
+    <Content Include="Administracion\VerActa.aspx" />
+    <Content Include="Administracion\VerSaldos.aspx" />
+    <Content Include="Administracion\SaldoAdministracion.aspx" />
+    <Content Include="Administracion\VerChip.aspx" />
+    <Content Include="Administracion\VerCartelera.aspx" />
+    <Content Include="Administracion\Notificicaciones.aspx" />
+    <Content Include="Administracion\VerSCGuardar.aspx" />
+    <Content Include="Administracion\VerSC.aspx" />
+    <Content Include="Administracion\SalonComunal.aspx" />
+    <Content Include="Administracion\VerMudanza.aspx" />
+    <Content Include="Administracion\VerDocumento.aspx" />
+    <Content Include="Administracion\NovedadesSaldo.aspx" />
+    <Content Include="Administracion\VerNovedad.aspx" />
+    <Content Include="Administracion\VerPQR.aspx" />
+    <Content Include="Administracion\TramitePQR.aspx" />
+    <Content Include="Administracion\RegEditarApa.aspx" />
+    <Content Include="Administracion\Registro_Apartamentos.aspx" />
+    <Content Include="Carrusel\3911889.png" />
+    <Content Include="Chip\3911889.png" />
+    <Content Include="Chip\Documento\3911889.png" />
+    <Content Include="Chip\Recibo\3911889.png" />
+    <Content Include="Consejo\AdmActas.aspx" />
+    <Content Include="Consejo\Estadisticas.aspx" />
+    <Content Include="Consejo\VerActa.aspx" />
+    <Content Include="Contabilidad\VerNovedad.aspx" />
+    <Content Include="Contabilidad\VerSaldos.aspx" />
+    <Content Include="Contabilidad\NovedadesSaldo.aspx" />
+    <Content Include="Contabilidad\SaldoAdministracion.aspx" />
+    <Content Include="Descarga\3911889.png" />
+    <Content Include="Descarga\Acta\3911889.png" />
+    <Content Include="Descarga\Correo\3911889.png" />
+    <Content Include="Descarga\Documento\3911889.png" />
+    <Content Include="Descarga\SoliRespuesta\3911889.png" />
+    <Content Include="Diseño\assets\css\animate.css" />
+    <Content Include="Diseño\assets\css\bootstrap-select.css" />
+    <Content Include="Diseño\assets\css\bootstrap.css" />
+    <Content Include="Diseño\assets\css\bootstrap.min.css" />
+    <Content Include="Diseño\assets\css\cs-skin-elastic.css" />
+    <Content Include="Diseño\assets\css\flag-icon.min.css" />
+    <Content Include="Diseño\assets\css\font-awesome.min.css" />
+    <Content Include="Diseño\assets\css\lib\chosen\chosen-sprite%402x.png" />
+    <Content Include="Diseño\assets\css\lib\chosen\chosen-sprite.png" />
+    <Content Include="Diseño\assets\css\lib\chosen\chosen.css" />
+    <Content Include="Diseño\assets\css\lib\chosen\chosen.min.css" />
+    <Content Include="Diseño\assets\css\lib\datatable\buttons.bootstrap.min.css" />
+    <Content Include="Diseño\assets\css\lib\datatable\buttons.dataTables.min.css" />
+    <Content Include="Diseño\assets\css\lib\datatable\dataTables.bootstrap.min.css" />
+    <Content Include="Diseño\assets\css\lib\vector-map\jqvmap.min.css" />
+    <Content Include="Diseño\assets\css\normalize.css" />
+    <Content Include="Diseño\assets\css\style.css" />
+    <Content Include="Diseño\assets\css\themify-icons.css" />
+    <Content Include="Diseño\assets\css\variables.css" />
+    <Content Include="Diseño\assets\fonts\codropsicons\codropsicons.svg" />
+    <Content Include="Diseño\assets\fonts\codropsicons\index.html" />
+    <Content Include="Diseño\assets\fonts\codropsicons\license.txt" />
+    <Content Include="Diseño\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Diseño\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Diseño\assets\fonts\icomoon\icomoon.svg" />
+    <Content Include="Diseño\assets\fonts\icomoon\index.html" />
+    <Content Include="Diseño\assets\fonts\index.html" />
+    <Content Include="Diseño\assets\fonts\themify.svg" />
+    <Content Include="Diseño\assets\js\chartjs.min.js" />
+    <Content Include="Diseño\assets\js\dashboard.js" />
+    <Content Include="Diseño\assets\js\index.html" />
+    <Content Include="Diseño\assets\js\less.min.js" />
+    <Content Include="Diseño\assets\js\lib\chart-js\Chart.bundle.js" />
+    <Content Include="Diseño\assets\js\lib\chart-js\chartjs-init.js" />
+    <Content Include="Diseño\assets\js\lib\chosen\chosen.jquery.js" />
+    <Content Include="Diseño\assets\js\lib\chosen\chosen.jquery.min.js" />
+    <Content Include="Diseño\assets\js\lib\chosen\chosen.proto.js" />
+    <Content Include="Diseño\assets\js\lib\chosen\chosen.proto.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\buttons.bootstrap.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\buttons.colVis.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\buttons.flash.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\buttons.html5.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\buttons.print.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\datatables-init.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\dataTables.bootstrap.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\dataTables.buttons.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\datatables.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\jquery-1.12.4.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\jquery.dataTables.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\jszip.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\pdfmake.min.js" />
+    <Content Include="Diseño\assets\js\lib\data-table\vfs_fonts.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\curvedLines.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\excanvas.min.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\flot-chart-init.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\flot-tooltip\jquery.flot.tooltip.min.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\jquery.flot.categories.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\jquery.flot.crosshair.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\jquery.flot.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\jquery.flot.pie.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\jquery.flot.resize.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\jquery.flot.stack.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\jquery.flot.threshold.js" />
+    <Content Include="Diseño\assets\js\lib\flot-chart\jquery.flot.time.js" />
+    <Content Include="Diseño\assets\js\lib\gauge\gauge.js" />
+    <Content Include="Diseño\assets\js\lib\gmap\gmap.init.js" />
+    <Content Include="Diseño\assets\js\lib\gmap\gmapApi.js" />
+    <Content Include="Diseño\assets\js\lib\gmap\gmaps.js" />
+    <Content Include="Diseño\assets\js\lib\gmap\gmaps.min.js" />
+    <Content Include="Diseño\assets\js\lib\peitychart\jquery.peity.min.js" />
+    <Content Include="Diseño\assets\js\lib\peitychart\peitychart.init.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.algeria.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.argentina.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.brazil.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.europe.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.france.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.germany.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.greece.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.iran.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.iraq.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.russia.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.tunisia.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.turkey.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.usa.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\country\jquery.vmap.world.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\jquery.vmap.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\jquery.vmap.min.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\jquery.vmap.sampledata.js" />
+    <Content Include="Diseño\assets\js\lib\vector-map\vector.init.js" />
+    <Content Include="Diseño\assets\js\main.js" />
+    <Content Include="Diseño\assets\js\plugins.js" />
+    <Content Include="Diseño\assets\js\popper.min.js" />
+    <Content Include="Diseño\assets\js\selectFx.js" />
+    <Content Include="Diseño\assets\js\vendor\index.html" />
+    <Content Include="Diseño\assets\js\vendor\jquery-1.11.3.min.js" />
+    <Content Include="Diseño\assets\js\vendor\jquery-2.1.4.min.js" />
+    <Content Include="Diseño\assets\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="Diseño\assets\js\widgets.js" />
+    <Content Include="Diseño\assets\scss\bootstrap\bootstrap-grid.css" />
+    <Content Include="Diseño\assets\scss\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Diseño\assets\scss\bootstrap\bootstrap.css" />
+    <Content Include="Diseño\assets\scss\socials.css" />
+    <Content Include="Diseño\assets\scss\style.css" />
+    <Content Include="Diseño\assets\scss\variables.css" />
+    <Content Include="Diseño\assets\scss\widgets.css" />
+    <Content Include="Diseño\Banner.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-grid.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-grid.min.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-reboot.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-utilities.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-utilities.min.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap.min.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap.rtl.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap.rtl.min.css" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.bundle.js" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.esm.js" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.esm.min.js" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.js" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.min.js" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\jquery.min.js" />
+    <Content Include="Diseño\Card.css" />
+    <Content Include="Diseño\Color.css" />
+    <Content Include="Diseño\GetOnsignal.js" />
+    <Content Include="Diseño\Imagenes\admin.png" />
+    <Content Include="Diseño\Imagenes\alquilar.png" />
+    <Content Include="Diseño\Imagenes\apa.png" />
+    <Content Include="Diseño\Imagenes\aseo.png" />
+    <Content Include="Diseño\Imagenes\bici.png" />
+    <Content Include="Diseño\Imagenes\calculator %281%29.png" />
+    <Content Include="Diseño\Imagenes\call.png" />
+    <Content Include="Diseño\Imagenes\camion-de-reparto.png" />
+    <Content Include="Diseño\Imagenes\campana.png" />
+    <Content Include="Diseño\Imagenes\carte.png" />
+    <Content Include="Diseño\Imagenes\cat.png" />
+    <Content Include="Diseño\Imagenes\cit.png" />
+    <Content Include="Diseño\Imagenes\coheteLoading.gif" />
+    <Content Include="Diseño\Imagenes\coheteLoading2.gif" />
+    <Content Include="Diseño\Imagenes\contrato.png" />
+    <Content Include="Diseño\Imagenes\conv.png" />
+    <Content Include="Diseño\Imagenes\correo-electronico.png" />
+    <Content Include="Diseño\Imagenes\desca.png" />
+    <Content Include="Diseño\Imagenes\dom.png" />
+    <Content Include="Diseño\Imagenes\drop.png" />
+    <Content Include="Diseño\Imagenes\env.png" />
+    <Content Include="Diseño\Imagenes\envio.png" />
+    <Content Include="Diseño\Imagenes\estacionamiento.png" />
+    <Content Include="Diseño\Imagenes\evento %281%29.png" />
+    <Content Include="Diseño\Imagenes\gas.png" />
+    <Content Include="Diseño\Imagenes\home.jpg" />
+    <Content Include="Diseño\Imagenes\homework %281%29.png" />
+    <Content Include="Diseño\Imagenes\logo.ico" />
+    <Content Include="Diseño\Imagenes\logo.png" />
+    <Content Include="Diseño\Imagenes\man %281%29.png" />
+    <Content Include="Diseño\Imagenes\mante.png" />
+    <Content Include="Diseño\Imagenes\notificacion %281%29.png" />
+    <Content Include="Diseño\Imagenes\officer.png" />
+    <Content Include="Diseño\Imagenes\oficina.gif" />
+    <Content Include="Diseño\Imagenes\point.png" />
+    <Content Include="Diseño\Imagenes\progr.png" />
+    <Content Include="Diseño\Imagenes\puerta.png" />
+    <Content Include="Diseño\Imagenes\pulgares-arriba.png" />
+    <Content Include="Diseño\Imagenes\quality.png" />
+    <Content Include="Diseño\Imagenes\rechargeable.png" />
+    <Content Include="Diseño\Imagenes\recib.png" />
+    <Content Include="Diseño\Imagenes\recibo.png" />
+    <Content Include="Diseño\Imagenes\regi.png" />
+    <Content Include="Diseño\Imagenes\registrarse.png" />
+    <Content Include="Diseño\Imagenes\respu.png" />
+    <Content Include="Diseño\Imagenes\saldo.png" />
+    <Content Include="Diseño\Imagenes\select.png" />
+    <Content Include="Diseño\Imagenes\serv.png" />
+    <Content Include="Diseño\Imagenes\suspiro %281%29.png" />
+    <Content Include="Diseño\Imagenes\tablero.png" />
+    <Content Include="Diseño\Imagenes\telefono-inteligente %281%29.png" />
+    <Content Include="Diseño\Imagenes\triste.png" />
+    <Content Include="Diseño\Imagenes\versaldo.png" />
+    <Content Include="Diseño\Imagenes\voto.png" />
+    <Content Include="Diseño\images\.gitignore" />
+    <Content Include="Diseño\images\admin.jpg" />
+    <Content Include="Diseño\images\avatar\1.jpg" />
+    <Content Include="Diseño\images\avatar\2.jpg" />
+    <Content Include="Diseño\images\avatar\3.jpg" />
+    <Content Include="Diseño\images\avatar\4.jpg" />
+    <Content Include="Diseño\images\avatar\5.jpg" />
+    <Content Include="Diseño\images\avatar\6.jpg" />
+    <Content Include="Diseño\images\flags\1x1\ad.svg" />
+    <Content Include="Diseño\images\flags\1x1\ae.svg" />
+    <Content Include="Diseño\images\flags\1x1\af.svg" />
+    <Content Include="Diseño\images\flags\1x1\ag.svg" />
+    <Content Include="Diseño\images\flags\1x1\ai.svg" />
+    <Content Include="Diseño\images\flags\1x1\al.svg" />
+    <Content Include="Diseño\images\flags\1x1\am.svg" />
+    <Content Include="Diseño\images\flags\1x1\ao.svg" />
+    <Content Include="Diseño\images\flags\1x1\aq.svg" />
+    <Content Include="Diseño\images\flags\1x1\ar.svg" />
+    <Content Include="Diseño\images\flags\1x1\as.svg" />
+    <Content Include="Diseño\images\flags\1x1\at.svg" />
+    <Content Include="Diseño\images\flags\1x1\au.svg" />
+    <Content Include="Diseño\images\flags\1x1\aw.svg" />
+    <Content Include="Diseño\images\flags\1x1\ax.svg" />
+    <Content Include="Diseño\images\flags\1x1\az.svg" />
+    <Content Include="Diseño\images\flags\1x1\ba.svg" />
+    <Content Include="Diseño\images\flags\1x1\bb.svg" />
+    <Content Include="Diseño\images\flags\1x1\bd.svg" />
+    <Content Include="Diseño\images\flags\1x1\be.svg" />
+    <Content Include="Diseño\images\flags\1x1\bf.svg" />
+    <Content Include="Diseño\images\flags\1x1\bg.svg" />
+    <Content Include="Diseño\images\flags\1x1\bh.svg" />
+    <Content Include="Diseño\images\flags\1x1\bi.svg" />
+    <Content Include="Diseño\images\flags\1x1\bj.svg" />
+    <Content Include="Diseño\images\flags\1x1\bl.svg" />
+    <Content Include="Diseño\images\flags\1x1\bm.svg" />
+    <Content Include="Diseño\images\flags\1x1\bn.svg" />
+    <Content Include="Diseño\images\flags\1x1\bo.svg" />
+    <Content Include="Diseño\images\flags\1x1\bq.svg" />
+    <Content Include="Diseño\images\flags\1x1\br.svg" />
+    <Content Include="Diseño\images\flags\1x1\bs.svg" />
+    <Content Include="Diseño\images\flags\1x1\bt.svg" />
+    <Content Include="Diseño\images\flags\1x1\bv.svg" />
+    <Content Include="Diseño\images\flags\1x1\bw.svg" />
+    <Content Include="Diseño\images\flags\1x1\by.svg" />
+    <Content Include="Diseño\images\flags\1x1\bz.svg" />
+    <Content Include="Diseño\images\flags\1x1\ca.svg" />
+    <Content Include="Diseño\images\flags\1x1\cc.svg" />
+    <Content Include="Diseño\images\flags\1x1\cd.svg" />
+    <Content Include="Diseño\images\flags\1x1\cf.svg" />
+    <Content Include="Diseño\images\flags\1x1\cg.svg" />
+    <Content Include="Diseño\images\flags\1x1\ch.svg" />
+    <Content Include="Diseño\images\flags\1x1\ci.svg" />
+    <Content Include="Diseño\images\flags\1x1\ck.svg" />
+    <Content Include="Diseño\images\flags\1x1\cl.svg" />
+    <Content Include="Diseño\images\flags\1x1\cm.svg" />
+    <Content Include="Diseño\images\flags\1x1\cn.svg" />
+    <Content Include="Diseño\images\flags\1x1\co.svg" />
+    <Content Include="Diseño\images\flags\1x1\cr.svg" />
+    <Content Include="Diseño\images\flags\1x1\cu.svg" />
+    <Content Include="Diseño\images\flags\1x1\cv.svg" />
+    <Content Include="Diseño\images\flags\1x1\cw.svg" />
+    <Content Include="Diseño\images\flags\1x1\cx.svg" />
+    <Content Include="Diseño\images\flags\1x1\cy.svg" />
+    <Content Include="Diseño\images\flags\1x1\cz.svg" />
+    <Content Include="Diseño\images\flags\1x1\de.svg" />
+    <Content Include="Diseño\images\flags\1x1\dj.svg" />
+    <Content Include="Diseño\images\flags\1x1\dk.svg" />
+    <Content Include="Diseño\images\flags\1x1\dm.svg" />
+    <Content Include="Diseño\images\flags\1x1\do.svg" />
+    <Content Include="Diseño\images\flags\1x1\dz.svg" />
+    <Content Include="Diseño\images\flags\1x1\ec.svg" />
+    <Content Include="Diseño\images\flags\1x1\ee.svg" />
+    <Content Include="Diseño\images\flags\1x1\eg.svg" />
+    <Content Include="Diseño\images\flags\1x1\eh.svg" />
+    <Content Include="Diseño\images\flags\1x1\er.svg" />
+    <Content Include="Diseño\images\flags\1x1\es-ct.svg" />
+    <Content Include="Diseño\images\flags\1x1\es.svg" />
+    <Content Include="Diseño\images\flags\1x1\et.svg" />
+    <Content Include="Diseño\images\flags\1x1\eu.svg" />
+    <Content Include="Diseño\images\flags\1x1\fi.svg" />
+    <Content Include="Diseño\images\flags\1x1\fj.svg" />
+    <Content Include="Diseño\images\flags\1x1\fk.svg" />
+    <Content Include="Diseño\images\flags\1x1\fm.svg" />
+    <Content Include="Diseño\images\flags\1x1\fo.svg" />
+    <Content Include="Diseño\images\flags\1x1\fr.svg" />
+    <Content Include="Diseño\images\flags\1x1\ga.svg" />
+    <Content Include="Diseño\images\flags\1x1\gb-eng.svg" />
+    <Content Include="Diseño\images\flags\1x1\gb-nir.svg" />
+    <Content Include="Diseño\images\flags\1x1\gb-sct.svg" />
+    <Content Include="Diseño\images\flags\1x1\gb-wls.svg" />
+    <Content Include="Diseño\images\flags\1x1\gb.svg" />
+    <Content Include="Diseño\images\flags\1x1\gd.svg" />
+    <Content Include="Diseño\images\flags\1x1\ge.svg" />
+    <Content Include="Diseño\images\flags\1x1\gf.svg" />
+    <Content Include="Diseño\images\flags\1x1\gg.svg" />
+    <Content Include="Diseño\images\flags\1x1\gh.svg" />
+    <Content Include="Diseño\images\flags\1x1\gi.svg" />
+    <Content Include="Diseño\images\flags\1x1\gl.svg" />
+    <Content Include="Diseño\images\flags\1x1\gm.svg" />
+    <Content Include="Diseño\images\flags\1x1\gn.svg" />
+    <Content Include="Diseño\images\flags\1x1\gp.svg" />
+    <Content Include="Diseño\images\flags\1x1\gq.svg" />
+    <Content Include="Diseño\images\flags\1x1\gr.svg" />
+    <Content Include="Diseño\images\flags\1x1\gs.svg" />
+    <Content Include="Diseño\images\flags\1x1\gt.svg" />
+    <Content Include="Diseño\images\flags\1x1\gu.svg" />
+    <Content Include="Diseño\images\flags\1x1\gw.svg" />
+    <Content Include="Diseño\images\flags\1x1\gy.svg" />
+    <Content Include="Diseño\images\flags\1x1\hk.svg" />
+    <Content Include="Diseño\images\flags\1x1\hm.svg" />
+    <Content Include="Diseño\images\flags\1x1\hn.svg" />
+    <Content Include="Diseño\images\flags\1x1\hr.svg" />
+    <Content Include="Diseño\images\flags\1x1\ht.svg" />
+    <Content Include="Diseño\images\flags\1x1\hu.svg" />
+    <Content Include="Diseño\images\flags\1x1\id.svg" />
+    <Content Include="Diseño\images\flags\1x1\ie.svg" />
+    <Content Include="Diseño\images\flags\1x1\il.svg" />
+    <Content Include="Diseño\images\flags\1x1\im.svg" />
+    <Content Include="Diseño\images\flags\1x1\in.svg" />
+    <Content Include="Diseño\images\flags\1x1\io.svg" />
+    <Content Include="Diseño\images\flags\1x1\iq.svg" />
+    <Content Include="Diseño\images\flags\1x1\ir.svg" />
+    <Content Include="Diseño\images\flags\1x1\is.svg" />
+    <Content Include="Diseño\images\flags\1x1\it.svg" />
+    <Content Include="Diseño\images\flags\1x1\je.svg" />
+    <Content Include="Diseño\images\flags\1x1\jm.svg" />
+    <Content Include="Diseño\images\flags\1x1\jo.svg" />
+    <Content Include="Diseño\images\flags\1x1\jp.svg" />
+    <Content Include="Diseño\images\flags\1x1\ke.svg" />
+    <Content Include="Diseño\images\flags\1x1\kg.svg" />
+    <Content Include="Diseño\images\flags\1x1\kh.svg" />
+    <Content Include="Diseño\images\flags\1x1\ki.svg" />
+    <Content Include="Diseño\images\flags\1x1\km.svg" />
+    <Content Include="Diseño\images\flags\1x1\kn.svg" />
+    <Content Include="Diseño\images\flags\1x1\kp.svg" />
+    <Content Include="Diseño\images\flags\1x1\kr.svg" />
+    <Content Include="Diseño\images\flags\1x1\kw.svg" />
+    <Content Include="Diseño\images\flags\1x1\ky.svg" />
+    <Content Include="Diseño\images\flags\1x1\kz.svg" />
+    <Content Include="Diseño\images\flags\1x1\la.svg" />
+    <Content Include="Diseño\images\flags\1x1\lb.svg" />
+    <Content Include="Diseño\images\flags\1x1\lc.svg" />
+    <Content Include="Diseño\images\flags\1x1\li.svg" />
+    <Content Include="Diseño\images\flags\1x1\lk.svg" />
+    <Content Include="Diseño\images\flags\1x1\lr.svg" />
+    <Content Include="Diseño\images\flags\1x1\ls.svg" />
+    <Content Include="Diseño\images\flags\1x1\lt.svg" />
+    <Content Include="Diseño\images\flags\1x1\lu.svg" />
+    <Content Include="Diseño\images\flags\1x1\lv.svg" />
+    <Content Include="Diseño\images\flags\1x1\ly.svg" />
+    <Content Include="Diseño\images\flags\1x1\ma.svg" />
+    <Content Include="Diseño\images\flags\1x1\mc.svg" />
+    <Content Include="Diseño\images\flags\1x1\md.svg" />
+    <Content Include="Diseño\images\flags\1x1\me.svg" />
+    <Content Include="Diseño\images\flags\1x1\mf.svg" />
+    <Content Include="Diseño\images\flags\1x1\mg.svg" />
+    <Content Include="Diseño\images\flags\1x1\mh.svg" />
+    <Content Include="Diseño\images\flags\1x1\mk.svg" />
+    <Content Include="Diseño\images\flags\1x1\ml.svg" />
+    <Content Include="Diseño\images\flags\1x1\mm.svg" />
+    <Content Include="Diseño\images\flags\1x1\mn.svg" />
+    <Content Include="Diseño\images\flags\1x1\mo.svg" />
+    <Content Include="Diseño\images\flags\1x1\mp.svg" />
+    <Content Include="Diseño\images\flags\1x1\mq.svg" />
+    <Content Include="Diseño\images\flags\1x1\mr.svg" />
+    <Content Include="Diseño\images\flags\1x1\ms.svg" />
+    <Content Include="Diseño\images\flags\1x1\mt.svg" />
+    <Content Include="Diseño\images\flags\1x1\mu.svg" />
+    <Content Include="Diseño\images\flags\1x1\mv.svg" />
+    <Content Include="Diseño\images\flags\1x1\mw.svg" />
+    <Content Include="Diseño\images\flags\1x1\mx.svg" />
+    <Content Include="Diseño\images\flags\1x1\my.svg" />
+    <Content Include="Diseño\images\flags\1x1\mz.svg" />
+    <Content Include="Diseño\images\flags\1x1\na.svg" />
+    <Content Include="Diseño\images\flags\1x1\nc.svg" />
+    <Content Include="Diseño\images\flags\1x1\ne.svg" />
+    <Content Include="Diseño\images\flags\1x1\nf.svg" />
+    <Content Include="Diseño\images\flags\1x1\ng.svg" />
+    <Content Include="Diseño\images\flags\1x1\ni.svg" />
+    <Content Include="Diseño\images\flags\1x1\nl.svg" />
+    <Content Include="Diseño\images\flags\1x1\no.svg" />
+    <Content Include="Diseño\images\flags\1x1\np.svg" />
+    <Content Include="Diseño\images\flags\1x1\nr.svg" />
+    <Content Include="Diseño\images\flags\1x1\nu.svg" />
+    <Content Include="Diseño\images\flags\1x1\nz.svg" />
+    <Content Include="Diseño\images\flags\1x1\om.svg" />
+    <Content Include="Diseño\images\flags\1x1\pa.svg" />
+    <Content Include="Diseño\images\flags\1x1\pe.svg" />
+    <Content Include="Diseño\images\flags\1x1\pf.svg" />
+    <Content Include="Diseño\images\flags\1x1\pg.svg" />
+    <Content Include="Diseño\images\flags\1x1\ph.svg" />
+    <Content Include="Diseño\images\flags\1x1\pk.svg" />
+    <Content Include="Diseño\images\flags\1x1\pl.svg" />
+    <Content Include="Diseño\images\flags\1x1\pm.svg" />
+    <Content Include="Diseño\images\flags\1x1\pn.svg" />
+    <Content Include="Diseño\images\flags\1x1\pr.svg" />
+    <Content Include="Diseño\images\flags\1x1\ps.svg" />
+    <Content Include="Diseño\images\flags\1x1\pt.svg" />
+    <Content Include="Diseño\images\flags\1x1\pw.svg" />
+    <Content Include="Diseño\images\flags\1x1\py.svg" />
+    <Content Include="Diseño\images\flags\1x1\qa.svg" />
+    <Content Include="Diseño\images\flags\1x1\re.svg" />
+    <Content Include="Diseño\images\flags\1x1\ro.svg" />
+    <Content Include="Diseño\images\flags\1x1\rs.svg" />
+    <Content Include="Diseño\images\flags\1x1\ru.svg" />
+    <Content Include="Diseño\images\flags\1x1\rw.svg" />
+    <Content Include="Diseño\images\flags\1x1\sa.svg" />
+    <Content Include="Diseño\images\flags\1x1\sb.svg" />
+    <Content Include="Diseño\images\flags\1x1\sc.svg" />
+    <Content Include="Diseño\images\flags\1x1\sd.svg" />
+    <Content Include="Diseño\images\flags\1x1\se.svg" />
+    <Content Include="Diseño\images\flags\1x1\sg.svg" />
+    <Content Include="Diseño\images\flags\1x1\sh.svg" />
+    <Content Include="Diseño\images\flags\1x1\si.svg" />
+    <Content Include="Diseño\images\flags\1x1\sj.svg" />
+    <Content Include="Diseño\images\flags\1x1\sk.svg" />
+    <Content Include="Diseño\images\flags\1x1\sl.svg" />
+    <Content Include="Diseño\images\flags\1x1\sm.svg" />
+    <Content Include="Diseño\images\flags\1x1\sn.svg" />
+    <Content Include="Diseño\images\flags\1x1\so.svg" />
+    <Content Include="Diseño\images\flags\1x1\sr.svg" />
+    <Content Include="Diseño\images\flags\1x1\ss.svg" />
+    <Content Include="Diseño\images\flags\1x1\st.svg" />
+    <Content Include="Diseño\images\flags\1x1\sv.svg" />
+    <Content Include="Diseño\images\flags\1x1\sx.svg" />
+    <Content Include="Diseño\images\flags\1x1\sy.svg" />
+    <Content Include="Diseño\images\flags\1x1\sz.svg" />
+    <Content Include="Diseño\images\flags\1x1\tc.svg" />
+    <Content Include="Diseño\images\flags\1x1\td.svg" />
+    <Content Include="Diseño\images\flags\1x1\tf.svg" />
+    <Content Include="Diseño\images\flags\1x1\tg.svg" />
+    <Content Include="Diseño\images\flags\1x1\th.svg" />
+    <Content Include="Diseño\images\flags\1x1\tj.svg" />
+    <Content Include="Diseño\images\flags\1x1\tk.svg" />
+    <Content Include="Diseño\images\flags\1x1\tl.svg" />
+    <Content Include="Diseño\images\flags\1x1\tm.svg" />
+    <Content Include="Diseño\images\flags\1x1\tn.svg" />
+    <Content Include="Diseño\images\flags\1x1\to.svg" />
+    <Content Include="Diseño\images\flags\1x1\tr.svg" />
+    <Content Include="Diseño\images\flags\1x1\tt.svg" />
+    <Content Include="Diseño\images\flags\1x1\tv.svg" />
+    <Content Include="Diseño\images\flags\1x1\tw.svg" />
+    <Content Include="Diseño\images\flags\1x1\tz.svg" />
+    <Content Include="Diseño\images\flags\1x1\ua.svg" />
+    <Content Include="Diseño\images\flags\1x1\ug.svg" />
+    <Content Include="Diseño\images\flags\1x1\um.svg" />
+    <Content Include="Diseño\images\flags\1x1\un.svg" />
+    <Content Include="Diseño\images\flags\1x1\us.svg" />
+    <Content Include="Diseño\images\flags\1x1\uy.svg" />
+    <Content Include="Diseño\images\flags\1x1\uz.svg" />
+    <Content Include="Diseño\images\flags\1x1\va.svg" />
+    <Content Include="Diseño\images\flags\1x1\vc.svg" />
+    <Content Include="Diseño\images\flags\1x1\ve.svg" />
+    <Content Include="Diseño\images\flags\1x1\vg.svg" />
+    <Content Include="Diseño\images\flags\1x1\vi.svg" />
+    <Content Include="Diseño\images\flags\1x1\vn.svg" />
+    <Content Include="Diseño\images\flags\1x1\vu.svg" />
+    <Content Include="Diseño\images\flags\1x1\wf.svg" />
+    <Content Include="Diseño\images\flags\1x1\ws.svg" />
+    <Content Include="Diseño\images\flags\1x1\ye.svg" />
+    <Content Include="Diseño\images\flags\1x1\yt.svg" />
+    <Content Include="Diseño\images\flags\1x1\za.svg" />
+    <Content Include="Diseño\images\flags\1x1\zm.svg" />
+    <Content Include="Diseño\images\flags\1x1\zw.svg" />
+    <Content Include="Diseño\images\flags\4x3\ad.svg" />
+    <Content Include="Diseño\images\flags\4x3\ae.svg" />
+    <Content Include="Diseño\images\flags\4x3\af.svg" />
+    <Content Include="Diseño\images\flags\4x3\ag.svg" />
+    <Content Include="Diseño\images\flags\4x3\ai.svg" />
+    <Content Include="Diseño\images\flags\4x3\al.svg" />
+    <Content Include="Diseño\images\flags\4x3\am.svg" />
+    <Content Include="Diseño\images\flags\4x3\ao.svg" />
+    <Content Include="Diseño\images\flags\4x3\aq.svg" />
+    <Content Include="Diseño\images\flags\4x3\ar.svg" />
+    <Content Include="Diseño\images\flags\4x3\as.svg" />
+    <Content Include="Diseño\images\flags\4x3\at.svg" />
+    <Content Include="Diseño\images\flags\4x3\au.svg" />
+    <Content Include="Diseño\images\flags\4x3\aw.svg" />
+    <Content Include="Diseño\images\flags\4x3\ax.svg" />
+    <Content Include="Diseño\images\flags\4x3\az.svg" />
+    <Content Include="Diseño\images\flags\4x3\ba.svg" />
+    <Content Include="Diseño\images\flags\4x3\bb.svg" />
+    <Content Include="Diseño\images\flags\4x3\bd.svg" />
+    <Content Include="Diseño\images\flags\4x3\be.svg" />
+    <Content Include="Diseño\images\flags\4x3\bf.svg" />
+    <Content Include="Diseño\images\flags\4x3\bg.svg" />
+    <Content Include="Diseño\images\flags\4x3\bh.svg" />
+    <Content Include="Diseño\images\flags\4x3\bi.svg" />
+    <Content Include="Diseño\images\flags\4x3\bj.svg" />
+    <Content Include="Diseño\images\flags\4x3\bl.svg" />
+    <Content Include="Diseño\images\flags\4x3\bm.svg" />
+    <Content Include="Diseño\images\flags\4x3\bn.svg" />
+    <Content Include="Diseño\images\flags\4x3\bo.svg" />
+    <Content Include="Diseño\images\flags\4x3\bq.svg" />
+    <Content Include="Diseño\images\flags\4x3\br.svg" />
+    <Content Include="Diseño\images\flags\4x3\bs.svg" />
+    <Content Include="Diseño\images\flags\4x3\bt.svg" />
+    <Content Include="Diseño\images\flags\4x3\bv.svg" />
+    <Content Include="Diseño\images\flags\4x3\bw.svg" />
+    <Content Include="Diseño\images\flags\4x3\by.svg" />
+    <Content Include="Diseño\images\flags\4x3\bz.svg" />
+    <Content Include="Diseño\images\flags\4x3\ca.svg" />
+    <Content Include="Diseño\images\flags\4x3\cc.svg" />
+    <Content Include="Diseño\images\flags\4x3\cd.svg" />
+    <Content Include="Diseño\images\flags\4x3\cf.svg" />
+    <Content Include="Diseño\images\flags\4x3\cg.svg" />
+    <Content Include="Diseño\images\flags\4x3\ch.svg" />
+    <Content Include="Diseño\images\flags\4x3\ci.svg" />
+    <Content Include="Diseño\images\flags\4x3\ck.svg" />
+    <Content Include="Diseño\images\flags\4x3\cl.svg" />
+    <Content Include="Diseño\images\flags\4x3\cm.svg" />
+    <Content Include="Diseño\images\flags\4x3\cn.svg" />
+    <Content Include="Diseño\images\flags\4x3\co.svg" />
+    <Content Include="Diseño\images\flags\4x3\cr.svg" />
+    <Content Include="Diseño\images\flags\4x3\cu.svg" />
+    <Content Include="Diseño\images\flags\4x3\cv.svg" />
+    <Content Include="Diseño\images\flags\4x3\cw.svg" />
+    <Content Include="Diseño\images\flags\4x3\cx.svg" />
+    <Content Include="Diseño\images\flags\4x3\cy.svg" />
+    <Content Include="Diseño\images\flags\4x3\cz.svg" />
+    <Content Include="Diseño\images\flags\4x3\de.svg" />
+    <Content Include="Diseño\images\flags\4x3\dj.svg" />
+    <Content Include="Diseño\images\flags\4x3\dk.svg" />
+    <Content Include="Diseño\images\flags\4x3\dm.svg" />
+    <Content Include="Diseño\images\flags\4x3\do.svg" />
+    <Content Include="Diseño\images\flags\4x3\dz.svg" />
+    <Content Include="Diseño\images\flags\4x3\ec.svg" />
+    <Content Include="Diseño\images\flags\4x3\ee.svg" />
+    <Content Include="Diseño\images\flags\4x3\eg.svg" />
+    <Content Include="Diseño\images\flags\4x3\eh.svg" />
+    <Content Include="Diseño\images\flags\4x3\er.svg" />
+    <Content Include="Diseño\images\flags\4x3\es-ct.svg" />
+    <Content Include="Diseño\images\flags\4x3\es.svg" />
+    <Content Include="Diseño\images\flags\4x3\et.svg" />
+    <Content Include="Diseño\images\flags\4x3\eu.svg" />
+    <Content Include="Diseño\images\flags\4x3\fi.svg" />
+    <Content Include="Diseño\images\flags\4x3\fj.svg" />
+    <Content Include="Diseño\images\flags\4x3\fk.svg" />
+    <Content Include="Diseño\images\flags\4x3\fm.svg" />
+    <Content Include="Diseño\images\flags\4x3\fo.svg" />
+    <Content Include="Diseño\images\flags\4x3\fr.svg" />
+    <Content Include="Diseño\images\flags\4x3\ga.svg" />
+    <Content Include="Diseño\images\flags\4x3\gb-eng.svg" />
+    <Content Include="Diseño\images\flags\4x3\gb-nir.svg" />
+    <Content Include="Diseño\images\flags\4x3\gb-sct.svg" />
+    <Content Include="Diseño\images\flags\4x3\gb-wls.svg" />
+    <Content Include="Diseño\images\flags\4x3\gb.svg" />
+    <Content Include="Diseño\images\flags\4x3\gd.svg" />
+    <Content Include="Diseño\images\flags\4x3\ge.svg" />
+    <Content Include="Diseño\images\flags\4x3\gf.svg" />
+    <Content Include="Diseño\images\flags\4x3\gg.svg" />
+    <Content Include="Diseño\images\flags\4x3\gh.svg" />
+    <Content Include="Diseño\images\flags\4x3\gi.svg" />
+    <Content Include="Diseño\images\flags\4x3\gl.svg" />
+    <Content Include="Diseño\images\flags\4x3\gm.svg" />
+    <Content Include="Diseño\images\flags\4x3\gn.svg" />
+    <Content Include="Diseño\images\flags\4x3\gp.svg" />
+    <Content Include="Diseño\images\flags\4x3\gq.svg" />
+    <Content Include="Diseño\images\flags\4x3\gr.svg" />
+    <Content Include="Diseño\images\flags\4x3\gs.svg" />
+    <Content Include="Diseño\images\flags\4x3\gt.svg" />
+    <Content Include="Diseño\images\flags\4x3\gu.svg" />
+    <Content Include="Diseño\images\flags\4x3\gw.svg" />
+    <Content Include="Diseño\images\flags\4x3\gy.svg" />
+    <Content Include="Diseño\images\flags\4x3\hk.svg" />
+    <Content Include="Diseño\images\flags\4x3\hm.svg" />
+    <Content Include="Diseño\images\flags\4x3\hn.svg" />
+    <Content Include="Diseño\images\flags\4x3\hr.svg" />
+    <Content Include="Diseño\images\flags\4x3\ht.svg" />
+    <Content Include="Diseño\images\flags\4x3\hu.svg" />
+    <Content Include="Diseño\images\flags\4x3\id.svg" />
+    <Content Include="Diseño\images\flags\4x3\ie.svg" />
+    <Content Include="Diseño\images\flags\4x3\il.svg" />
+    <Content Include="Diseño\images\flags\4x3\im.svg" />
+    <Content Include="Diseño\images\flags\4x3\in.svg" />
+    <Content Include="Diseño\images\flags\4x3\io.svg" />
+    <Content Include="Diseño\images\flags\4x3\iq.svg" />
+    <Content Include="Diseño\images\flags\4x3\ir.svg" />
+    <Content Include="Diseño\images\flags\4x3\is.svg" />
+    <Content Include="Diseño\images\flags\4x3\it.svg" />
+    <Content Include="Diseño\images\flags\4x3\je.svg" />
+    <Content Include="Diseño\images\flags\4x3\jm.svg" />
+    <Content Include="Diseño\images\flags\4x3\jo.svg" />
+    <Content Include="Diseño\images\flags\4x3\jp.svg" />
+    <Content Include="Diseño\images\flags\4x3\ke.svg" />
+    <Content Include="Diseño\images\flags\4x3\kg.svg" />
+    <Content Include="Diseño\images\flags\4x3\kh.svg" />
+    <Content Include="Diseño\images\flags\4x3\ki.svg" />
+    <Content Include="Diseño\images\flags\4x3\km.svg" />
+    <Content Include="Diseño\images\flags\4x3\kn.svg" />
+    <Content Include="Diseño\images\flags\4x3\kp.svg" />
+    <Content Include="Diseño\images\flags\4x3\kr.svg" />
+    <Content Include="Diseño\images\flags\4x3\kw.svg" />
+    <Content Include="Diseño\images\flags\4x3\ky.svg" />
+    <Content Include="Diseño\images\flags\4x3\kz.svg" />
+    <Content Include="Diseño\images\flags\4x3\la.svg" />
+    <Content Include="Diseño\images\flags\4x3\lb.svg" />
+    <Content Include="Diseño\images\flags\4x3\lc.svg" />
+    <Content Include="Diseño\images\flags\4x3\li.svg" />
+    <Content Include="Diseño\images\flags\4x3\lk.svg" />
+    <Content Include="Diseño\images\flags\4x3\lr.svg" />
+    <Content Include="Diseño\images\flags\4x3\ls.svg" />
+    <Content Include="Diseño\images\flags\4x3\lt.svg" />
+    <Content Include="Diseño\images\flags\4x3\lu.svg" />
+    <Content Include="Diseño\images\flags\4x3\lv.svg" />
+    <Content Include="Diseño\images\flags\4x3\ly.svg" />
+    <Content Include="Diseño\images\flags\4x3\ma.svg" />
+    <Content Include="Diseño\images\flags\4x3\mc.svg" />
+    <Content Include="Diseño\images\flags\4x3\md.svg" />
+    <Content Include="Diseño\images\flags\4x3\me.svg" />
+    <Content Include="Diseño\images\flags\4x3\mf.svg" />
+    <Content Include="Diseño\images\flags\4x3\mg.svg" />
+    <Content Include="Diseño\images\flags\4x3\mh.svg" />
+    <Content Include="Diseño\images\flags\4x3\mk.svg" />
+    <Content Include="Diseño\images\flags\4x3\ml.svg" />
+    <Content Include="Diseño\images\flags\4x3\mm.svg" />
+    <Content Include="Diseño\images\flags\4x3\mn.svg" />
+    <Content Include="Diseño\images\flags\4x3\mo.svg" />
+    <Content Include="Diseño\images\flags\4x3\mp.svg" />
+    <Content Include="Diseño\images\flags\4x3\mq.svg" />
+    <Content Include="Diseño\images\flags\4x3\mr.svg" />
+    <Content Include="Diseño\images\flags\4x3\ms.svg" />
+    <Content Include="Diseño\images\flags\4x3\mt.svg" />
+    <Content Include="Diseño\images\flags\4x3\mu.svg" />
+    <Content Include="Diseño\images\flags\4x3\mv.svg" />
+    <Content Include="Diseño\images\flags\4x3\mw.svg" />
+    <Content Include="Diseño\images\flags\4x3\mx.svg" />
+    <Content Include="Diseño\images\flags\4x3\my.svg" />
+    <Content Include="Diseño\images\flags\4x3\mz.svg" />
+    <Content Include="Diseño\images\flags\4x3\na.svg" />
+    <Content Include="Diseño\images\flags\4x3\nc.svg" />
+    <Content Include="Diseño\images\flags\4x3\ne.svg" />
+    <Content Include="Diseño\images\flags\4x3\nf.svg" />
+    <Content Include="Diseño\images\flags\4x3\ng.svg" />
+    <Content Include="Diseño\images\flags\4x3\ni.svg" />
+    <Content Include="Diseño\images\flags\4x3\nl.svg" />
+    <Content Include="Diseño\images\flags\4x3\no.svg" />
+    <Content Include="Diseño\images\flags\4x3\np.svg" />
+    <Content Include="Diseño\images\flags\4x3\nr.svg" />
+    <Content Include="Diseño\images\flags\4x3\nu.svg" />
+    <Content Include="Diseño\images\flags\4x3\nz.svg" />
+    <Content Include="Diseño\images\flags\4x3\om.svg" />
+    <Content Include="Diseño\images\flags\4x3\pa.svg" />
+    <Content Include="Diseño\images\flags\4x3\pe.svg" />
+    <Content Include="Diseño\images\flags\4x3\pf.svg" />
+    <Content Include="Diseño\images\flags\4x3\pg.svg" />
+    <Content Include="Diseño\images\flags\4x3\ph.svg" />
+    <Content Include="Diseño\images\flags\4x3\pk.svg" />
+    <Content Include="Diseño\images\flags\4x3\pl.svg" />
+    <Content Include="Diseño\images\flags\4x3\pm.svg" />
+    <Content Include="Diseño\images\flags\4x3\pn.svg" />
+    <Content Include="Diseño\images\flags\4x3\pr.svg" />
+    <Content Include="Diseño\images\flags\4x3\ps.svg" />
+    <Content Include="Diseño\images\flags\4x3\pt.svg" />
+    <Content Include="Diseño\images\flags\4x3\pw.svg" />
+    <Content Include="Diseño\images\flags\4x3\py.svg" />
+    <Content Include="Diseño\images\flags\4x3\qa.svg" />
+    <Content Include="Diseño\images\flags\4x3\re.svg" />
+    <Content Include="Diseño\images\flags\4x3\ro.svg" />
+    <Content Include="Diseño\images\flags\4x3\rs.svg" />
+    <Content Include="Diseño\images\flags\4x3\ru.svg" />
+    <Content Include="Diseño\images\flags\4x3\rw.svg" />
+    <Content Include="Diseño\images\flags\4x3\sa.svg" />
+    <Content Include="Diseño\images\flags\4x3\sb.svg" />
+    <Content Include="Diseño\images\flags\4x3\sc.svg" />
+    <Content Include="Diseño\images\flags\4x3\sd.svg" />
+    <Content Include="Diseño\images\flags\4x3\se.svg" />
+    <Content Include="Diseño\images\flags\4x3\sg.svg" />
+    <Content Include="Diseño\images\flags\4x3\sh.svg" />
+    <Content Include="Diseño\images\flags\4x3\si.svg" />
+    <Content Include="Diseño\images\flags\4x3\sj.svg" />
+    <Content Include="Diseño\images\flags\4x3\sk.svg" />
+    <Content Include="Diseño\images\flags\4x3\sl.svg" />
+    <Content Include="Diseño\images\flags\4x3\sm.svg" />
+    <Content Include="Diseño\images\flags\4x3\sn.svg" />
+    <Content Include="Diseño\images\flags\4x3\so.svg" />
+    <Content Include="Diseño\images\flags\4x3\sr.svg" />
+    <Content Include="Diseño\images\flags\4x3\ss.svg" />
+    <Content Include="Diseño\images\flags\4x3\st.svg" />
+    <Content Include="Diseño\images\flags\4x3\sv.svg" />
+    <Content Include="Diseño\images\flags\4x3\sx.svg" />
+    <Content Include="Diseño\images\flags\4x3\sy.svg" />
+    <Content Include="Diseño\images\flags\4x3\sz.svg" />
+    <Content Include="Diseño\images\flags\4x3\tc.svg" />
+    <Content Include="Diseño\images\flags\4x3\td.svg" />
+    <Content Include="Diseño\images\flags\4x3\tf.svg" />
+    <Content Include="Diseño\images\flags\4x3\tg.svg" />
+    <Content Include="Diseño\images\flags\4x3\th.svg" />
+    <Content Include="Diseño\images\flags\4x3\tj.svg" />
+    <Content Include="Diseño\images\flags\4x3\tk.svg" />
+    <Content Include="Diseño\images\flags\4x3\tl.svg" />
+    <Content Include="Diseño\images\flags\4x3\tm.svg" />
+    <Content Include="Diseño\images\flags\4x3\tn.svg" />
+    <Content Include="Diseño\images\flags\4x3\to.svg" />
+    <Content Include="Diseño\images\flags\4x3\tr.svg" />
+    <Content Include="Diseño\images\flags\4x3\tt.svg" />
+    <Content Include="Diseño\images\flags\4x3\tv.svg" />
+    <Content Include="Diseño\images\flags\4x3\tw.svg" />
+    <Content Include="Diseño\images\flags\4x3\tz.svg" />
+    <Content Include="Diseño\images\flags\4x3\ua.svg" />
+    <Content Include="Diseño\images\flags\4x3\ug.svg" />
+    <Content Include="Diseño\images\flags\4x3\um.svg" />
+    <Content Include="Diseño\images\flags\4x3\un.svg" />
+    <Content Include="Diseño\images\flags\4x3\us.svg" />
+    <Content Include="Diseño\images\flags\4x3\uy.svg" />
+    <Content Include="Diseño\images\flags\4x3\uz.svg" />
+    <Content Include="Diseño\images\flags\4x3\va.svg" />
+    <Content Include="Diseño\images\flags\4x3\vc.svg" />
+    <Content Include="Diseño\images\flags\4x3\ve.svg" />
+    <Content Include="Diseño\images\flags\4x3\vg.svg" />
+    <Content Include="Diseño\images\flags\4x3\vi.svg" />
+    <Content Include="Diseño\images\flags\4x3\vn.svg" />
+    <Content Include="Diseño\images\flags\4x3\vu.svg" />
+    <Content Include="Diseño\images\flags\4x3\wf.svg" />
+    <Content Include="Diseño\images\flags\4x3\ws.svg" />
+    <Content Include="Diseño\images\flags\4x3\ye.svg" />
+    <Content Include="Diseño\images\flags\4x3\yt.svg" />
+    <Content Include="Diseño\images\flags\4x3\za.svg" />
+    <Content Include="Diseño\images\flags\4x3\zm.svg" />
+    <Content Include="Diseño\images\flags\4x3\zw.svg" />
+    <Content Include="Diseño\images\flags\ad.svg" />
+    <Content Include="Diseño\images\flags\ae.svg" />
+    <Content Include="Diseño\images\flags\af.svg" />
+    <Content Include="Diseño\images\flags\ag.svg" />
+    <Content Include="Diseño\images\flags\ai.svg" />
+    <Content Include="Diseño\images\flags\al.svg" />
+    <Content Include="Diseño\images\flags\am.svg" />
+    <Content Include="Diseño\images\flags\ao.svg" />
+    <Content Include="Diseño\images\flags\aq.svg" />
+    <Content Include="Diseño\images\flags\ar.svg" />
+    <Content Include="Diseño\images\flags\as.svg" />
+    <Content Include="Diseño\images\flags\at.svg" />
+    <Content Include="Diseño\images\flags\au.svg" />
+    <Content Include="Diseño\images\flags\aw.svg" />
+    <Content Include="Diseño\images\flags\ax.svg" />
+    <Content Include="Diseño\images\flags\az.svg" />
+    <Content Include="Diseño\images\flags\ba.svg" />
+    <Content Include="Diseño\images\flags\bb.svg" />
+    <Content Include="Diseño\images\flags\bd.svg" />
+    <Content Include="Diseño\images\flags\be.svg" />
+    <Content Include="Diseño\images\flags\bf.svg" />
+    <Content Include="Diseño\images\flags\bg.svg" />
+    <Content Include="Diseño\images\flags\bh.svg" />
+    <Content Include="Diseño\images\flags\bi.svg" />
+    <Content Include="Diseño\images\flags\bj.svg" />
+    <Content Include="Diseño\images\flags\bl.svg" />
+    <Content Include="Diseño\images\flags\bm.svg" />
+    <Content Include="Diseño\images\flags\bn.svg" />
+    <Content Include="Diseño\images\flags\bo.svg" />
+    <Content Include="Diseño\images\flags\bq.svg" />
+    <Content Include="Diseño\images\flags\br.svg" />
+    <Content Include="Diseño\images\flags\bs.svg" />
+    <Content Include="Diseño\images\flags\bt.svg" />
+    <Content Include="Diseño\images\flags\bv.svg" />
+    <Content Include="Diseño\images\flags\bw.svg" />
+    <Content Include="Diseño\images\flags\by.svg" />
+    <Content Include="Diseño\images\flags\bz.svg" />
+    <Content Include="Diseño\images\flags\ca.svg" />
+    <Content Include="Diseño\images\flags\cc.svg" />
+    <Content Include="Diseño\images\flags\cd.svg" />
+    <Content Include="Diseño\images\flags\cf.svg" />
+    <Content Include="Diseño\images\flags\cg.svg" />
+    <Content Include="Diseño\images\flags\ch.svg" />
+    <Content Include="Diseño\images\flags\ci.svg" />
+    <Content Include="Diseño\images\flags\ck.svg" />
+    <Content Include="Diseño\images\flags\cl.svg" />
+    <Content Include="Diseño\images\flags\cm.svg" />
+    <Content Include="Diseño\images\flags\cn.svg" />
+    <Content Include="Diseño\images\flags\co.svg" />
+    <Content Include="Diseño\images\flags\cr.svg" />
+    <Content Include="Diseño\images\flags\cu.svg" />
+    <Content Include="Diseño\images\flags\cv.svg" />
+    <Content Include="Diseño\images\flags\cw.svg" />
+    <Content Include="Diseño\images\flags\cx.svg" />
+    <Content Include="Diseño\images\flags\cy.svg" />
+    <Content Include="Diseño\images\flags\cz.svg" />
+    <Content Include="Diseño\images\flags\de.svg" />
+    <Content Include="Diseño\images\flags\dj.svg" />
+    <Content Include="Diseño\images\flags\dk.svg" />
+    <Content Include="Diseño\images\flags\dm.svg" />
+    <Content Include="Diseño\images\flags\do.svg" />
+    <Content Include="Diseño\images\flags\dz.svg" />
+    <Content Include="Diseño\images\flags\ec.svg" />
+    <Content Include="Diseño\images\flags\ee.svg" />
+    <Content Include="Diseño\images\flags\eg.svg" />
+    <Content Include="Diseño\images\flags\eh.svg" />
+    <Content Include="Diseño\images\flags\er.svg" />
+    <Content Include="Diseño\images\flags\es.svg" />
+    <Content Include="Diseño\images\flags\et.svg" />
+    <Content Include="Diseño\images\flags\fi.svg" />
+    <Content Include="Diseño\images\flags\fj.svg" />
+    <Content Include="Diseño\images\flags\fk.svg" />
+    <Content Include="Diseño\images\flags\fm.svg" />
+    <Content Include="Diseño\images\flags\fo.svg" />
+    <Content Include="Diseño\images\flags\fr.svg" />
+    <Content Include="Diseño\images\flags\ga.svg" />
+    <Content Include="Diseño\images\flags\gb.svg" />
+    <Content Include="Diseño\images\flags\gd.svg" />
+    <Content Include="Diseño\images\flags\ge.svg" />
+    <Content Include="Diseño\images\flags\gf.svg" />
+    <Content Include="Diseño\images\flags\gg.svg" />
+    <Content Include="Diseño\images\flags\gh.svg" />
+    <Content Include="Diseño\images\flags\gi.svg" />
+    <Content Include="Diseño\images\flags\gl.svg" />
+    <Content Include="Diseño\images\flags\gm.svg" />
+    <Content Include="Diseño\images\flags\gn.svg" />
+    <Content Include="Diseño\images\flags\gp.svg" />
+    <Content Include="Diseño\images\flags\gq.svg" />
+    <Content Include="Diseño\images\flags\gr.svg" />
+    <Content Include="Diseño\images\flags\gs.svg" />
+    <Content Include="Diseño\images\flags\gt.svg" />
+    <Content Include="Diseño\images\flags\gu.svg" />
+    <Content Include="Diseño\images\flags\gw.svg" />
+    <Content Include="Diseño\images\flags\gy.svg" />
+    <Content Include="Diseño\images\flags\hk.svg" />
+    <Content Include="Diseño\images\flags\hm.svg" />
+    <Content Include="Diseño\images\flags\hn.svg" />
+    <Content Include="Diseño\images\flags\hr.svg" />
+    <Content Include="Diseño\images\flags\ht.svg" />
+    <Content Include="Diseño\images\flags\hu.svg" />
+    <Content Include="Diseño\images\flags\id.svg" />
+    <Content Include="Diseño\images\flags\ie.svg" />
+    <Content Include="Diseño\images\flags\il.svg" />
+    <Content Include="Diseño\images\flags\im.svg" />
+    <Content Include="Diseño\images\flags\in.svg" />
+    <Content Include="Diseño\images\flags\io.svg" />
+    <Content Include="Diseño\images\flags\iq.svg" />
+    <Content Include="Diseño\images\flags\ir.svg" />
+    <Content Include="Diseño\images\flags\is.svg" />
+    <Content Include="Diseño\images\flags\it.svg" />
+    <Content Include="Diseño\images\flags\je.svg" />
+    <Content Include="Diseño\images\flags\jm.svg" />
+    <Content Include="Diseño\images\flags\jo.svg" />
+    <Content Include="Diseño\images\flags\jp.svg" />
+    <Content Include="Diseño\images\flags\ke.svg" />
+    <Content Include="Diseño\images\flags\kg.svg" />
+    <Content Include="Diseño\images\flags\kh.svg" />
+    <Content Include="Diseño\images\flags\ki.svg" />
+    <Content Include="Diseño\images\flags\km.svg" />
+    <Content Include="Diseño\images\flags\kn.svg" />
+    <Content Include="Diseño\images\flags\kp.svg" />
+    <Content Include="Diseño\images\flags\kr.svg" />
+    <Content Include="Diseño\images\flags\kw.svg" />
+    <Content Include="Diseño\images\flags\ky.svg" />
+    <Content Include="Diseño\images\flags\kz.svg" />
+    <Content Include="Diseño\images\flags\la.svg" />
+    <Content Include="Diseño\images\flags\lb.svg" />
+    <Content Include="Diseño\images\flags\lc.svg" />
+    <Content Include="Diseño\images\flags\li.svg" />
+    <Content Include="Diseño\images\flags\lk.svg" />
+    <Content Include="Diseño\images\flags\lr.svg" />
+    <Content Include="Diseño\images\flags\ls.svg" />
+    <Content Include="Diseño\images\flags\lt.svg" />
+    <Content Include="Diseño\images\flags\lu.svg" />
+    <Content Include="Diseño\images\flags\lv.svg" />
+    <Content Include="Diseño\images\flags\ly.svg" />
+    <Content Include="Diseño\images\flags\ma.svg" />
+    <Content Include="Diseño\images\flags\mc.svg" />
+    <Content Include="Diseño\images\flags\md.svg" />
+    <Content Include="Diseño\images\flags\me.svg" />
+    <Content Include="Diseño\images\flags\mf.svg" />
+    <Content Include="Diseño\images\flags\mg.svg" />
+    <Content Include="Diseño\images\flags\mh.svg" />
+    <Content Include="Diseño\images\flags\mk.svg" />
+    <Content Include="Diseño\images\flags\ml.svg" />
+    <Content Include="Diseño\images\flags\mm.svg" />
+    <Content Include="Diseño\images\flags\mn.svg" />
+    <Content Include="Diseño\images\flags\mo.svg" />
+    <Content Include="Diseño\images\flags\mp.svg" />
+    <Content Include="Diseño\images\flags\mq.svg" />
+    <Content Include="Diseño\images\flags\mr.svg" />
+    <Content Include="Diseño\images\flags\ms.svg" />
+    <Content Include="Diseño\images\flags\mt.svg" />
+    <Content Include="Diseño\images\flags\mu.svg" />
+    <Content Include="Diseño\images\flags\mv.svg" />
+    <Content Include="Diseño\images\flags\mw.svg" />
+    <Content Include="Diseño\images\flags\mx.svg" />
+    <Content Include="Diseño\images\flags\my.svg" />
+    <Content Include="Diseño\images\flags\mz.svg" />
+    <Content Include="Diseño\images\flags\na.svg" />
+    <Content Include="Diseño\images\flags\nc.svg" />
+    <Content Include="Diseño\images\flags\ne.svg" />
+    <Content Include="Diseño\images\flags\nf.svg" />
+    <Content Include="Diseño\images\flags\ng.svg" />
+    <Content Include="Diseño\images\flags\ni.svg" />
+    <Content Include="Diseño\images\flags\nl.svg" />
+    <Content Include="Diseño\images\flags\no.svg" />
+    <Content Include="Diseño\images\flags\np.svg" />
+    <Content Include="Diseño\images\flags\nr.svg" />
+    <Content Include="Diseño\images\flags\nu.svg" />
+    <Content Include="Diseño\images\flags\nz.svg" />
+    <Content Include="Diseño\images\flags\om.svg" />
+    <Content Include="Diseño\images\flags\pa.svg" />
+    <Content Include="Diseño\images\flags\pe.svg" />
+    <Content Include="Diseño\images\flags\pf.svg" />
+    <Content Include="Diseño\images\flags\pg.svg" />
+    <Content Include="Diseño\images\flags\ph.svg" />
+    <Content Include="Diseño\images\flags\pk.svg" />
+    <Content Include="Diseño\images\flags\pl.svg" />
+    <Content Include="Diseño\images\flags\pm.svg" />
+    <Content Include="Diseño\images\flags\pn.svg" />
+    <Content Include="Diseño\images\flags\pr.svg" />
+    <Content Include="Diseño\images\flags\ps.svg" />
+    <Content Include="Diseño\images\flags\pt.svg" />
+    <Content Include="Diseño\images\flags\pw.svg" />
+    <Content Include="Diseño\images\flags\py.svg" />
+    <Content Include="Diseño\images\flags\qa.svg" />
+    <Content Include="Diseño\images\flags\re.svg" />
+    <Content Include="Diseño\images\flags\ro.svg" />
+    <Content Include="Diseño\images\flags\rs.svg" />
+    <Content Include="Diseño\images\flags\ru.svg" />
+    <Content Include="Diseño\images\flags\rw.svg" />
+    <Content Include="Diseño\images\flags\sa.svg" />
+    <Content Include="Diseño\images\flags\sb.svg" />
+    <Content Include="Diseño\images\flags\sc.svg" />
+    <Content Include="Diseño\images\flags\sd.svg" />
+    <Content Include="Diseño\images\flags\se.svg" />
+    <Content Include="Diseño\images\flags\sg.svg" />
+    <Content Include="Diseño\images\flags\sh.svg" />
+    <Content Include="Diseño\images\flags\si.svg" />
+    <Content Include="Diseño\images\flags\sj.svg" />
+    <Content Include="Diseño\images\flags\sk.svg" />
+    <Content Include="Diseño\images\flags\sl.svg" />
+    <Content Include="Diseño\images\flags\sm.svg" />
+    <Content Include="Diseño\images\flags\sn.svg" />
+    <Content Include="Diseño\images\flags\so.svg" />
+    <Content Include="Diseño\images\flags\sr.svg" />
+    <Content Include="Diseño\images\flags\ss.svg" />
+    <Content Include="Diseño\images\flags\st.svg" />
+    <Content Include="Diseño\images\flags\sv.svg" />
+    <Content Include="Diseño\images\flags\sx.svg" />
+    <Content Include="Diseño\images\flags\sy.svg" />
+    <Content Include="Diseño\images\flags\sz.svg" />
+    <Content Include="Diseño\images\flags\tc.svg" />
+    <Content Include="Diseño\images\flags\td.svg" />
+    <Content Include="Diseño\images\flags\tf.svg" />
+    <Content Include="Diseño\images\flags\tg.svg" />
+    <Content Include="Diseño\images\flags\th.svg" />
+    <Content Include="Diseño\images\flags\tj.svg" />
+    <Content Include="Diseño\images\flags\tk.svg" />
+    <Content Include="Diseño\images\flags\tl.svg" />
+    <Content Include="Diseño\images\flags\tm.svg" />
+    <Content Include="Diseño\images\flags\tn.svg" />
+    <Content Include="Diseño\images\flags\to.svg" />
+    <Content Include="Diseño\images\flags\tr.svg" />
+    <Content Include="Diseño\images\flags\tt.svg" />
+    <Content Include="Diseño\images\flags\tv.svg" />
+    <Content Include="Diseño\images\flags\tw.svg" />
+    <Content Include="Diseño\images\flags\tz.svg" />
+    <Content Include="Diseño\images\flags\ua.svg" />
+    <Content Include="Diseño\images\flags\ug.svg" />
+    <Content Include="Diseño\images\flags\um.svg" />
+    <Content Include="Diseño\images\flags\us.svg" />
+    <Content Include="Diseño\images\flags\uy.svg" />
+    <Content Include="Diseño\images\flags\uz.svg" />
+    <Content Include="Diseño\images\flags\va.svg" />
+    <Content Include="Diseño\images\flags\vc.svg" />
+    <Content Include="Diseño\images\flags\ve.svg" />
+    <Content Include="Diseño\images\flags\vg.svg" />
+    <Content Include="Diseño\images\flags\vi.svg" />
+    <Content Include="Diseño\images\flags\vn.svg" />
+    <Content Include="Diseño\images\flags\vu.svg" />
+    <Content Include="Diseño\images\flags\wf.svg" />
+    <Content Include="Diseño\images\flags\ws.svg" />
+    <Content Include="Diseño\images\flags\ye.svg" />
+    <Content Include="Diseño\images\flags\yt.svg" />
+    <Content Include="Diseño\images\flags\za.svg" />
+    <Content Include="Diseño\images\flags\zm.svg" />
+    <Content Include="Diseño\images\flags\zw.svg" />
+    <Content Include="Diseño\images\flag\du.png" />
+    <Content Include="Diseño\images\flag\es.png" />
+    <Content Include="Diseño\images\flag\fr.png" />
+    <Content Include="Diseño\images\flag\it.png" />
+    <Content Include="Diseño\images\flag\us.png" />
+    <Content Include="Diseño\images\Ingeniería Visual.mp4" />
+    <Content Include="Diseño\images\logo.png" />
+    <Content Include="Diseño\images\logo2.png" />
+    <Content Include="Diseño\images\placeholder.png" />
+    <Content Include="Diseño\images\twitter_corner_black.png" />
+    <Content Include="Diseño\images\twitter_corner_blue.png" />
+    <Content Include="Diseño\Login.css" />
+    <Content Include="Diseño\Onsignal.js" />
+    <Content Include="Diseño\switch.css" />
+    <Content Include="Diseño\Video.css" />
+    <Content Include="Empleados\Citofonia.aspx" />
+    <Content Include="Empleados\EmpRegistroVisitantes.aspx" />
+    <Content Include="Empleados\EmpQuejas.aspx" />
+    <Content Include="Empleados\EmpCicla.aspx" />
+    <Content Include="Empleados\EmpBitacora.aspx" />
+    <Content Include="Empleados\Arriendo.aspx" />
+    <Content Include="Empleados\EmpQuejaAseo.aspx" />
+    <Content Include="Empleados\CajaParqueadero.aspx" />
+    <Content Include="Empleados\RegSCAseo.aspx" />
+    <Content Include="Empleados\VigSCAseo.aspx" />
+    <Content Include="Empleados\HomeA.aspx" />
+    <Content Include="Empleados\VigSCEditar.aspx" />
+    <Content Include="Empleados\VigSalidasEditar.aspx" />
+    <Content Include="Empleados\VigSalidas.aspx" />
+    <Content Include="Empleados\VigSC.aspx" />
+    <Content Include="Empleados\VigParquea.aspx" />
+    <Content Include="Empleados\Home.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Inicio\Inicio.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="ModeloSaldos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloSaldos.edmx</DependentUpon>
+      <LastGenOutput>ModeloSaldos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModeloSaldos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloSaldos.edmx</DependentUpon>
+      <LastGenOutput>ModeloSaldos.cs</LastGenOutput>
+    </Content>
+    <Content Include="Mudanzas\3911889.png" />
+    <Content Include="Mudanzas\Cedula\3911889.png" />
+    <Content Include="Mudanzas\DocumentoPDF\3911889.png" />
+    <Content Include="Mudanzas\Firma\3911889.png" />
+    <Content Include="NovedadSaldos\3911889.png" />
+    <Content Include="NovedadPQR\3911889.png" />
+    <Content Include="Parqueadero\3911889.png" />
+    <Content Include="Parqueadero\Cedula\3911889.png" />
+    <Content Include="Parqueadero\Soat\3911889.png" />
+    <Content Include="Parqueadero\TarjetaP\3911889.png" />
+    <Content Include="Parqueadero\Tecnomecanica\3911889.png" />
+    <Content Include="Parqueadero\Vehiculo\3911889.png" />
+    <Content Include="Propietario\Actualizar_Propietario.aspx" />
+    <Content Include="Propietario\Documentos_propietario.aspx" />
+    <Content Include="Propietario\AdmNotificaciones.aspx" />
+    <Content Include="Propietario\DescargarPDFAsamblea.aspx" />
+    <Content Include="Propietario\DescargaPDF.aspx" />
+    <Content Include="Propietario\ProConstruccion.aspx" />
+    <Content Include="Propietario\MudanzaValidar.aspx" />
+    <Content Include="Propietario\ProVerNotiPDF.aspx" />
+    <Content Include="Propietario\ProVerNotifi.aspx" />
+    <Content Include="Propietario\ProVerResPagPDF.aspx" />
+    <Content Include="Propietario\ProVerRespuestas.aspx" />
+    <Content Include="Propietario\SolRespuestas.aspx" />
+    <Content Include="Propietario\ProVotacion.aspx" />
+    <Content Include="Propietario\ProST.aspx" />
+    <Content Include="Propietario\Temporal2.aspx" />
+    <Content Include="Propietario\ProGas.aspx" />
+    <Content Include="Propietario\ProEnergia.aspx" />
+    <Content Include="Propietario\ProAgua.aspx" />
+    <Content Include="Propietario\HomeRecibo.aspx" />
+    <Content Include="Propietario\ProConvivencia.aspx" />
+    <Content Include="Propietario\ProVerResChip.aspx" />
+    <Content Include="Propietario\ProTabResChip.aspx" />
+    <Content Include="Propietario\ProSolChip.aspx" />
+    <Content Include="Propietario\ProVerResSC.aspx" />
+    <Content Include="Propietario\ProTabResSC.aspx" />
+    <Content Include="Propietario\VerificarDisponibilidadSC.aspx" />
+    <Content Include="Propietario\SerSalonComunal.aspx" />
+    <Content Include="Propietario\VerCartelera.aspx" />
+    <Content Include="Propietario\ProArriendoEditar.aspx" />
+    <Content Include="Propietario\ProArriVent.aspx" />
+    <Content Include="Propietario\ProCarteleraEditar.aspx" />
+    <Content Include="Propietario\ProCartelera.aspx" />
+    <Content Include="Propietario\ProIngMud.aspx" />
+    <Content Include="Propietario\ProIngArt.aspx" />
+    <Content Include="Propietario\ProSalMud.aspx" />
+    <Content Include="Propietario\ProVerResSal.aspx" />
+    <Content Include="Propietario\ProTabResSal.aspx" />
+    <Content Include="Propietario\ProSalArt.aspx" />
+    <Content Include="Propietario\ProMudanza.aspx" />
+    <Content Include="Propietario\ProVerResPar.aspx" />
+    <Content Include="Propietario\ProTabResPar.aspx" />
+    <Content Include="Propietario\ProRespuestas.aspx" />
+    <Content Include="Propietario\RespuestaPQRPropietario.aspx" />
+    <Content Include="Propietario\PQRPropietarios.aspx" />
+    <Content Include="Propietario\VerRespuestaSol.aspx" />
+    <Content Include="Propietario\HomeSolicitud.aspx" />
+    <Content Include="Propietario\ProVerResPag.aspx" />
+    <Content Include="Propietario\ProTabResPag.aspx" />
+    <Content Include="Propietario\NovedadPagoPyZ.aspx" />
+    <Content Include="Propietario\NovedadPagoSel.aspx" />
+    <Content Include="Propietario\NovedadPago.aspx" />
+    <Content Include="Propietario\SaldoNotificacion.aspx" />
+    <Content Include="Propietario\SaldoAdministracion.aspx" />
+    <Content Include="Propietario\HomeSaldo.aspx" />
+    <Content Include="Propietario\ProRegGen.aspx" />
+    <Content Include="Propietario\ProRegistroVisitantes.aspx" />
+    <Content Include="Propietario\ProProVis.aspx" />
+    <Content Include="Propietario\ProCiclaEditar.aspx" />
+    <Content Include="Propietario\ProCicla.aspx" />
+    <Content Include="Propietario\PoliticaDatos.aspx" />
+    <Content Include="Propietario\ProPoliticaConvivencia.aspx" />
+    <Content Include="Propietario\HomeRegistro.aspx" />
+    <Content Include="Propietario\TokenOK.aspx" />
+    <Content Include="Propietario\Token.aspx" />
+    <Content Include="Propietario\Perfil_Propietario.aspx" />
+    <Content Include="Propietario\Home.aspx" />
+    <Content Include="Registro\NuevoPassword.aspx" />
+    <Content Include="Registro\PoliticaConvivencia.aspx" />
+    <Content Include="Registro\PoliticaDatos.aspx" />
+    <Content Include="Registro\RegistroCitofonia.aspx" />
+    <Content Include="Registro\ResetPassword.aspx" />
+    <Content Include="SC\3911889.png" />
+    <Content Include="SC\Recibo\3911889.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administracion\Administracion.Master.cs">
+      <DependentUpon>Administracion.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Administracion.Master.designer.cs">
+      <DependentUpon>Administracion.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdmVerSol.aspx.cs">
+      <DependentUpon>AdmVerSol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdmVerSol.aspx.designer.cs">
+      <DependentUpon>AdmVerSol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Documentos_Recibidos.aspx.cs">
+      <DependentUpon>Documentos_Recibidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Documentos_Recibidos.aspx.designer.cs">
+      <DependentUpon>Documentos_Recibidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AutorizacionTrasteo.aspx.cs">
+      <DependentUpon>AutorizacionTrasteo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AutorizacionTrasteo.aspx.designer.cs">
+      <DependentUpon>AutorizacionTrasteo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdmCarrusel.aspx.cs">
+      <DependentUpon>AdmCarrusel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdmCarrusel.aspx.designer.cs">
+      <DependentUpon>AdmCarrusel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdmCartelera.aspx.cs">
+      <DependentUpon>AdmCartelera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdmCartelera.aspx.designer.cs">
+      <DependentUpon>AdmCartelera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdmChip.aspx.cs">
+      <DependentUpon>AdmChip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdmChip.aspx.designer.cs">
+      <DependentUpon>AdmChip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdmActas.aspx.cs">
+      <DependentUpon>AdmActas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdmActas.aspx.designer.cs">
+      <DependentUpon>AdmActas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Asamblea.aspx.cs">
+      <DependentUpon>Asamblea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Asamblea.aspx.designer.cs">
+      <DependentUpon>Asamblea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EliminarActa.aspx.cs">
+      <DependentUpon>EliminarActa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EliminarActa.aspx.designer.cs">
+      <DependentUpon>EliminarActa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AsambleaVer.aspx.cs">
+      <DependentUpon>AsambleaVer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AsambleaVer.aspx.designer.cs">
+      <DependentUpon>AsambleaVer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Configuracion.aspx.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Configuracion.aspx.designer.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EditarValor.aspx.cs">
+      <DependentUpon>EditarValor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EditarValor.aspx.designer.cs">
+      <DependentUpon>EditarValor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EditarDescue.aspx.cs">
+      <DependentUpon>EditarDescue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EditarDescue.aspx.designer.cs">
+      <DependentUpon>EditarDescue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EditarSC.aspx.cs">
+      <DependentUpon>EditarSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EditarSC.aspx.designer.cs">
+      <DependentUpon>EditarSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EditarChip.aspx.cs">
+      <DependentUpon>EditarChip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EditarChip.aspx.designer.cs">
+      <DependentUpon>EditarChip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EditarParque.aspx.cs">
+      <DependentUpon>EditarParque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EditarParque.aspx.designer.cs">
+      <DependentUpon>EditarParque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Estadisticas.aspx.cs">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Estadisticas.aspx.designer.cs">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EditarNota.aspx.cs">
+      <DependentUpon>EditarNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EditarNota.aspx.designer.cs">
+      <DependentUpon>EditarNota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdmParqueadero.aspx.cs">
+      <DependentUpon>AdmParqueadero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdmParqueadero.aspx.designer.cs">
+      <DependentUpon>AdmParqueadero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EditarParqueadero.aspx.cs">
+      <DependentUpon>EditarParqueadero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EditarParqueadero.aspx.designer.cs">
+      <DependentUpon>EditarParqueadero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EliminarMsg.aspx.cs">
+      <DependentUpon>EliminarMsg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EliminarMsg.aspx.designer.cs">
+      <DependentUpon>EliminarMsg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EmailsMasivos.aspx.cs">
+      <DependentUpon>EmailsMasivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EmailsMasivos.aspx.designer.cs">
+      <DependentUpon>EmailsMasivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\ReenviarPush.aspx.cs">
+      <DependentUpon>ReenviarPush.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\ReenviarPush.aspx.designer.cs">
+      <DependentUpon>ReenviarPush.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\NotificaPushAppGroup.aspx.cs">
+      <DependentUpon>NotificaPushAppGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\NotificaPushAppGroup.aspx.designer.cs">
+      <DependentUpon>NotificaPushAppGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerPDF.aspx.cs">
+      <DependentUpon>VerPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerPDF.aspx.designer.cs">
+      <DependentUpon>VerPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\NotificaPushAppID.aspx.cs">
+      <DependentUpon>NotificaPushAppID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\NotificaPushAppID.aspx.designer.cs">
+      <DependentUpon>NotificaPushAppID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\NotificaPushApp.aspx.cs">
+      <DependentUpon>NotificaPushApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\NotificaPushApp.aspx.designer.cs">
+      <DependentUpon>NotificaPushApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\NotificaPush.aspx.cs">
+      <DependentUpon>NotificaPush.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\NotificaPush.aspx.designer.cs">
+      <DependentUpon>NotificaPush.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\TablerosGen.aspx.cs">
+      <DependentUpon>TablerosGen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\TablerosGen.aspx.designer.cs">
+      <DependentUpon>TablerosGen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerActa.aspx.cs">
+      <DependentUpon>VerActa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerActa.aspx.designer.cs">
+      <DependentUpon>VerActa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerSaldos.aspx.cs">
+      <DependentUpon>VerSaldos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerSaldos.aspx.designer.cs">
+      <DependentUpon>VerSaldos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\SaldoAdministracion.aspx.cs">
+      <DependentUpon>SaldoAdministracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\SaldoAdministracion.aspx.designer.cs">
+      <DependentUpon>SaldoAdministracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerChip.aspx.cs">
+      <DependentUpon>VerChip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerChip.aspx.designer.cs">
+      <DependentUpon>VerChip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerCartelera.aspx.cs">
+      <DependentUpon>VerCartelera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerCartelera.aspx.designer.cs">
+      <DependentUpon>VerCartelera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Notificicaciones.aspx.cs">
+      <DependentUpon>Notificicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Notificicaciones.aspx.designer.cs">
+      <DependentUpon>Notificicaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerSCGuardar.aspx.cs">
+      <DependentUpon>VerSCGuardar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerSCGuardar.aspx.designer.cs">
+      <DependentUpon>VerSCGuardar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerSC.aspx.cs">
+      <DependentUpon>VerSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerSC.aspx.designer.cs">
+      <DependentUpon>VerSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\SalonComunal.aspx.cs">
+      <DependentUpon>SalonComunal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\SalonComunal.aspx.designer.cs">
+      <DependentUpon>SalonComunal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerMudanza.aspx.cs">
+      <DependentUpon>VerMudanza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerMudanza.aspx.designer.cs">
+      <DependentUpon>VerMudanza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerDocumento.aspx.cs">
+      <DependentUpon>VerDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerDocumento.aspx.designer.cs">
+      <DependentUpon>VerDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\NovedadesSaldo.aspx.cs">
+      <DependentUpon>NovedadesSaldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\NovedadesSaldo.aspx.designer.cs">
+      <DependentUpon>NovedadesSaldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerNovedad.aspx.cs">
+      <DependentUpon>VerNovedad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerNovedad.aspx.designer.cs">
+      <DependentUpon>VerNovedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerPQR.aspx.cs">
+      <DependentUpon>VerPQR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerPQR.aspx.designer.cs">
+      <DependentUpon>VerPQR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\TramitePQR.aspx.cs">
+      <DependentUpon>TramitePQR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\TramitePQR.aspx.designer.cs">
+      <DependentUpon>TramitePQR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\RegEditarApa.aspx.cs">
+      <DependentUpon>RegEditarApa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\RegEditarApa.aspx.designer.cs">
+      <DependentUpon>RegEditarApa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Registro_Apartamentos.aspx.cs">
+      <DependentUpon>Registro_Apartamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Registro_Apartamentos.aspx.designer.cs">
+      <DependentUpon>Registro_Apartamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Consejo\Consejo.Master.cs">
+      <DependentUpon>Consejo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consejo\Consejo.Master.designer.cs">
+      <DependentUpon>Consejo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Consejo\AdmActas.aspx.cs">
+      <DependentUpon>AdmActas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consejo\AdmActas.aspx.designer.cs">
+      <DependentUpon>AdmActas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consejo\Estadisticas.aspx.cs">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consejo\Estadisticas.aspx.designer.cs">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consejo\VerActa.aspx.cs">
+      <DependentUpon>VerActa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consejo\VerActa.aspx.designer.cs">
+      <DependentUpon>VerActa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\Contabilidad.Master.cs">
+      <DependentUpon>Contabilidad.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\Contabilidad.Master.designer.cs">
+      <DependentUpon>Contabilidad.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\VerNovedad.aspx.cs">
+      <DependentUpon>VerNovedad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\VerNovedad.aspx.designer.cs">
+      <DependentUpon>VerNovedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\VerSaldos.aspx.cs">
+      <DependentUpon>VerSaldos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\VerSaldos.aspx.designer.cs">
+      <DependentUpon>VerSaldos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\NovedadesSaldo.aspx.cs">
+      <DependentUpon>NovedadesSaldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\NovedadesSaldo.aspx.designer.cs">
+      <DependentUpon>NovedadesSaldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\SaldoAdministracion.aspx.cs">
+      <DependentUpon>SaldoAdministracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\SaldoAdministracion.aspx.designer.cs">
+      <DependentUpon>SaldoAdministracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Aseo.Master.cs">
+      <DependentUpon>Aseo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Aseo.Master.designer.cs">
+      <DependentUpon>Aseo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Empleados.Master.cs">
+      <DependentUpon>Empleados.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Empleados.Master.designer.cs">
+      <DependentUpon>Empleados.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Citofonia.aspx.cs">
+      <DependentUpon>Citofonia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Citofonia.aspx.designer.cs">
+      <DependentUpon>Citofonia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpRegistroVisitantes.aspx.cs">
+      <DependentUpon>EmpRegistroVisitantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpRegistroVisitantes.aspx.designer.cs">
+      <DependentUpon>EmpRegistroVisitantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpQuejas.aspx.cs">
+      <DependentUpon>EmpQuejas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpQuejas.aspx.designer.cs">
+      <DependentUpon>EmpQuejas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpCicla.aspx.cs">
+      <DependentUpon>EmpCicla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpCicla.aspx.designer.cs">
+      <DependentUpon>EmpCicla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpBitacora.aspx.cs">
+      <DependentUpon>EmpBitacora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpBitacora.aspx.designer.cs">
+      <DependentUpon>EmpBitacora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Arriendo.aspx.cs">
+      <DependentUpon>Arriendo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Arriendo.aspx.designer.cs">
+      <DependentUpon>Arriendo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpQuejaAseo.aspx.cs">
+      <DependentUpon>EmpQuejaAseo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpQuejaAseo.aspx.designer.cs">
+      <DependentUpon>EmpQuejaAseo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\CajaParqueadero.aspx.cs">
+      <DependentUpon>CajaParqueadero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\CajaParqueadero.aspx.designer.cs">
+      <DependentUpon>CajaParqueadero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\RegSCAseo.aspx.cs">
+      <DependentUpon>RegSCAseo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\RegSCAseo.aspx.designer.cs">
+      <DependentUpon>RegSCAseo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\VigSCAseo.aspx.cs">
+      <DependentUpon>VigSCAseo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\VigSCAseo.aspx.designer.cs">
+      <DependentUpon>VigSCAseo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\HomeA.aspx.cs">
+      <DependentUpon>HomeA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\HomeA.aspx.designer.cs">
+      <DependentUpon>HomeA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\VigSCEditar.aspx.cs">
+      <DependentUpon>VigSCEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\VigSCEditar.aspx.designer.cs">
+      <DependentUpon>VigSCEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\VigSalidasEditar.aspx.cs">
+      <DependentUpon>VigSalidasEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\VigSalidasEditar.aspx.designer.cs">
+      <DependentUpon>VigSalidasEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\VigSalidas.aspx.cs">
+      <DependentUpon>VigSalidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\VigSalidas.aspx.designer.cs">
+      <DependentUpon>VigSalidas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\VigSC.aspx.cs">
+      <DependentUpon>VigSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\VigSC.aspx.designer.cs">
+      <DependentUpon>VigSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\VigParquea.aspx.cs">
+      <DependentUpon>VigParquea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\VigParquea.aspx.designer.cs">
+      <DependentUpon>VigParquea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloSaldos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloSaldos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloSaldos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloSaldos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloSaldos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloSaldos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propietario\Actualizar_Propietario.aspx.cs">
+      <DependentUpon>Actualizar_Propietario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\Actualizar_Propietario.aspx.designer.cs">
+      <DependentUpon>Actualizar_Propietario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\Documentos_propietario.aspx.cs">
+      <DependentUpon>Documentos_propietario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\Documentos_propietario.aspx.designer.cs">
+      <DependentUpon>Documentos_propietario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\AdmNotificaciones.aspx.cs">
+      <DependentUpon>AdmNotificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\AdmNotificaciones.aspx.designer.cs">
+      <DependentUpon>AdmNotificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\DescargarPDFAsamblea.aspx.cs">
+      <DependentUpon>DescargarPDFAsamblea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\DescargarPDFAsamblea.aspx.designer.cs">
+      <DependentUpon>DescargarPDFAsamblea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\DescargaPDF.aspx.cs">
+      <DependentUpon>DescargaPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\DescargaPDF.aspx.designer.cs">
+      <DependentUpon>DescargaPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProConstruccion.aspx.cs">
+      <DependentUpon>ProConstruccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProConstruccion.aspx.designer.cs">
+      <DependentUpon>ProConstruccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\MudanzaValidar.aspx.cs">
+      <DependentUpon>MudanzaValidar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\MudanzaValidar.aspx.designer.cs">
+      <DependentUpon>MudanzaValidar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerNotiPDF.aspx.cs">
+      <DependentUpon>ProVerNotiPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerNotiPDF.aspx.designer.cs">
+      <DependentUpon>ProVerNotiPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerNotifi.aspx.cs">
+      <DependentUpon>ProVerNotifi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerNotifi.aspx.designer.cs">
+      <DependentUpon>ProVerNotifi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerResPagPDF.aspx.cs">
+      <DependentUpon>ProVerResPagPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerResPagPDF.aspx.designer.cs">
+      <DependentUpon>ProVerResPagPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerRespuestas.aspx.cs">
+      <DependentUpon>ProVerRespuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerRespuestas.aspx.designer.cs">
+      <DependentUpon>ProVerRespuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\SolRespuestas.aspx.cs">
+      <DependentUpon>SolRespuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\SolRespuestas.aspx.designer.cs">
+      <DependentUpon>SolRespuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVotacion.aspx.cs">
+      <DependentUpon>ProVotacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVotacion.aspx.designer.cs">
+      <DependentUpon>ProVotacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProST.aspx.cs">
+      <DependentUpon>ProST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProST.aspx.designer.cs">
+      <DependentUpon>ProST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\Temporal2.aspx.cs">
+      <DependentUpon>Temporal2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\Temporal2.aspx.designer.cs">
+      <DependentUpon>Temporal2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProGas.aspx.cs">
+      <DependentUpon>ProGas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProGas.aspx.designer.cs">
+      <DependentUpon>ProGas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProEnergia.aspx.cs">
+      <DependentUpon>ProEnergia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProEnergia.aspx.designer.cs">
+      <DependentUpon>ProEnergia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProAgua.aspx.cs">
+      <DependentUpon>ProAgua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProAgua.aspx.designer.cs">
+      <DependentUpon>ProAgua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\HomeRecibo.aspx.cs">
+      <DependentUpon>HomeRecibo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\HomeRecibo.aspx.designer.cs">
+      <DependentUpon>HomeRecibo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProConvivencia.aspx.cs">
+      <DependentUpon>ProConvivencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProConvivencia.aspx.designer.cs">
+      <DependentUpon>ProConvivencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerResChip.aspx.cs">
+      <DependentUpon>ProVerResChip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerResChip.aspx.designer.cs">
+      <DependentUpon>ProVerResChip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProTabResChip.aspx.cs">
+      <DependentUpon>ProTabResChip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProTabResChip.aspx.designer.cs">
+      <DependentUpon>ProTabResChip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProSolChip.aspx.cs">
+      <DependentUpon>ProSolChip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProSolChip.aspx.designer.cs">
+      <DependentUpon>ProSolChip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerResSC.aspx.cs">
+      <DependentUpon>ProVerResSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerResSC.aspx.designer.cs">
+      <DependentUpon>ProVerResSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProTabResSC.aspx.cs">
+      <DependentUpon>ProTabResSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProTabResSC.aspx.designer.cs">
+      <DependentUpon>ProTabResSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\VerificarDisponibilidadSC.aspx.cs">
+      <DependentUpon>VerificarDisponibilidadSC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\VerificarDisponibilidadSC.aspx.designer.cs">
+      <DependentUpon>VerificarDisponibilidadSC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\SerSalonComunal.aspx.cs">
+      <DependentUpon>SerSalonComunal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\SerSalonComunal.aspx.designer.cs">
+      <DependentUpon>SerSalonComunal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\VerCartelera.aspx.cs">
+      <DependentUpon>VerCartelera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\VerCartelera.aspx.designer.cs">
+      <DependentUpon>VerCartelera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProArriendoEditar.aspx.cs">
+      <DependentUpon>ProArriendoEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProArriendoEditar.aspx.designer.cs">
+      <DependentUpon>ProArriendoEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProArriVent.aspx.cs">
+      <DependentUpon>ProArriVent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProArriVent.aspx.designer.cs">
+      <DependentUpon>ProArriVent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProCarteleraEditar.aspx.cs">
+      <DependentUpon>ProCarteleraEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProCarteleraEditar.aspx.designer.cs">
+      <DependentUpon>ProCarteleraEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProCartelera.aspx.cs">
+      <DependentUpon>ProCartelera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProCartelera.aspx.designer.cs">
+      <DependentUpon>ProCartelera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProIngMud.aspx.cs">
+      <DependentUpon>ProIngMud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProIngMud.aspx.designer.cs">
+      <DependentUpon>ProIngMud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProIngArt.aspx.cs">
+      <DependentUpon>ProIngArt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProIngArt.aspx.designer.cs">
+      <DependentUpon>ProIngArt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProSalMud.aspx.cs">
+      <DependentUpon>ProSalMud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProSalMud.aspx.designer.cs">
+      <DependentUpon>ProSalMud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerResSal.aspx.cs">
+      <DependentUpon>ProVerResSal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerResSal.aspx.designer.cs">
+      <DependentUpon>ProVerResSal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProTabResSal.aspx.cs">
+      <DependentUpon>ProTabResSal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProTabResSal.aspx.designer.cs">
+      <DependentUpon>ProTabResSal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProSalArt.aspx.cs">
+      <DependentUpon>ProSalArt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProSalArt.aspx.designer.cs">
+      <DependentUpon>ProSalArt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProMudanza.aspx.cs">
+      <DependentUpon>ProMudanza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProMudanza.aspx.designer.cs">
+      <DependentUpon>ProMudanza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerResPar.aspx.cs">
+      <DependentUpon>ProVerResPar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerResPar.aspx.designer.cs">
+      <DependentUpon>ProVerResPar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProTabResPar.aspx.cs">
+      <DependentUpon>ProTabResPar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProTabResPar.aspx.designer.cs">
+      <DependentUpon>ProTabResPar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProRespuestas.aspx.cs">
+      <DependentUpon>ProRespuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProRespuestas.aspx.designer.cs">
+      <DependentUpon>ProRespuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\RespuestaPQRPropietario.aspx.cs">
+      <DependentUpon>RespuestaPQRPropietario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\RespuestaPQRPropietario.aspx.designer.cs">
+      <DependentUpon>RespuestaPQRPropietario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\PQRPropietarios.aspx.cs">
+      <DependentUpon>PQRPropietarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\PQRPropietarios.aspx.designer.cs">
+      <DependentUpon>PQRPropietarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\VerRespuestaSol.aspx.cs">
+      <DependentUpon>VerRespuestaSol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\VerRespuestaSol.aspx.designer.cs">
+      <DependentUpon>VerRespuestaSol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\HomeSolicitud.aspx.cs">
+      <DependentUpon>HomeSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\HomeSolicitud.aspx.designer.cs">
+      <DependentUpon>HomeSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerResPag.aspx.cs">
+      <DependentUpon>ProVerResPag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerResPag.aspx.designer.cs">
+      <DependentUpon>ProVerResPag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProTabResPag.aspx.cs">
+      <DependentUpon>ProTabResPag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProTabResPag.aspx.designer.cs">
+      <DependentUpon>ProTabResPag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\NovedadPagoPyZ.aspx.cs">
+      <DependentUpon>NovedadPagoPyZ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\NovedadPagoPyZ.aspx.designer.cs">
+      <DependentUpon>NovedadPagoPyZ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\NovedadPagoSel.aspx.cs">
+      <DependentUpon>NovedadPagoSel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\NovedadPagoSel.aspx.designer.cs">
+      <DependentUpon>NovedadPagoSel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\NovedadPago.aspx.cs">
+      <DependentUpon>NovedadPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\NovedadPago.aspx.designer.cs">
+      <DependentUpon>NovedadPago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\SaldoNotificacion.aspx.cs">
+      <DependentUpon>SaldoNotificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\SaldoNotificacion.aspx.designer.cs">
+      <DependentUpon>SaldoNotificacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\SaldoAdministracion.aspx.cs">
+      <DependentUpon>SaldoAdministracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\SaldoAdministracion.aspx.designer.cs">
+      <DependentUpon>SaldoAdministracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\HomeSaldo.aspx.cs">
+      <DependentUpon>HomeSaldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\HomeSaldo.aspx.designer.cs">
+      <DependentUpon>HomeSaldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProRegGen.aspx.cs">
+      <DependentUpon>ProRegGen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProRegGen.aspx.designer.cs">
+      <DependentUpon>ProRegGen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProRegistroVisitantes.aspx.cs">
+      <DependentUpon>ProRegistroVisitantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProRegistroVisitantes.aspx.designer.cs">
+      <DependentUpon>ProRegistroVisitantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProProVis.aspx.cs">
+      <DependentUpon>ProProVis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProProVis.aspx.designer.cs">
+      <DependentUpon>ProProVis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProCiclaEditar.aspx.cs">
+      <DependentUpon>ProCiclaEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProCiclaEditar.aspx.designer.cs">
+      <DependentUpon>ProCiclaEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProCicla.aspx.cs">
+      <DependentUpon>ProCicla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProCicla.aspx.designer.cs">
+      <DependentUpon>ProCicla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\PoliticaDatos.aspx.cs">
+      <DependentUpon>PoliticaDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\PoliticaDatos.aspx.designer.cs">
+      <DependentUpon>PoliticaDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProPoliticaConvivencia.aspx.cs">
+      <DependentUpon>ProPoliticaConvivencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProPoliticaConvivencia.aspx.designer.cs">
+      <DependentUpon>ProPoliticaConvivencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\HomeRegistro.aspx.cs">
+      <DependentUpon>HomeRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\HomeRegistro.aspx.designer.cs">
+      <DependentUpon>HomeRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\TokenOK.aspx.cs">
+      <DependentUpon>TokenOK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\TokenOK.aspx.designer.cs">
+      <DependentUpon>TokenOK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\Token.aspx.cs">
+      <DependentUpon>Token.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\Token.aspx.designer.cs">
+      <DependentUpon>Token.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\Perfil_Propietario.aspx.cs">
+      <DependentUpon>Perfil_Propietario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\Perfil_Propietario.aspx.designer.cs">
+      <DependentUpon>Perfil_Propietario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\Propietario.Master.cs">
+      <DependentUpon>Propietario.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\Propietario.Master.designer.cs">
+      <DependentUpon>Propietario.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\NuevoPassword.aspx.cs">
+      <DependentUpon>NuevoPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro\NuevoPassword.aspx.designer.cs">
+      <DependentUpon>NuevoPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\PoliticaConvivencia.aspx.cs">
+      <DependentUpon>PoliticaConvivencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro\PoliticaConvivencia.aspx.designer.cs">
+      <DependentUpon>PoliticaConvivencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\PoliticaDatos.aspx.cs">
+      <DependentUpon>PoliticaDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro\PoliticaDatos.aspx.designer.cs">
+      <DependentUpon>PoliticaDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\RegistroCitofonia.aspx.cs">
+      <DependentUpon>RegistroCitofonia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro\RegistroCitofonia.aspx.designer.cs">
+      <DependentUpon>RegistroCitofonia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tblSaldo.cs">
+      <DependentUpon>ModeloSaldos.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-grid.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-utilities.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap.min.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap.rtl.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.esm.js.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.esm.min.js.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.js.map" />
+    <Content Include="Diseño\bootstrap-5.0.1-dist\bootstrap-5.0.1-dist\js\bootstrap.min.js.map" />
+    <Content Include="Diseño\assets\css\bootstrap.css.map" />
+    <Content Include="Diseño\assets\css\bootstrap.min.css.map" />
+    <Content Include="Diseño\assets\css\style.css.map" />
+    <Content Include="Diseño\assets\fonts\codropsicons\codropsicons.eot" />
+    <Content Include="Diseño\assets\fonts\codropsicons\codropsicons.ttf" />
+    <Content Include="Diseño\assets\fonts\codropsicons\codropsicons.woff" />
+    <Content Include="Diseño\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Diseño\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Diseño\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Diseño\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Diseño\assets\fonts\FontAwesome.otf" />
+    <Content Include="Diseño\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Diseño\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Diseño\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Diseño\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Diseño\assets\fonts\icomoon\icomoon.eot" />
+    <Content Include="Diseño\assets\fonts\icomoon\icomoon.ttf" />
+    <Content Include="Diseño\assets\fonts\icomoon\icomoon.woff" />
+    <Content Include="Diseño\assets\fonts\themify.eot" />
+    <Content Include="Diseño\assets\fonts\themify.ttf" />
+    <Content Include="Diseño\assets\fonts\themify.woff" />
+    <Content Include="Diseño\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\style.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\variables.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\_gauge.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\_switches.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\_widgets.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_alert.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_background-variant.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_badge.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_border-radius.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_box-shadow.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_breakpoints.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_buttons.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_caret.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_clearfix.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_float.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_forms.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_gradients.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_grid-framework.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_grid.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_hover.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_image.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_list-group.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_lists.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_nav-divider.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_pagination.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_reset-text.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_resize.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_screen-reader.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_size.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_table-row.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_text-emphasis.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_text-hide.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_text-truncate.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_transition.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_visibility.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\bootstrap.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_alert.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_badge.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_breadcrumb.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_button-group.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_buttons.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_card.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_carousel.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_close.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_code.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_custom-forms.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_dropdown.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_forms.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_functions.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_grid.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_images.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_input-group.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_jumbotron.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_list-group.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_media.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_mixins.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_modal.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_nav.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_navbar.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_pagination.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_popover.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_print.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_progress.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_reboot.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_root.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_tables.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_tooltip.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_transitions.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_type.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_utilities.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_variables.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\bootstrap.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_alert.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_badge.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_breadcrumb.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_button-group.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_buttons.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_card.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_carousel.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_close.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_code.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_custom-forms.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_dropdown.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_forms.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_functions.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_grid.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_images.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_input-group.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_jumbotron.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_list-group.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_media.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_mixins.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_modal.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_nav.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_navbar.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_pagination.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_popover.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_print.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_progress.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_reboot.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_root.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_tables.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_tooltip.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_transitions.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_type.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_utilities.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_variables.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\socials.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\style.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\variables.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\_gauge.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\_switches.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\_widgets.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_align.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_background.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_borders.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_clearfix.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_display.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_embed.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_flex.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_float.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_position.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_screenreaders.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_sizing.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_spacing.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_text.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_visibility.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_alert.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_background-variant.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_badge.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_border-radius.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_box-shadow.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_breakpoints.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_buttons.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_caret.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_clearfix.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_float.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_forms.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_gradients.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_grid-framework.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_grid.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_hover.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_image.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_list-group.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_lists.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_nav-divider.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_pagination.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_reset-text.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_resize.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_screen-reader.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_size.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_table-row.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_text-emphasis.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_text-hide.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_text-truncate.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_transition.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_visibility.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_align.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_background.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_borders.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_clearfix.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_display.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_embed.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_flex.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_float.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_position.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_screenreaders.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_sizing.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_spacing.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_text.scssc" />
+    <Content Include="Diseño\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_visibility.scssc" />
+    <Content Include="Diseño\assets\scss\bootstrap\bootstrap-grid.css.map" />
+    <Content Include="Diseño\assets\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\bootstrap-reboot.css.map" />
+    <Content Include="Diseño\assets\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\bootstrap.css.map" />
+    <Content Include="Diseño\assets\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_navbar-align.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_alert.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_badge.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_button-group.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_buttons.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_card.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_carousel.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_close.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_code.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_forms.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_functions.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_grid.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_images.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_input-group.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_list-group.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_media.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_mixins.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_modal.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_nav.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_navbar.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_pagination.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_popover.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_print.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_progress.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_reboot.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_root.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_tables.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_transitions.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_type.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_utilities.scss" />
+    <Content Include="Diseño\assets\scss\bootstrap\_variables.scss" />
+    <Content Include="Diseño\assets\scss\socials.css.map" />
+    <Content Include="Diseño\assets\scss\socials.scss" />
+    <Content Include="Diseño\assets\scss\style.css.map" />
+    <Content Include="Diseño\assets\scss\style.scss" />
+    <Content Include="Diseño\assets\scss\variables.scss" />
+    <Content Include="Diseño\assets\scss\_gauge.scss" />
+    <Content Include="Diseño\assets\scss\_switches.scss" />
+    <Content Include="Diseño\assets\scss\_widgets.scss" />
+    <Content Include="Inicio\Web.config" />
+    <Content Include="Empleados\Empleados.Master" />
+    <Content Include="Empleados\Aseo.Master" />
+    <Content Include="Administracion\Administracion.Master" />
+    <Content Include="Contabilidad\Contabilidad.Master" />
+    <Content Include="Consejo\Consejo.Master" />
+    <EntityDeploy Include="ModeloSaldos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloSaldos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ModeloSaldos.edmx.diagram">
+      <DependentUpon>ModeloSaldos.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Propietario\Propietario.Master" />
+    <Content Include="Registro\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{335b5816-97bd-420d-807e-02d93ed5ea92}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicaNeg\LogicaNeg.csproj">
+      <Project>{c773c2f0-3cf6-4301-b981-e83fd19e981a}</Project>
+      <Name>LogicaNeg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{1c4ff53d-706d-4038-b3d9-05efd5b5d2fd}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servicios\Servicios.csproj">
+      <Project>{1d139b64-72c4-4f63-bc48-11e975f23b6b}</Project>
+      <Name>Servicios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63245</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63245/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
