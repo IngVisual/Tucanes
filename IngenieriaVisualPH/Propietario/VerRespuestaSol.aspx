@@ -27,15 +27,19 @@
                             </li></a>
                             <br />
                             <a href="ProTabResSC.aspx"><li class="list-group-item">
-                                <i class="fa fa-building"></i>Solicitud-Salon comunal<span class="badge badge-success pull-right">> Ver Estado</span>
+                                <i class="fa fa-building"></i>Solicitud-SALON SOCIAL<span class="badge badge-success pull-right">> Ver Estado</span>
                             </li></a>
                             <br />
                             <a href="ProTabResSal.aspx"><li class="list-group-item">
-                                <i class="fa fa-truck"></i>Solicitud-Mudanza o Articulos<span class="badge badge-warning pull-right r-activity">> Ver Estado</span>
+                                <i class="fa fa-truck"></i>Solicitud-Mudanza,Articulos o Adecuaciones<span class="badge badge-warning pull-right r-activity">> Ver Estado</span>
                             </li></a>
                             <br />
                             <a href="ProTabResChip.aspx"><li class="list-group-item">
                                 <i class="fa fa-lock"></i>Solicitud-Chip puerta del conjunto <span class="badge badge-info pull-right">> Ver Estado</span>
+                            </li></a>
+                             <br />
+                             <a href="ProCiclaEditar.aspx"><li class="list-group-item">
+                                <i class="fa fa-bicycle"></i>Respuesta-Bicletero <span class="badge badge-secondary pull-right">> Ver Estado</span>
                             </li></a>
                             <br />
                         </ul>

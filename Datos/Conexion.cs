@@ -19,7 +19,7 @@ namespace Datos
         {
             //Data Source = INGENIERIAVISUA\\SQLEXPRESS; Initial Catalog = IngenieriaVisualPH; Integrated Security = True
             //workstation id = DBconjuntoid004.mssql.somee.com; packet size = 4096; user id = AppCibeles_SQLLogin_1; pwd = k4nd9r8qxx; data source = DBconjuntoid004.mssql.somee.com; persist security info = False; initial catalog = DBconjuntoid004
-            conexion = new SqlConnection("workstation id = DBconjuntoid013.mssql.somee.com; packet size = 4096; user id = AppCibeles_SQLLogin_1; pwd = k4nd9r8qxx; data source = DBconjuntoid013.mssql.somee.com; persist security info = False; initial catalog = DBconjuntoid013");
+            conexion = new SqlConnection("workstation id = DBconjuntoid012.mssql.somee.com; packet size = 4096; user id = AppCibeles_SQLLogin_1; pwd = k4nd9r8qxx; data source = DBconjuntoid013.mssql.somee.com; persist security info = False; initial catalog = DBconjuntoid012");
             conexion.Open();
         }
         public void Cerrar()

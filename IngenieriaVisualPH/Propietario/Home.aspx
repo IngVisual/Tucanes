@@ -1,6 +1,36 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Propietario/Propietario.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="IngenieriaVisualPH.Propietario.Formulario_web1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="server">
-      <link href="../Diseño/Color.css" rel="stylesheet" />
+    <link href="../Diseño/Color.css" rel="stylesheet" />
+     <style>
+        .linea-horizontal {
+  border: none; /* Elimina el borde predeterminado */
+  border-top: 2px solid gray; /* Establece el grosor y el color de la línea */
+  margin: 20px 0; /* Agrega espacio superior e inferior a la línea */
+}
+    </style>
+    <div class="toast alert alert-success border border-success" role="alert" aria-live="assertive" aria-atomic="true" >
+        <div class="toast-header">
+            <strong class="mr-auto">IMPORTANTE</strong>
+        </div>
+        <div class="toast-body">
+            <p>Click en <span><i class="ti-bell"></i></span> para ver las NOTIFICACIONES de Administracion.</p>
+            <p>Click en <span><i class="fa fa-envelope-o"></i></span> para ver RESPUESTAS de Administracion.</p>
+            <p>Click en <span><i class="ti-face-sad"></i></span> para ver LLAMADOS DE ATENCION o SANCIONES</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var toast = document.querySelector(".toast");
+            var toastDelay = parseInt(toast.getAttribute("data-delay"));
+
+            setTimeout(function () {
+                toast.classList.add("hide");
+                setTimeout(function () {
+                    toast.parentNode.removeChild(toast);
+                }, 10000); // Tiempo de transición CSS + 100ms de margen
+            }, toastDelay);
+        });
+    </script>
     <form id="form1" runat="server">
         <div class="col-xs-6 col-lg-6">
         <div class="card bordercolorinfo" style="border-radius:7px">
@@ -44,7 +74,7 @@
                         </div>
                     </div>
 
-                    <div class="twt-write col-sm-12">
+                    <div class="col-sm-12">
                         <small class="font-weight-bold textocolorinfo "><i class="fa fa-user">Propietario:&nbsp;</i><asp:Label ID="lblnombre" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
                         <small class="font-weight-bold textocolorinfo"><i class="fa fa-envelope">Correo:&nbsp;</i><asp:Label ID="lblcorreo" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
                         <div class="row" style="margin-left: 1px">
@@ -55,16 +85,34 @@
                         <div class="row" style="margin-left: 1px">
                             <small class="font-weight-bold textocolorinfo"><i class="fa fa-phone">Citofonia Propietario:&nbsp;</i><asp:Label ID="lbltelpro1" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
                             &nbsp;&nbsp;&nbsp;
-                      <small class="font-weight-bold textocolorinfo"><i class="fa fa-phone">&nbsp;</i><asp:Label ID="lbltelpro2" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
+                            <small class="font-weight-bold textocolorinfo"><i class="fa fa-phone">&nbsp;</i><asp:Label ID="lbltelpro2" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
+                         </div>
+                        <hr class="linea-horizontal">
+                        <div class="row" style="left: 1px">
                             <asp:Repeater ID="r8" runat="server">
                                 <ItemTemplate>
                                     <small class="font-weight-bold textocolorinfo" style="margin-left: 20px"><i class="fa fa-car">Informacion Parqueaderos:&nbsp;</i>
-                                        &nbsp;&nbsp;#:&nbsp;<asp:Label ID="label53" CssClass="text-secondary font-weight-bold" runat="server"><%#Eval("Parqueadero") %></asp:Label>
+                                        &nbsp;&nbsp;#Parqueadero:&nbsp;<asp:Label ID="label53" CssClass="text-secondary font-weight-bold" runat="server"><%#Eval("Parqueadero") %></asp:Label>
                                         &nbsp;&nbsp;Placas:&nbsp<asp:Label ID="label1" CssClass="text-secondary font-weight-bold" runat="server"><%#Eval("PlacaVehiculo1") %></asp:Label>
                                         <asp:Label ID="label2" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("PlacaVehiculo2") %></asp:Label>
                                         <asp:Label ID="label3" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("PlacaVehiculo3") %></asp:Label>
                                         <asp:Label ID="label4" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("PlacaVehiculo4") %></asp:Label>
-                                        <asp:Label ID="label5" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("Obseravacion") %></asp:Label>
+                                        &nbsp;&nbsp;Observaciones:&nbsp<asp:Label ID="label5" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("Obseravacion") %></asp:Label>
+                                    </small>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                            </div>
+                        <hr class="linea-horizontal">
+                        <div class="row" style="left: 1px">                               
+                              <asp:Repeater ID="r9" runat="server">
+                                <ItemTemplate>
+                                    <small class="font-weight-bold textocolorinfo" style="margin-left: 20px"><i class="fa fa-bicycle">Informacion Bicicletero:&nbsp;</i>
+                                        &nbsp;&nbsp;Numero: &nbsp<asp:Label ID="label53" CssClass="text-secondary" runat="server"><%#Eval("ObservacionAdm") %></asp:Label>
+                                        &nbsp;&nbsp;Solicitante: &nbsp<asp:Label ID="label17" CssClass="text-secondary" runat="server"><%#Eval("TipoSolicitante") %></asp:Label>
+                                        &nbsp;&nbsp;Asignado a: &nbsp<asp:Label ID="label18" CssClass="text-secondary " runat="server"><%#Eval("Nombre") %></asp:Label>
+                                        &nbsp;&nbsp;Marca: &nbsp<asp:Label ID="label1" CssClass="text-secondary " runat="server"><%#Eval("Marca") %></asp:Label>
+                                        &nbsp;&nbsp;Tipo: &nbsp<asp:Label ID="label2" CssClass="text-secondary " runat="server"><%#Eval("Tipo") %></asp:Label>
+                                        &nbsp;&nbsp;Color: &nbsp<asp:Label ID="label3" CssClass="text-secondary " runat="server"><%#Eval("Color") %></asp:Label>
                                     </small>
                                 </ItemTemplate>
                             </asp:Repeater>
@@ -215,10 +263,10 @@
                     <div class="col-xs-2">
                         <section class="card bordercolorinfo" style="border-radius: 10px">
                             <div class="card-body text-secondary">
-                                <a href="Temporal2.aspx">
+                                <a href="HomeMascotas.aspx">
                                     <button type="button" class="bgcolor text-light" style="margin-bottom: 4px; width: 75px; border-radius: 7px">
-                                        <img class="mx-auto d-block" src="../Diseño/Imagenes/voto.png" alt="Card image cap" width="45" height="45">
-                                        <asp:Label ID="Label8" Font-Bold="true" Font-Size="Small" runat="server" Text="Votacion"></asp:Label>
+                                        <img class="mx-auto d-block" src="../Diseño/Imagenes/dog1.png" alt="Card image cap" width="45" height="45">
+                                        <asp:Label ID="Label8" Font-Bold="true" Font-Size="Small" runat="server" Text="Mascotas"></asp:Label>
                                     </button>
                                 </a>
                             </div>
@@ -239,10 +287,10 @@
                     <div class="col-xs-2">
                         <section class="card bordercolorinfo" style="border-radius: 10px">
                             <div class="card-body text-secondary">
-                                <a href="Temporal2.aspx">
+                                <a href="ProAlquilerResultados.aspx">
                                     <button type="button" class="bgcolor text-light" style="margin-bottom: 4px; width: 75px; border-radius: 7px">
-                                        <img class="mx-auto d-block" src="../Diseño/Imagenes/dom.png" alt="Card image cap" width="45" height="45">
-                                        <asp:Label ID="Label10" Font-Bold="true" Font-Size="Small" runat="server" Text="Domicilio"></asp:Label>
+                                        <img class="mx-auto d-block" src="../Diseño/Imagenes/ingalquiler.png" alt="Card image cap" width="45" height="45">
+                                        <asp:Label ID="Label10" Font-Bold="true" Font-Size="Small" runat="server" Text="Alquiler"></asp:Label>
                                     </button>
                                 </a>
                             </div>
@@ -323,10 +371,13 @@
                                 <i class="fa fa-building"></i>Respuesta-SALON SOCIAL<span class="badge badge-success pull-right">> Ver Estado</span>
                             </li></a>
                             <a href="ProTabResSal.aspx"><li class="list-group-item">
-                                <i class="fa fa-truck"></i>Respuesta de Mudanza o Articulos<span class="badge badge-warning pull-right r-activity">> Ver Estado</span>
+                                <i class="fa fa-truck"></i>Respuesta de Mudanza o Trabajos de Adecuacion<span class="badge badge-warning pull-right r-activity">> Ver Estado</span>
                             </li></a>
                             <a href="ProTabResChip.aspx"><li class="list-group-item">
                                 <i class="fa fa-lock"></i>Respuesta-Chip puerta del conjunto <span class="badge badge-info pull-right">> Ver Estado</span>
+                            </li></a>
+                             <a href="ProCiclaEditar.aspx"><li class="list-group-item">
+                                <i class="fa fa-bicycle"></i>Respuesta-Bicicletero <span class="badge badge-secondary pull-right">> Ver Estado</span>
                             </li></a>
                             <br />
                         </ul>
@@ -335,4 +386,5 @@
             </div>
         <br />
         </div>
+   
 </asp:Content>

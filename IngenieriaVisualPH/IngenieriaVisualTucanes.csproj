@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IngenieriaVisualPH</RootNamespace>
     <AssemblyName>IngenieriaVisualPH</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,6 +63,7 @@
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -75,8 +77,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
@@ -84,13 +84,13 @@
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -121,6 +121,20 @@
     <Content Include="Administracion\EditarParqueadero.aspx" />
     <Content Include="Administracion\EliminarMsg.aspx" />
     <Content Include="Administracion\EmailsMasivos.aspx" />
+    <Content Include="Administracion\AlquilerParqConfigActivar.aspx" />
+    <Content Include="Administracion\AlquilerParqueadero.aspx" />
+    <Content Include="Administracion\AlquilerParqueaderoConfig.aspx" />
+    <Content Include="Administracion\AlquilerParqueaderoCM.aspx" />
+    <Content Include="Administracion\AlquilerParqCMAddUser.aspx" />
+    <Content Include="Administracion\AlquilerParquEditarUsuario.aspx" />
+    <Content Include="Administracion\AdmBici.aspx" />
+    <Content Include="Administracion\AdmEspacioBicicletero.aspx" />
+    <Content Include="Administracion\EditarBicicletero.aspx" />
+    <Content Include="Administracion\EditarAlquiler.aspx" />
+    <Content Include="Administracion\AdmMascotas.aspx" />
+    <Content Include="Administracion\VerTablaMascotas.aspx" />
+    <Content Include="Administracion\VerMascota.aspx" />
+    <Content Include="Administracion\VerBicicleta.aspx" />
     <Content Include="Administracion\ReenviarPush.aspx" />
     <Content Include="Administracion\NotificaPushAppGroup.aspx" />
     <Content Include="Administracion\VerPDF.aspx" />
@@ -311,17 +325,31 @@
     <Content Include="Diseño\Imagenes\conv.png" />
     <Content Include="Diseño\Imagenes\correo-electronico.png" />
     <Content Include="Diseño\Imagenes\desca.png" />
+    <Content Include="Diseño\Imagenes\dog1.png" />
+    <Content Include="Diseño\Imagenes\dogcard.png" />
+    <Content Include="Diseño\Imagenes\dogcat.png" />
     <Content Include="Diseño\Imagenes\dom.png" />
     <Content Include="Diseño\Imagenes\drop.png" />
     <Content Include="Diseño\Imagenes\env.png" />
     <Content Include="Diseño\Imagenes\envio.png" />
     <Content Include="Diseño\Imagenes\estacionamiento.png" />
     <Content Include="Diseño\Imagenes\evento %281%29.png" />
+    <Content Include="Diseño\Imagenes\finalquiler.png" />
     <Content Include="Diseño\Imagenes\gas.png" />
     <Content Include="Diseño\Imagenes\home.jpg" />
     <Content Include="Diseño\Imagenes\homework %281%29.png" />
+    <Content Include="Diseño\Imagenes\ingalquiler.png" />
     <Content Include="Diseño\Imagenes\logo.ico" />
     <Content Include="Diseño\Imagenes\logo.png" />
+    <Content Include="Diseño\Imagenes\logo144.png" />
+    <Content Include="Diseño\Imagenes\logo192.png" />
+    <Content Include="Diseño\Imagenes\logo256.png" />
+    <Content Include="Diseño\Imagenes\logo36.png" />
+    <Content Include="Diseño\Imagenes\logo384.png" />
+    <Content Include="Diseño\Imagenes\logo48.png" />
+    <Content Include="Diseño\Imagenes\logo512.png" />
+    <Content Include="Diseño\Imagenes\logo72.png" />
+    <Content Include="Diseño\Imagenes\logo96.png" />
     <Content Include="Diseño\Imagenes\man %281%29.png" />
     <Content Include="Diseño\Imagenes\mante.png" />
     <Content Include="Diseño\Imagenes\notificacion %281%29.png" />
@@ -342,6 +370,7 @@
     <Content Include="Diseño\Imagenes\select.png" />
     <Content Include="Diseño\Imagenes\serv.png" />
     <Content Include="Diseño\Imagenes\suspiro %281%29.png" />
+    <Content Include="Diseño\Imagenes\tablapagos.png" />
     <Content Include="Diseño\Imagenes\tablero.png" />
     <Content Include="Diseño\Imagenes\telefono-inteligente %281%29.png" />
     <Content Include="Diseño\Imagenes\triste.png" />
@@ -1139,6 +1168,13 @@
     <Content Include="Empleados\Arriendo.aspx" />
     <Content Include="Empleados\EmpQuejaAseo.aspx" />
     <Content Include="Empleados\CajaParqueadero.aspx" />
+    <Content Include="Empleados\AlquilerResultados.aspx" />
+    <Content Include="Empleados\AlquilerResultadosPorTiempo.aspx" />
+    <Content Include="Empleados\EmpAlquilerParq.aspx" />
+    <Content Include="Empleados\EmpGuardarAlquiler.aspx" />
+    <Content Include="Empleados\EmpAlquilerParqueaderoCM.aspx" />
+    <Content Include="Empleados\EmpMascota.aspx" />
+    <Content Include="Empleados\VerTablaAlquiler.aspx" />
     <Content Include="Empleados\RegSCAseo.aspx" />
     <Content Include="Empleados\VigSCAseo.aspx" />
     <Content Include="Empleados\HomeA.aspx" />
@@ -1167,6 +1203,15 @@
     <Content Include="Mudanzas\Firma\3911889.png" />
     <Content Include="NovedadSaldos\3911889.png" />
     <Content Include="NovedadPQR\3911889.png" />
+    <Content Include="Propietario\EditarMascota.aspx" />
+    <Content Include="Propietario\EliminarMascota.aspx" />
+    <Content Include="Propietario\VerMascotas.aspx" />
+    <Content Include="Propietario\ProMascotas.aspx" />
+    <Content Include="Propietario\HomeMascotas.aspx" />
+    <Content Include="SC\Mascota\3911889.png" />
+    <Content Include="SC\Mascota\Carnet\3911889.png" />
+    <Content Include="SC\Mascota\FotoMascota\3911889.png" />
+    <Content Include="service-worker.js" />
     <Content Include="Parqueadero\3911889.png" />
     <Content Include="Parqueadero\Cedula\3911889.png" />
     <Content Include="Parqueadero\Soat\3911889.png" />
@@ -1178,6 +1223,8 @@
     <Content Include="Propietario\AdmNotificaciones.aspx" />
     <Content Include="Propietario\DescargarPDFAsamblea.aspx" />
     <Content Include="Propietario\DescargaPDF.aspx" />
+    <Content Include="Propietario\ProVerResBici.aspx" />
+    <Content Include="Propietario\ProAlquilerResultados.aspx" />
     <Content Include="Propietario\ProConstruccion.aspx" />
     <Content Include="Propietario\MudanzaValidar.aspx" />
     <Content Include="Propietario\ProVerNotiPDF.aspx" />
@@ -1245,6 +1292,11 @@
     <Content Include="Registro\RegistroCitofonia.aspx" />
     <Content Include="Registro\ResetPassword.aspx" />
     <Content Include="SC\3911889.png" />
+    <Content Include="SC\Bicicleta\3911889.png" />
+    <Content Include="SC\Bicicleta\bicifoto\3911889.png" />
+    <Content Include="SC\Bicicleta\cc\3911889.png" />
+    <Content Include="SC\Bicicleta\firmaBici\3911889.png" />
+    <Content Include="SC\Bicicleta\tp\3911889.png" />
     <Content Include="SC\Recibo\3911889.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1411,6 +1463,104 @@
     </Compile>
     <Compile Include="Administracion\EmailsMasivos.aspx.designer.cs">
       <DependentUpon>EmailsMasivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqConfigActivar.aspx.cs">
+      <DependentUpon>AlquilerParqConfigActivar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqConfigActivar.aspx.designer.cs">
+      <DependentUpon>AlquilerParqConfigActivar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqueadero.aspx.cs">
+      <DependentUpon>AlquilerParqueadero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqueadero.aspx.designer.cs">
+      <DependentUpon>AlquilerParqueadero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqueaderoConfig.aspx.cs">
+      <DependentUpon>AlquilerParqueaderoConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqueaderoConfig.aspx.designer.cs">
+      <DependentUpon>AlquilerParqueaderoConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqueaderoCM.aspx.cs">
+      <DependentUpon>AlquilerParqueaderoCM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqueaderoCM.aspx.designer.cs">
+      <DependentUpon>AlquilerParqueaderoCM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqCMAddUser.aspx.cs">
+      <DependentUpon>AlquilerParqCMAddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParqCMAddUser.aspx.designer.cs">
+      <DependentUpon>AlquilerParqCMAddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParquEditarUsuario.aspx.cs">
+      <DependentUpon>AlquilerParquEditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AlquilerParquEditarUsuario.aspx.designer.cs">
+      <DependentUpon>AlquilerParquEditarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdmBici.aspx.cs">
+      <DependentUpon>AdmBici.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdmBici.aspx.designer.cs">
+      <DependentUpon>AdmBici.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdmEspacioBicicletero.aspx.cs">
+      <DependentUpon>AdmEspacioBicicletero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdmEspacioBicicletero.aspx.designer.cs">
+      <DependentUpon>AdmEspacioBicicletero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EditarBicicletero.aspx.cs">
+      <DependentUpon>EditarBicicletero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EditarBicicletero.aspx.designer.cs">
+      <DependentUpon>EditarBicicletero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\EditarAlquiler.aspx.cs">
+      <DependentUpon>EditarAlquiler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\EditarAlquiler.aspx.designer.cs">
+      <DependentUpon>EditarAlquiler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\AdmMascotas.aspx.cs">
+      <DependentUpon>AdmMascotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\AdmMascotas.aspx.designer.cs">
+      <DependentUpon>AdmMascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerTablaMascotas.aspx.cs">
+      <DependentUpon>VerTablaMascotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerTablaMascotas.aspx.designer.cs">
+      <DependentUpon>VerTablaMascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerMascota.aspx.cs">
+      <DependentUpon>VerMascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerMascota.aspx.designer.cs">
+      <DependentUpon>VerMascota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\VerBicicleta.aspx.cs">
+      <DependentUpon>VerBicicleta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\VerBicicleta.aspx.designer.cs">
+      <DependentUpon>VerBicicleta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administracion\ReenviarPush.aspx.cs">
       <DependentUpon>ReenviarPush.aspx</DependentUpon>
@@ -1714,6 +1864,55 @@
     <Compile Include="Empleados\CajaParqueadero.aspx.designer.cs">
       <DependentUpon>CajaParqueadero.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Empleados\AlquilerResultados.aspx.cs">
+      <DependentUpon>AlquilerResultados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\AlquilerResultados.aspx.designer.cs">
+      <DependentUpon>AlquilerResultados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\AlquilerResultadosPorTiempo.aspx.cs">
+      <DependentUpon>AlquilerResultadosPorTiempo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\AlquilerResultadosPorTiempo.aspx.designer.cs">
+      <DependentUpon>AlquilerResultadosPorTiempo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpAlquilerParq.aspx.cs">
+      <DependentUpon>EmpAlquilerParq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpAlquilerParq.aspx.designer.cs">
+      <DependentUpon>EmpAlquilerParq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpGuardarAlquiler.aspx.cs">
+      <DependentUpon>EmpGuardarAlquiler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpGuardarAlquiler.aspx.designer.cs">
+      <DependentUpon>EmpGuardarAlquiler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpAlquilerParqueaderoCM.aspx.cs">
+      <DependentUpon>EmpAlquilerParqueaderoCM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpAlquilerParqueaderoCM.aspx.designer.cs">
+      <DependentUpon>EmpAlquilerParqueaderoCM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpMascota.aspx.cs">
+      <DependentUpon>EmpMascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpMascota.aspx.designer.cs">
+      <DependentUpon>EmpMascota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\VerTablaAlquiler.aspx.cs">
+      <DependentUpon>VerTablaAlquiler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\VerTablaAlquiler.aspx.designer.cs">
+      <DependentUpon>VerTablaAlquiler.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Empleados\RegSCAseo.aspx.cs">
       <DependentUpon>RegSCAseo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1844,6 +2043,55 @@
     </Compile>
     <Compile Include="Propietario\DescargaPDF.aspx.designer.cs">
       <DependentUpon>DescargaPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\EditarMascota.aspx.cs">
+      <DependentUpon>EditarMascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\EditarMascota.aspx.designer.cs">
+      <DependentUpon>EditarMascota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\EliminarMascota.aspx.cs">
+      <DependentUpon>EliminarMascota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\EliminarMascota.aspx.designer.cs">
+      <DependentUpon>EliminarMascota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\VerMascotas.aspx.cs">
+      <DependentUpon>VerMascotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\VerMascotas.aspx.designer.cs">
+      <DependentUpon>VerMascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProMascotas.aspx.cs">
+      <DependentUpon>ProMascotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProMascotas.aspx.designer.cs">
+      <DependentUpon>ProMascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\HomeMascotas.aspx.cs">
+      <DependentUpon>HomeMascotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\HomeMascotas.aspx.designer.cs">
+      <DependentUpon>HomeMascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProVerResBici.aspx.cs">
+      <DependentUpon>ProVerResBici.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProVerResBici.aspx.designer.cs">
+      <DependentUpon>ProVerResBici.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Propietario\ProAlquilerResultados.aspx.cs">
+      <DependentUpon>ProAlquilerResultados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propietario\ProAlquilerResultados.aspx.designer.cs">
+      <DependentUpon>ProAlquilerResultados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Propietario\ProConstruccion.aspx.cs">
       <DependentUpon>ProConstruccion.aspx</DependentUpon>
@@ -2640,6 +2888,7 @@
     <Content Include="ModeloSaldos.edmx.diagram">
       <DependentUpon>ModeloSaldos.edmx</DependentUpon>
     </Content>
+    <Content Include="manifest.json" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Propietario\Propietario.Master" />

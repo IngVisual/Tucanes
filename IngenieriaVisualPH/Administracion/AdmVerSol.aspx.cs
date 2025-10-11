@@ -18,8 +18,10 @@ namespace IngenieriaVisualPH.Administracion
         Datos.MapeoSC mapeosc = new Datos.MapeoSC();
         Datos.MapeoUsuarios mapeousua = new Datos.MapeoUsuarios();
         Datos.MapeoNota nota = new Datos.MapeoNota();
+        Datos.MapeoRegistros mapeobici = new Datos.MapeoRegistros();
+        Datos.MapeoMascotas mapeomascota = new Datos.MapeoMascotas();
         private string estado1 = "Abierta", estado2="Solicitud", estadonota="Cerrada";
-        private int count1,count2,count3,count4,count5,count6,count7, count8, idnota;
+        private int count1, count2, count3, count4, count5, count6, count7, count8, idnota, count15, count9;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -60,10 +62,20 @@ namespace IngenieriaVisualPH.Administracion
             count7 = result7.Count;
             lblsc.Text = count7.ToString();
 
+            DataTable dt15 = mapeobici.MostrarbiciTabla();
+            var result15 = dt15.AsEnumerable().Where(myRow => myRow.Field<string>("Estado") == estado2).AsDataView();
+            count15 = result15.Count;
+            lblbici.Text = count15.ToString();
+
             DataTable dt8 = mapeousua.TablaUsuario();
             var result8 = dt8.AsEnumerable().Where(myRow => myRow.Field<string>("AceptaTerminosyCondiciones") == "Si").AsDataView();
             count8 = result8.Count;
             lblreg.Text = count8.ToString();
+
+            DataTable dt17 = mapeomascota.MostrarMascotaTabla();
+            var result17 = dt17.AsEnumerable().Where(myRow => myRow.Field<string>("Estado") == estado2).AsDataView();
+            count9 = result17.Count;
+            lblmascota.Text = count9.ToString();
 
             var result9 = dt8.AsEnumerable().Sum(myRow => myRow.Field<int?>("Conteo"));
             lblsesi.Text = result9.ToString();

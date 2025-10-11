@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class=" form-control-label textocolorinfo font-weight-bold">Describción del Evento</label>
+                        <label class=" form-control-label textocolorinfo font-weight-bold">Descripción del Evento</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="fa fa-edit"></i></div>
                             <asp:TextBox ID="txtobservacion" runat="server" Text="Opcional" MaxLength="100" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>

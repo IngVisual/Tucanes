@@ -61,12 +61,16 @@
                                 <asp:ListItem>Solicitudes de Mudanzas</asp:ListItem>
                                 <asp:ListItem>Tablero de Notificaciones</asp:ListItem>
                                 <asp:ListItem>Solicitudes de Parqueaderos</asp:ListItem>
-                                <asp:ListItem>Solicitudes de Salon Comunal</asp:ListItem>
+                                <asp:ListItem>Solicitudes de SALON SOCIAL</asp:ListItem>
                                 <asp:ListItem>Solicitudes de Chips</asp:ListItem>
                                 <asp:ListItem>Registro de Visitantes</asp:ListItem>
                                 <asp:ListItem>Registro General</asp:ListItem>
                                 <asp:ListItem>Registro de Bicicletas</asp:ListItem>
                                 <asp:ListItem>Tablero de Parqueaderos</asp:ListItem>
+                                <asp:ListItem>Tablero de Notificaciones</asp:ListItem>
+                                <asp:ListItem>Tablero de Alquiler Parqueadero</asp:ListItem>
+                                <asp:ListItem>Tablero de Caja Menor Parqueaderos</asp:ListItem>
+                                <asp:ListItem>Tablero de Mascotas</asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorusuario" runat="server" Display="Dynamic"
                                 ErrorMessage="" ControlToValidate="ddestado" Text="*">

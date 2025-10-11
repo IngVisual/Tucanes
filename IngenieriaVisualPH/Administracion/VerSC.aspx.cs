@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Net;
+using System.Data.SqlClient;
 
 namespace IngenieriaVisualPH.Administracion
 {
@@ -36,7 +37,7 @@ namespace IngenieriaVisualPH.Administracion
                 txtcodigo.Text = dr["Codigo"].ToString();
                 txtres.Text = dr["Respuesta"].ToString();
                 lblfecha.Text = dr["FechaRes"].ToString();
-                txtfeceven.Text = dr["Fecha"].ToString();
+                txtfeceven.Text = (dr["Fecha"] != DBNull.Value) ? dr["Fecha"].ToString() : "";
                 txtfecpago.Text = dr["FechaPago"].ToString();
                 txtfecha1.Text = dr["FechaSol"].ToString();
                 txtnombre.Text = dr["Nombre"].ToString();
@@ -75,6 +76,17 @@ namespace IngenieriaVisualPH.Administracion
             var fecha = DateTime.Now.ToString();
             if (ddestado.Text != "" && txtres.Text != "" && txtnombre.Text != "" && txtced.Text.Trim() != "")
             {
+                if (ddestado.Text == "Reserva Eliminada")
+                {
+                    Datos.Conexion con = new Datos.Conexion();
+                    con.Abrir();
+                    string query = "UPDATE tblSalonComunal SET Fecha=@Fecha WHERE Id=@Id ";
+                    SqlCommand command = new SqlCommand(query, con.conexion);
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@Fecha", DBNull.Value);
+                    command.ExecuteNonQuery();
+                    con.Cerrar();
+                }
                 var idcorreo = mapeoCorreo.ObtenerIdMaxCorreo();
                 usuario._Id = id;
                 usuario._FechaRes = fecha;
@@ -90,8 +102,8 @@ namespace IngenieriaVisualPH.Administracion
                 BuscarEmail();
                 if (lblemail1.Text != "")
                 {
-                    string asunto = "Respuesta SOLICITUD DE SALON COMUNAL";
-                    string mensaje1 = "Descripcion de la solicitud: " + txtsc.Text + "<br/><br/>" + " Observacion de Administracion: " + txtres.Text + "";
+                    string asunto = "Respuesta SOLICITUD DE SALON SOCIAL";
+                    string mensaje1 = "Tiene una respuesta de Salon Social en la aplicación de su Conjunto Residencial. <a style='color:#138496;' href=\"https://conjuntoid012.somee.com/Login.aspx?ReturnUrl=%2fPropietario%2fHome.aspx\"><u><strong>Link de la Aplicacion</strong></u></a>";
                     Servicios.Email email1 = new Servicios.Email(lblemail1.Text, txtcodigo.Text, mensaje1, asunto, conjunto);
                 }
                 Response.Redirect("SalonComunal.aspx");

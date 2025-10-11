@@ -48,7 +48,7 @@
                                                         <th>Marca</th>
                                                         <th>Color</th>
                                                         <th>Tipo</th>
-                                                        <th>Persona</th>
+                                                        <th>Bicicletero</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -58,14 +58,17 @@
                                                     <td><%#Eval("Marca") %></td>
                                                     <td><%#Eval("Color") %></td>
                                                     <td><%#Eval("Tipo") %></td>
-                                                    <td><%#Eval("Persona") %></td>
+                                                    <td><%#Eval("ObservacionAdm") %></td>
                                                 </tr>
+                                                 <div class="card border-danger" style="border-radius: 7px">
+                                                    <img class="card-img-top" src="../SC/Bicicleta/bicifoto/<%#Eval("bicifoto") %>" alt="Card image cap">
+                                                </div>
                                             </ItemTemplate>
                                             <FooterTemplate>
                                                 </tbody>
                                               </table>
                                             </FooterTemplate>
-                                        </asp:Repeater>
+                                       </asp:Repeater>
                                 </div>
                             </div>
                         </div>

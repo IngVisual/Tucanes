@@ -53,21 +53,21 @@
             </div>
             <br />
             <div class="form-group">
-                <label for="" class="control-label mb-1 textocolorinfo text-light font-weight-bold">Nombre</label>
+                <label for="" class="control-label mb-1 textocolorinfo font-weight-bold">Nombre</label>
                 <asp:TextBox ID="txtnombre" runat="server" CssClass="form-control"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Display="Dynamic"
                     ErrorMessage="El Nombre es requerido" ControlToValidate="txtnombre" Text="*">
                 </asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
-                <label for="" class="control-label mb-1 textocolorinfo text-light font-weight-bold">Celular de contacto</label>
+                <label for="" class="control-label mb-1 textocolorinfo font-weight-bold">Celular de contacto</label>
                 <asp:TextBox ID="txttelefono" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic"
                     ErrorMessage="El Telefono es requerido" ControlToValidate="txttelefono" Text="*">
                 </asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
-                <label for="" class="control-label mb-1 textocolorinfo text-light font-weight-bold">Descripción del servicio</label>
+                <label for="" class="control-label mb-1 textocolorinfo  font-weight-bold">Descripción del servicio</label>
                 <asp:TextBox ID="txtobservacion" placeholder="Ej:Peluqueria para adultos y niños" runat="server" CssClass="form-control" TextMode="MultiLine" MaxLength="200"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Display="Dynamic"
                     ErrorMessage="La Observacion es requerida" ControlToValidate="txtobservacion" Text="*">

@@ -31,6 +31,15 @@ namespace Modelo
         public int IdNovedad { get; set; }
         public int IdNotif { get; set; }
         public int IdNotificacion { get; set; }
+        public int IdBicicleta { get; set; }
+        public string cc { get; set; }
+        public string tp { get; set; }
+        public string bicifoto { get; set; }
+        public string firmaBici { get; set; }
+        public int IdMascota { get; set; }
+        public string Carnet { get; set; }
+        public string FotoMascota { get; set; }
+        public int IdImagMascota { get; set; }
 
     }
 }

@@ -4,6 +4,10 @@
        <link href="../Diseño/Banner.css" rel="stylesheet" />
        <link href="../Diseño/Firma.css" rel="stylesheet" />
     <script>
+        function cerrarVideo() {
+            var video = document.getElementById("miVideo");
+            video.pause();
+        }
         function pregunta1SI() {
             document.getElementById("pregunta1").style.display = "none";
             document.getElementById("form1").style.display = "block";
@@ -40,11 +44,11 @@
             document.getElementById("conta").style.display = "none"
             document.getElementById("procesando").style.display = "block"
             document.getElementById('<%=btnenviardocuemnto.ClientID%>').disabled = true;
-        document.getElementById('<%=FileUpload1.ClientID%>').disabled = true;
-        document.getElementById('<%=FileUpload2.ClientID%>').disabled = true;
+            document.getElementById('<%=FileUpload1.ClientID%>').disabled = true;
+            document.getElementById('<%=FileUpload2.ClientID%>').disabled = true;
         document.getElementById('<%=FileUpload3.ClientID%>').disabled = true;
         document.getElementById('<%=FileUpload4.ClientID%>').disabled = true;
-        document.getElementById('<%=FileUpload5.ClientID%>').disabled = true;
+            document.getElementById('<%=FileUpload5.ClientID%>').disabled = true;
         }
         window.onbeforeunload = DesactivarBoton;
     </script>
@@ -85,41 +89,73 @@
             document.getElementById("foto4").style.display = "block";
             document.getElementById("foto5").style.display = "none";
         }
-       function f6NO() {
+        function f6NO() {
             document.getElementById("form3").style.display = "block";
             document.getElementById("foto5").style.display = "block";
             document.getElementById("button").style.display = "none";
         }
     </script>
+<%--El plazo para la carga de documentos ya venció.
+<div style="display:none;">--%>
     <div id="procesando" class="ventana3">
         <img src="../Diseño/Imagenes/coheteLoading.gif" />
         <h5 class="text-right text-center font-weight-bold">Por favor espere un momento, Cargando Solicitud.....</h5>
     </div>
+
     <div class="container" id="conta">
         <h3 class="text-center textocolorinfo font-weight-bold">Solicitud de Parqueadero</h3>
+         <br />
+        <button type="button" class="btn btn-primary rounded" data-toggle="modal" data-target="#videoModal">
+            Ver Video Ayuda
+        </button>
+        <br />
         <td colspan="2">
             <asp:Label ID="lblMessage" runat="server" Font-Bold="True" CssClass="form-control alert alert-danger" Visible="False"></asp:Label>
         </td>
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="videoModalLabel">Play para iniciar</h5>
+                        <button type="button" onclick="cerrarVideo()" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <video id="miVideo" width="100%" controls>
+                            <source src="../Diseño/videos/documentoparqueadero.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="cerrarModalBtn" onclick="cerrarVideo()" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <br />
         <form id="fo1" runat="server">
             <div id="mensaje" runat="server" style="display: none">
                 <div class="col-lg-6">
-                            <div class="alert alert-warning">
-                                <span class="badge badge-pill badge-secondary">Importante</span>
-                                <strong>
-                                    <asp:Label ID="lblmsg2" runat="server"></asp:Label>
-                                </strong>
-                                <br />
-                            </div>
+                    <div class="alert alert-warning">
+                        <span class="badge badge-pill badge-secondary">Importante</span>
+                        <strong class="h6">
+                            <asp:Label ID="lblmsg2" runat="server"></asp:Label>
+                        </strong>
+                        <br />
+                    </div>
                 </div>
             </div>
+            <td colspan="2">
+                <asp:ValidationSummary ID="ValidationSummary2" runat="server" CssClass="text-danger font-weight-bold" />
+            </td>
             <div id="pregunta1">
-                <strong class="card-title textocolorinfo font-weight-bold">¿Tienes listos los siguientes documentos para adjuntar? EN FORMATO IMAGEN, FOTO O CAPTURA DE PANTALLA (NO ACEPTA PDF) </strong>
-                <p></p>
-                <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">CEDULA </i></p>
+               <strong class="card-title textocolorinfo font-weight-bold">¿Tienes listos los siguientes documentos en foto para adjuntar? Estos se pueden adjuntar como CAPTURAS DE PANTALLA para que la solicitud cargue más rapido. </strong>
+                 <p></p>
+                <p>TODOS LOS DOCUMENTOS SON OBLIGATORIOS (NO ACEPTA PDF)</p>
+                <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">CEDULA</i></p>
                 <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">SOAT</i></p>
                 <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">TARJETA DE PROPIEDAD</i></p>
-                <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">TECNO-MECANICA</i></p>
+                <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">TECNO-MECANICA. Si no tiene, debe adjuntar otra foto del vehiculo</i></p>
                 <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">FOTO DEL VEHICULO</i></p>
                 <br />
                 <p>
@@ -140,11 +176,6 @@
                 </div>
             </div>
             <div id="form2" style="display: none">
-                <div class="card">
-                    <td colspan="2">
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger font-weight-bold" />
-                    </td>
-                </div>
                 <h5 class="text-center form-control btncolorinfo font-weight-bold animate__animated animate__pulse animate__infinite">IMPORTANTE: Es una solicitud por parqueadero, si tiene otro vehiculo debe hacer otra solicitud. Gracias</h5>
                 <br />
                 <div id="opcion" class="card bordercolorinfo">
@@ -290,5 +321,5 @@
             </div>
         </form>
     </div>
-
+<%--</div>--%>
 </asp:Content>

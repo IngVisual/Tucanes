@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administracion/Administracion.Master" AutoEventWireup="true" CodeBehind="NotificaPushApp.aspx.cs" Inherits="IngenieriaVisualPH.Administracion.Formulario_web138" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="server">
-     <style>
+<style>
         body {
             background: rgb(249,244,242);
             background: linear-gradient(90deg, rgba(249,244,242,1) 0%, rgba(22,27,38,0.8267682072829132) 50%);
@@ -9,11 +9,11 @@
     <link href="../Diseño/Banner.css" rel="stylesheet" />
         <script>
             function DesactivarBoton() {
-             document.getElementById("conta").style.display = "none"
-            document.getElementById("procesando").style.display = "block"
-        }
-        window.onbeforeunload = DesactivarBoton;
-    </script>
+                document.getElementById("conta").style.display = "none"
+                document.getElementById("procesando").style.display = "block"
+            }
+            window.onbeforeunload = DesactivarBoton;
+        </script>
     <div id="procesando" class="ventana2" style="display: none">
                 <h5 class="text-light text-center font-weight-bold">Enviando Mensajes...</h5>
         <img src="../Diseño/Imagenes/coheteLoading2.gif" />
@@ -71,6 +71,16 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="font-weight-bold text-ligth">Fecha Inicial</h4>
+                    <asp:TextBox ID="txtfechaini" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtDate_TextChanged" TextMode="Date"></asp:TextBox>
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="font-weight-bold text-ligth">Fecha Final</h4>
+                    <asp:TextBox ID="txtfechafinal" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtDate_TextChanged" TextMode="Date"></asp:TextBox>
+                </div>
+            </div>
              <section id="tabsc">
                 <div class="content mt-3">
                     <div class="animated fadeIn">
@@ -84,9 +94,9 @@
                                                     <HeaderTemplate>
                                                         <thead class="thead-dark" style="border-radius: 5px">
                                                             <tr>
+                                                                <th><small>Fecha </small></th>
                                                                 <th><small>Reenviar Notificación<small></th>
                                                                 <th><small>Ver PDF<small></th>
-                                                                <th><small>Fecha </small></th>
                                                                 <th><small>asunto<small></th>
                                                                 <th><small>Mensaje<small></th>
                                                             </tr>
@@ -94,7 +104,10 @@
                                                         <tbody>
                                                     </HeaderTemplate>
                                                     <ItemTemplate>
-                                                        <tr>      
+                                                          <tr>
+                                                             <td>
+                                                                <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("Fecha","{0:dd/MM/yyyy}") %></i></small>
+                                                            </td>
                                                             <td><a href="ReenviarPush.aspx?Asunto=<%#Eval("Asunto")%>&Msg=<%#Eval("Mensaje") %>">
                                                                 <button class="btn btn-sm btn-success font-weight-bold" onclick="return confirm('RECUERDA que la Notificación que Reenvíes le llegara a todo el conjunto, ¿Esta seguro(a) de Reenviar este Mensaje?');" type="button" style="border-radius: 5px" title="Reenviar Notificación"><i class="fa fa-mail-forward"></i>&nbsp;Reenviar</button>
                                                             </a></td>
@@ -102,15 +115,12 @@
                                                                 <button class="btn btn-sm btn-primary font-weight-bold" type="button" style="border-radius: 5px" title="Ver pdf"><i class="fa fa-download"></i></button>
                                                             </a></td>
                                                             <td>
-                                                                <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("Fecha") %></i></small>
-                                                            </td>
-                                                            <td>
                                                                 <h6 class="text-dark"><i class="fa fa-clipboard">&nbsp;<%#Eval("Asunto") %></i></h6>
                                                             </td>
                                                              <td>
                                                                 <small class="text-dark"><i class="fa fa-file-text-o">&nbsp;<%#Eval("Mensaje") %></i></small>
                                                             </td>
-                                                        </tr>
+                                                              </tr>
                                                     </ItemTemplate>
                                                     <FooterTemplate>
                                                         </tbody>
@@ -143,10 +153,10 @@
     <script src="../Diseño/assets/js/lib/data-table/buttons.html5.min.js"></script>
     <script src="../Diseño/assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="../Diseño/assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="../Diseño/assets/js/lib/data-table/datatables-init.js"></script>
+  <%--  <script src="../Diseño/assets/js/lib/data-table/datatables-init.js"></script>--%>
         <script type="text/javascript">
-        $(document).ready(function() {
-          $('#bootstrap-data-table-export').DataTable();
-        } );
-    </script>
+            $(document).ready(function () {
+                $('#bootstrap-data-table-export').DataTable();
+            });
+        </script>
 </asp:Content>

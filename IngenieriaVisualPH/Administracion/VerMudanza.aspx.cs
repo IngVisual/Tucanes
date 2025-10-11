@@ -20,7 +20,7 @@ namespace IngenieriaVisualPH.Administracion
 
         private int id;
         private string conjunto;
-        private string Asunto = "Respuesta de Mudanza o Articulos", Leido = "no";
+        private string Asunto = "Respuesta de Mudanza, Articulos o Adeacuaciones", Leido = "no";
         protected void Page_Load(object sender, EventArgs e)
         {        
             try
@@ -97,8 +97,8 @@ namespace IngenieriaVisualPH.Administracion
                 BuscarEmail();
                 if (lblemail1.Text != "")
                 {
-                    string asunto = "Respuesta SOLICITUD DE MUDANZA O ARTICULOS";
-                    string mensaje1 = "Descripcion de la solicitud: " + txttp.Text + "<br/><br/>" + " Observacion de Administracion: " + txtres.Text + "";
+                    string asunto = "Respuesta SOLICITUD DE MUDANZA, ARTICULOS O ADECUACIONES";
+                    string mensaje1 = "Tiene una respuesta de Mudanza o Adecuaciones en la aplicación de su Conjunto Residencial. <a style='color:#138496;' href=\"https://conjuntoid012.somee.com/Login.aspx?ReturnUrl=%2fPropietario%2fHome.aspx\"><u><strong>Link de la Aplicacion</strong></u></a>";
                     Servicios.Email email1 = new Servicios.Email(lblemail1.Text, txtcodigo.Text, mensaje1, asunto, conjunto);
                 }
                 Response.Redirect("AutorizacionTrasteo.aspx");

@@ -73,7 +73,7 @@ namespace IngenieriaVisualPH.Administracion
                 if (lblemail1.Text != "")
                 {
                     string asunto = "Respuesta SOLICITUD DE CHIPS";
-                    string mensaje1 = "Descripcion de la solicitud: <br/><br/>" + " Observacion de Administracion: " +ddestado.Text+ " " + txtres.Text + "";
+                    string mensaje1 = "Tiene una respuesta de Chips en la aplicación de su Conjunto Residencial. <a style='color:#138496;' href=\"https://conjuntoid012.somee.com/Login.aspx?ReturnUrl=%2fPropietario%2fHome.aspx\"><u><strong>Link de la Aplicacion</strong></u></a>";
                     Servicios.Email email1 = new Servicios.Email(lblemail1.Text, txtcodigo.Text, mensaje1, asunto, conjunto);
                 }
                 Response.Redirect("AdmChip.aspx");

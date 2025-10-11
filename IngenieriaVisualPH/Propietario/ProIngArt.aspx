@@ -147,7 +147,7 @@
                     <div class="card-body">
 <%--                        <input id="rd1" type="radio" onclick="Opcion1()" />-- ¿ Ingresa menos de 3 articulos <strong class="text-success">NUEVOS ?</strong> Ej(Cama, nevera, estufa, televisor, etc..)?
                     <p></p>--%>
-                        <div class="form-group" id="opcion1" style="display: none">
+<%--                        <div class="form-group" id="opcion1" style="display: none">
                             <div class="alert alert-success" id="error1" runat="server" style="margin-top: 10px;">
                                 <span class="badge badge-pill badge-success">IMPORTANTE</span>
                                 Para esta opción no es necesario enviar la solicitud, solo debe realizar los siguientes pasos:
@@ -165,7 +165,7 @@
                                 <br />
                             </div>
                             <br />
-                        </div>
+                        </div>--%>
 
                         <p></p>
                         <input id="rd2" type="radio" onclick="Opcion2()" />-- ¿ Ingresa algunos articulos y el apartamento ya esta <strong class="text-danger">HABITADO ?</strong> Ej(Cama, nevera, estufa, televisor, etc..)?, <strong class="alert-danger">NO ES UNA MUDANZA COMPLETA .</strong>

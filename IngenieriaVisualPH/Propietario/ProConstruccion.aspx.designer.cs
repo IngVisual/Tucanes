@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace IngenieriaVisualPH.Propietario {
-    
-    
-    public partial class Formulario_web165 {
-        
+namespace IngenieriaVisualPH.Propietario
+{
+
+
+    public partial class Formulario_web165
+    {
+
         /// <summary>
         /// Control lblMessage3.
         /// </summary>
@@ -20,7 +22,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage3;
-        
+
         /// <summary>
         /// Control lblMessage.
         /// </summary>
@@ -29,7 +31,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
-        
+
         /// <summary>
         /// Control lblMessage2.
         /// </summary>
@@ -38,7 +40,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage2;
-        
+
         /// <summary>
         /// Control fo1.
         /// </summary>
@@ -47,25 +49,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm fo1;
-        
-        /// <summary>
-        /// Control mensaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensaje;
-        
-        /// <summary>
-        /// Control lblmsg22.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblmsg22;
-        
+
         /// <summary>
         /// Control lblpro.
         /// </summary>
@@ -74,7 +58,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblpro;
-        
+
         /// <summary>
         /// Control error1.
         /// </summary>
@@ -83,7 +67,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl error1;
-        
+
         /// <summary>
         /// Control error.
         /// </summary>
@@ -92,7 +76,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl error;
-        
+
         /// <summary>
         /// Control lblmsg.
         /// </summary>
@@ -101,7 +85,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblmsg;
-        
+
         /// <summary>
         /// Control ValidationSummary1.
         /// </summary>
@@ -110,7 +94,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
-        
+
         /// <summary>
         /// Control lblpropie.
         /// </summary>
@@ -119,7 +103,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblpropie;
-        
+
         /// <summary>
         /// Control txtcedula.
         /// </summary>
@@ -128,7 +112,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcedula;
-        
+
         /// <summary>
         /// Control RequiredFieldValidator1.
         /// </summary>
@@ -137,7 +121,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
+
         /// <summary>
         /// Control txtencargado.
         /// </summary>
@@ -146,7 +130,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtencargado;
-        
+
         /// <summary>
         /// Control RequiredFieldValidator2.
         /// </summary>
@@ -155,7 +139,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
+
         /// <summary>
         /// Control txtfechaini.
         /// </summary>
@@ -164,7 +148,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtfechaini;
-        
+
         /// <summary>
         /// Control RequiredFieldValidator4.
         /// </summary>
@@ -173,7 +157,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-        
+
         /// <summary>
         /// Control txtfechafin.
         /// </summary>
@@ -182,7 +166,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtfechafin;
-        
+
         /// <summary>
         /// Control RequiredFieldValidator5.
         /// </summary>
@@ -191,7 +175,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
-        
+
         /// <summary>
         /// Control txtarticulos.
         /// </summary>
@@ -200,7 +184,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtarticulos;
-        
+
         /// <summary>
         /// Control Label5.
         /// </summary>
@@ -209,7 +193,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-        
+
         /// <summary>
         /// Control FileUpload1.
         /// </summary>
@@ -218,7 +202,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
+
         /// <summary>
         /// Control RequiredFieldValidator6.
         /// </summary>
@@ -227,7 +211,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
-        
+
         /// <summary>
         /// Control Label2.
         /// </summary>
@@ -236,7 +220,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// Control FileUpload2.
         /// </summary>
@@ -245,7 +229,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
-        
+
         /// <summary>
         /// Control RequiredFieldValidator3.
         /// </summary>
@@ -254,7 +238,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-        
+
         /// <summary>
         /// Control Label1.
         /// </summary>
@@ -263,7 +247,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// Control hfImageData.
         /// </summary>
@@ -272,7 +256,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hfImageData;
-        
+
         /// <summary>
         /// Control btnenviardocuemnto.
         /// </summary>

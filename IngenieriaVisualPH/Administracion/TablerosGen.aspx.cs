@@ -24,54 +24,80 @@ namespace IngenieriaVisualPH.Administracion
 
         protected void btnconsulta_Click(object sender, EventArgs e)
         {
-            if(ddestado.Text== "Apartamentos")
+            if (ddestado.Text == "Apartamentos")
             {
                 _tipo = "Apartamentos";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if(ddestado.Text == "PQRS")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "PQRS")
             {
                 _tipo = "PQRS";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Novedades de Saldo")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Novedades de Saldo")
             {
                 _tipo = "Saldo";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Solicitudes de Mudanzas")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Solicitudes de Mudanzas")
             {
                 _tipo = "Mudanza";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Solicitudes de Parqueaderos")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Solicitudes de Parqueaderos")
             {
                 _tipo = "SolParqueadero";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Solicitudes de Salon Comunal")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Solicitudes de SALON SOCIAL")
             {
                 _tipo = "SC";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Solicitudes de Chips")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Solicitudes de Chips")
             {
                 _tipo = "Chip";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Registro de Visitantes")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Registro de Visitantes")
             {
                 _tipo = "Visitantes";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Registro General")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Registro General")
             {
                 _tipo = "General";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Registro de Bicicletas")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Registro de Bicicletas")
             {
                 _tipo = "Bicicletas";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Tablero de Parqueaderos")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Tablero de Parqueaderos")
             {
                 _tipo = "Parqueadero";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
-            }else if (ddestado.Text == "Tablero de Notificaciones")
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Tablero de Notificaciones")
             {
                 _tipo = "Notificaciones";
-                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text));
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Tablero de Alquiler Parqueadero")
+            {
+                _tipo = "AlquilerParqueadero";
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Tablero de Caja Menor Parqueaderos")
+            {
+                _tipo = "CajaMenor";
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
+            }
+            else if (ddestado.Text == "Tablero de Mascotas")
+            {
+                _tipo = "Mascotas";
+                MostrarTablas(_tipo, Convert.ToDateTime(txtfechaini.Text), Convert.ToDateTime(txtfechafinal.Text).AddHours(24));
             }
         }
 

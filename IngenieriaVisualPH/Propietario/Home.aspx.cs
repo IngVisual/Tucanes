@@ -41,6 +41,7 @@ namespace IngenieriaVisualPH.Propietario
             //Se retira en la tercera version.
             //MostrarSaldo();
             MostrarParqueadero();
+            MostrarBicicleta();
             try
             {
                 con.Abrir();
@@ -82,6 +83,16 @@ namespace IngenieriaVisualPH.Propietario
             DataTable dt11 = mapeopar.MostrarTableroParqCodigo(parq);
             r8.DataSource = dt11;
             r8.DataBind();
+        }
+        public void MostrarBicicleta()
+        {
+            Datos.MapeoRegistros mapeopar = new Datos.MapeoRegistros();
+            Modelo.EntidadBicicleta parq = new Modelo.EntidadBicicleta();
+            parq.Codigo = codigo;
+            DataTable dt12 = mapeopar.Mostrar_UnaSolBicicodigo(parq);
+            var result = dt12.AsEnumerable().Where(myRow => myRow.Field<string>("Estado") == "Autorizado").AsDataView();
+            r9.DataSource = result;
+            r9.DataBind();
         }
 
     }

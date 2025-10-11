@@ -111,7 +111,7 @@
                 <td><a href="https://app.onesignal.com/login">
              <button type="button" style="border-radius:5px" class="btn btn-success btn-sm"><i class="fa fa-bell"></i>&nbsp; Notificacion Push</button></a></td>
                 <br />
-                 <td><a href="https://conjuntoid004.somee.com/Contrato.html">
+                 <td><a href="https://conjuntoid004.somee.com/PPDIngVisual.html">
              <button type="button" style="border-radius:5px" class="btn btn-warning btn-sm"><i class="fa fa-lock"></i>&nbsp; Politica de Datos</button></a></td>
                 <br />
                  <td><a href="https://ingenieriavisualph.com">
@@ -145,7 +145,10 @@
                  &nbsp;&nbsp;
                 <a href="AdmVerSol.aspx">
              <button type="button" class="btn btn-success border border-secondary text-light font-weight-bold animate__animated animate__pulse animate__infinite animate__delay-2s" style="border-radius:5px"><i class="fa fa-rocket"></i>&nbsp; Inicio</button></a>
-            </div>
+           &nbsp;&nbsp;
+                 <a href="AlquilerParqueadero.aspx">
+             <button type="button" class="btn btn-info border border-secondary text-light font-weight-bold" style="border-radius:5px"><i class="fa fa-car"></i>&nbsp; Alquiler Parqueadero</button></a>
+                </div>
           </div>
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">

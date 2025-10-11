@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace IngenieriaVisualPH.Propietario {
-    
-    
-    public partial class Formulario_web14 {
-        
+namespace IngenieriaVisualPH.Propietario
+{
+
+
+    public partial class Formulario_web14
+    {
+
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Control lblapa.
         /// </summary>
@@ -29,16 +31,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblapa;
-        
-        /// <summary>
-        /// Control Label2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// Control Label4.
         /// </summary>
@@ -47,7 +40,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// Control Label3.
         /// </summary>
@@ -56,7 +49,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// Control Label5.
         /// </summary>

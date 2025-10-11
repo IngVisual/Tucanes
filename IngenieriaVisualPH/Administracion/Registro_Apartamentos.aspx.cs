@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.SqlClient;
 
 
 namespace IngenieriaVisualPH.Administracion
@@ -20,10 +21,13 @@ namespace IngenieriaVisualPH.Administracion
         Datos.MapeoSC mapeosc = new Datos.MapeoSC();
         Datos.MapeoSaldos mapeosaldo = new Datos.MapeoSaldos();
         Datos.MapeoUsuarios mapeousu = new Datos.MapeoUsuarios();
+        Datos.MapeoMascotas mapeomasc = new Datos.MapeoMascotas();
         Modelo.EntidadUsuario usuario = new Modelo.EntidadUsuario();
         Modelo.EntidadesPQR pqr = new Modelo.EntidadesPQR();
         Modelo.EntidadesPQR pqr1 = new Modelo.EntidadesPQR();
+        Modelo.EntidadMascota mascota = new Modelo.EntidadMascota();
         private int count1,count2;
+        Datos.Conexion con = new Datos.Conexion();
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -35,7 +39,20 @@ namespace IngenieriaVisualPH.Administracion
             {
             div1.Style.Add("display", "none");
             usuario.Codigo = int.Parse(txtbuscar.Text);
-            DataTable dt= mapeousu.LeerUsuario(usuario);
+                //---------------------------------Mostrar ultimos tres ingresos.
+                var codigo = int.Parse(txtbuscar.Text);
+                con.Abrir();
+                string query = "SELECT TOP 3 * FROM tbl_RegistroLogin WHERE Codigo = @Codigo ORDER BY FechaIngreso DESC";
+                SqlCommand command = new SqlCommand(query, con.conexion);
+                command.Parameters.AddWithValue("@Codigo", codigo);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                con.Cerrar();
+                R1registro.DataSource = dataTable;
+                R1registro.DataBind();
+                //--------------------------------
+                DataTable dt = mapeousu.LeerUsuario(usuario);
                foreach (DataRow item in dt.Rows)
                {
                 lblingresos.Text = item["Conteo"].ToString();
@@ -122,12 +139,23 @@ namespace IngenieriaVisualPH.Administracion
                     r8.DataSource = dt11;
                     r8.DataBind();
 
-
                 Modelo.EntidadRegistroGeneral cicla = new Modelo.EntidadRegistroGeneral();
                 cicla.Codigo = int.Parse(txtbuscar.Text);
                 DataTable dt12 = mapeoreg.MostrarCicla(cicla);
-                    r9.DataSource = dt12;
-                    r9.DataBind();
+                var result = dt12.AsEnumerable().Where(myRow => myRow.Field<string>("Estado") == "Autorizado").AsDataView();
+                r9.DataSource = result;
+                r9.DataBind();
+
+                Modelo.EntidadBicicleta ciclas = new Modelo.EntidadBicicleta();
+                ciclas.Codigo = int.Parse(txtbuscar.Text);
+                DataTable dt15 = mapeoreg.Mostrar_UnaSolBicicodigo(ciclas);
+                rcicla.DataSource = dt15;
+                rcicla.DataBind();
+
+                mascota.Codigo = int.Parse(txtbuscar.Text);
+                DataTable dt16 = mapeomasc.MostrarMascotaCodigo(mascota);
+                rmascota.DataSource = dt16;
+                rmascota.DataBind();
             }
             else{
                 div1.Style.Add("display","block");

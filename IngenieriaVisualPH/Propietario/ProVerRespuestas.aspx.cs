@@ -31,21 +31,34 @@ namespace IngenieriaVisualPH.Propietario
             if (tipo == "Respuesta de PQR")
             {
                 Response.Redirect("RespuestaPQRPropietario.aspx?Id=" + id + "");
-            }else if (tipo == "Respuesta Solicitud de Chip")
+            }
+            else if (tipo == "Respuesta Solicitud de Chip")
             {
                 Response.Redirect("ProTabResChip.aspx?Id=" + id + "");
-            }else if (tipo == "Respuesta de Parqueadero")
+            }
+            else if (tipo == "Respuesta de Parqueadero")
             {
                 Response.Redirect("ProTabResPar.aspx?Id=" + id + "");
-            }else if (tipo == "Respuesta de Mudanza o Articulos")
+            }
+            else if (tipo == "Respuesta de Mudanza o Articulos")
             {
                 Response.Redirect("ProTabResSal.aspx?Id=" + id + "");
-            }else if (tipo == "Respuesta Novedad de Saldo")
+            }
+            else if (tipo == "Respuesta Novedad de Saldo")
             {
                 Response.Redirect("ProTabResPag.aspx?Id=" + id + "");
-            }else if (tipo == "Respuesta de Salon Comunal")
+            }
+            else if (tipo == "Respuesta de Salon Comunal")
             {
                 Response.Redirect("ProTabResSC.aspx?Id=" + id + "");
+            }
+            else if (tipo == "Respuesta de Mudanza, Articulos o Adeacuaciones")
+            {
+                Response.Redirect("ProTabResSal.aspx?Id=" + id + "");
+            }
+            else if (tipo == "Respuesta de Bicicletero")
+            {
+                Response.Redirect("ProCiclaEditar.aspx?Id=" + id + "");
             }
         }
     }

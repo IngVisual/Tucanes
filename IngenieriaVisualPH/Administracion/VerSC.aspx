@@ -124,6 +124,7 @@
                                                 <asp:ListItem>No Autorizado</asp:ListItem>
                                                 <asp:ListItem>Novedad</asp:ListItem>
                                                 <asp:ListItem>Finalizado</asp:ListItem>
+                                                <asp:ListItem>Reserva Eliminada</asp:ListItem>
                                     </asp:DropDownList>
                                          <asp:RequiredFieldValidator ID="RequiredFieldValidatorcon" runat="server" Display="Dynamic"
                                             ErrorMessage="Debe ingresar el estado de la solicitud" ControlToValidate="ddestado" Text="Requerido *">

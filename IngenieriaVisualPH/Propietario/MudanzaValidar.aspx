@@ -19,7 +19,7 @@
       <form id="form1" runat="server">
         <div class="card-body">
             <div class="card-title">
-                <h3 class="text-center textocolorinfo font-weight-bold">Solicitud Mudanza, Articulos o Articulos de Contrucción</h3>
+                <h3 class="text-center textocolorinfo font-weight-bold">Solicitud de Mudanza, articulos o ingresos de material y personal de construccion</h3>
             </div>
             <div class="card bordercolorinfo" style="border-radius: 5px">
                 <div>

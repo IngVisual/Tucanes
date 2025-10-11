@@ -86,7 +86,7 @@ namespace IngenieriaVisualPH.Administracion
                 if (lblemail1.Text != "")
                 {
                     string asunto = "Respuesta SOLICITUD DE PARQUEADERO";
-                    string mensaje1 = "Descripcion del vehiculo: " + txtobs.Text + "<br/><br/>" + " Observacion de Administracion: " + txtres.Text + "";
+                    string mensaje1 = "Tiene una respuesta de Parqueadero en la aplicación de su Conjunto Residencial. <a style='color:#138496;' href=\"https://conjuntoid012.somee.com/Login.aspx?ReturnUrl=%2fPropietario%2fHome.aspx\"><u><strong>Link de la Aplicacion</strong></u></a>";
                     Servicios.Email email1 = new Servicios.Email(lblemail1.Text, txtcodigo.Text, mensaje1, asunto, conjunto);
                 }
                 Response.Redirect("Documentos_Recibidos.aspx");

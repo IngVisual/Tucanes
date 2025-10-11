@@ -133,6 +133,24 @@
                                                 </button>
                                             </a>
                                         </div>
+                                        <div class="dropdown for-message">
+                                            <a href="AdmBici.aspx">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="bici">
+                                                    <i class="fa fa-bicycle"></i><span class="count bg-primary">
+                                                        <asp:Label ID="lblbici" runat="server"></asp:Label></span>
+                                                    <small><span class="badge badge-secondary float-right mt-1">SolBicicletero</span></small>
+                                                </button>
+                                            </a>
+                                        </div>
+                                         <div class="dropdown for-message">
+                                            <a href="AdmMascotas.aspx">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="macota">
+                                                    <i class="fa fa-check-circle"></i><span class="count bg-primary">
+                                                        <asp:Label ID="lblmascota" runat="server"></asp:Label></span>
+                                                    <small><span class="badge badge-secondary float-right mt-1">RegMascotas</span></small>
+                                                </button>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-3">

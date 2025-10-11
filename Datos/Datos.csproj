@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Datos</RootNamespace>
     <AssemblyName>Datos</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="MapeoAlquilerParqueadero.cs" />
     <Compile Include="MapeoAseo.cs" />
     <Compile Include="MapeoChip.cs" />
     <Compile Include="MapeoContrato.cs" />
@@ -52,6 +54,7 @@
     <Compile Include="MapeoDescargas.cs" />
     <Compile Include="MapeoGeneral.cs" />
     <Compile Include="MapeoLogin.cs" />
+    <Compile Include="MapeoMascotas.cs" />
     <Compile Include="MapeoMaterPropietario.cs" />
     <Compile Include="MapeoMsg.cs" />
     <Compile Include="MapeoMudanzas.cs" />

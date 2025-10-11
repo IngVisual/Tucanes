@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-xs-6 col-lg-2">
-                                <label class=" form-control-label">QUEJA POR:</label>
+                                <label class=" form-control-label">QUEJA PARA:</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="fa fa-gavel"></i></div>
                                     <asp:TextBox ID="txtcodigo1"  CssClass="form-control" runat="server"></asp:TextBox>

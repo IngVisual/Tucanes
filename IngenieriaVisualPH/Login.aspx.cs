@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using System.Data.SqlClient;
 
 namespace IngenieriaVisualPH
 {
@@ -12,6 +13,7 @@ namespace IngenieriaVisualPH
     {
         Modelo.EntidadUsuario usuario = new Modelo.EntidadUsuario();
         Datos.MapeoLogin acceso = new Datos.MapeoLogin();
+        Datos.Conexion con = new Datos.Conexion();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,11 +34,29 @@ namespace IngenieriaVisualPH
                     string est = txtcod1.Text;
                     Session["cod"] = txtcod1.Text;
                     Session["conteo"] = count.ToString();
+                    int codigo = int.Parse(est);
+                    DateTime fechaIngreso = DateTime.Now;
+                    con.Abrir();
+                    string query = "INSERT INTO tbl_RegistroLogin (Codigo, FechaIngreso) VALUES (@Codigo, @FechaIngreso)";
+                    SqlCommand command = new SqlCommand(query, con.conexion);
+                    command.Parameters.AddWithValue("@Codigo", codigo);
+                    command.Parameters.AddWithValue("@FechaIngreso", fechaIngreso);
+                    command.ExecuteNonQuery();
+                    con.Cerrar();
                     Response.Redirect("~/Propietario/Token.aspx");
                 }
                 else if (fila == 2)
                 {
                     Session["cod"] = txtcod1.Text;
+                    int codigo = int.Parse(txtcod1.Text);
+                    DateTime fechaIngreso = DateTime.Now;
+                    con.Abrir();
+                    string query = "INSERT INTO tbl_RegistroLogin (Codigo, FechaIngreso) VALUES (@Codigo, @FechaIngreso)";
+                    SqlCommand command = new SqlCommand(query, con.conexion);
+                    command.Parameters.AddWithValue("@Codigo", codigo);
+                    command.Parameters.AddWithValue("@FechaIngreso", fechaIngreso);
+                    command.ExecuteNonQuery();
+                    con.Cerrar();
                     Response.Redirect("~/Registro/RegistroCitofonia.aspx");
                 }
                 else
@@ -51,6 +71,15 @@ namespace IngenieriaVisualPH
                 int fila = acceso.LoginEmpleado(usuario);
                 if (fila == 1)
                 {
+                    DateTime fechaIngreso = DateTime.Now;
+                    int codigo = int.Parse(txtcod1.Text);
+                    con.Abrir();
+                    string query = "INSERT INTO tbl_RegistroLoginGuarda (Codigo, FechaIngreso) VALUES (@Codigo, @FechaIngreso)";
+                    SqlCommand command = new SqlCommand(query, con.conexion);
+                    command.Parameters.AddWithValue("@Codigo", codigo);
+                    command.Parameters.AddWithValue("@FechaIngreso", fechaIngreso);
+                    command.ExecuteNonQuery();
+                    con.Cerrar();
                     FormsAuthentication.RedirectFromLoginPage(txtcontraseña.Text, true);
                     Response.Redirect("~/Empleados/Citofonia.aspx");
                 }

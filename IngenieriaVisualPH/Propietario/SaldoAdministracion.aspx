@@ -91,7 +91,7 @@
             <div class="col-lg-6">
                 <div class="row">
                     <div class="col-xs-3">
-                        <a href="https://www.edificiosdavivienda.com/living/portal/buscarEdificio#!">
+                        <a href="https://web-conjuntos.jelpit.com/zona-publica-pagos">
                             <button id="btn" type="button" style="border-radius:7px" class="btncolorinfo font-weight-bold form-control border-light animate__animated animate__pulse animate__infinite animate__delay-2s">
                                 <i class="fa fa-hand-o-right"></i>&nbsp;Pagar Administración</button></a>
    <p></p>

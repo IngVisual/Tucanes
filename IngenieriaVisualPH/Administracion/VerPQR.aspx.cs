@@ -83,17 +83,17 @@ namespace IngenieriaVisualPH.Administracion
                EnviarPushQueja();
                BuscarEmail();           
                if(lblemail1.Text!="")
-               {
-               string asunto = "Respuesta de PQR";
-               string mensaje1 = "Descripcion del llamado de atencion: "+ txtcodigo1.Text+ " " + txtobs.Text + "<br/><br/>" + " Observacion de Administracion: " +txtres.Text+"";
-               Servicios.Email email1 = new Servicios.Email(lblemail1.Text, txtcodigo.Text, mensaje1, asunto, conjunto);
-               }             
-               if(lblemail2.Text!="")
-               {
-               string asunto1 = "Asunto llamado de Atencion";
-               string mensaje2 = "Descripcion del llamado de atencion: " + txtobs.Text + "<br/><br/>" + " Observacion de Administracion: "+ txtres.Text+"";
-               Servicios.Email email2 = new Servicios.Email(lblemail2.Text, txtcodigo1.Text, mensaje2, asunto1, conjunto);
-               }
+                {
+                    string asunto = "Respuesta de PQR";
+                    string mensaje1 = "Tiene una respuesta de PQR en la aplicación de su Conjunto Residencial. <a style='color:#138496;' href=\"https://conjuntoid012.somee.com/Login.aspx?ReturnUrl=%2fPropietario%2fHome.aspx\"><u><strong>Link de la Aplicacion</strong></u></a>";
+                    Servicios.Email email1 = new Servicios.Email(lblemail1.Text, txtcodigo.Text, mensaje1, asunto, conjunto);
+                }
+                if (lblemail2.Text != "")
+                {
+                    string asunto1 = "Asunto llamado de Atencion";
+                    string mensaje2 = "Tiene un llamado de atención en la aplicación de su Conjunto Residencial. <a style='color:#138496;' href=\"https://conjuntoid012.somee.com/Login.aspx?ReturnUrl=%2fPropietario%2fHome.aspx\"><u><strong>Link de la Aplicacion</strong></u></a>";
+                    Servicios.Email email2 = new Servicios.Email(lblemail2.Text, txtcodigo1.Text, mensaje2, asunto1, conjunto);
+                }
                 Response.Redirect("TramitePQR.aspx");
             }
             else

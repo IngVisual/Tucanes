@@ -338,7 +338,7 @@ namespace IngenieriaVisualPH.Propietario
                 //chip._IdRec = idestado;
                 imag.IdChip = applicationid2;
                 mapeochip.RegistroChipSinRecibo(chip, imag);
-                error3.Style.Add("display", "block");
+                Response.Redirect("ProTabResChip.aspx");
             }
             else
             {

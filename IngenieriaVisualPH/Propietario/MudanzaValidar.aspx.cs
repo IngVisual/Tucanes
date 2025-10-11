@@ -11,7 +11,7 @@ namespace IngenieriaVisualPH.Propietario
     {
         private int codigo;
         private string Msg;
-        private int dia = 3;
+        private int dia = 2;
         private bool validacion;
         Datos.MapeoMudanzas mud = new Datos.MapeoMudanzas();
         protected void Page_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace IngenieriaVisualPH.Propietario
             }
             else
             {
-                lblMessage.Text = "Seleccione otra fecha, Su solicitud se debe realizar con " + dia + " días de anticipación a la fecha de la Mudanza. De lo contrario comuníquese con " + " ADMINISTRACION en los horarios de atención para que validen su solicitud.";
+                lblMessage.Text = "Seleccione otra fecha, Su solicitud se debe realizar con 3 días de anticipación a la fecha de la Mudanza. De lo contrario comuníquese con " + " ADMINISTRACION en los horarios de atención para que validen su solicitud.";
                 lblMessage.Visible = true;
             }
         }

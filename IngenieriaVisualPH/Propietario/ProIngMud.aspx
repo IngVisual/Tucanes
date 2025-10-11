@@ -28,6 +28,10 @@
         };
     </script>
     <script>
+        function cerrarVideo() {
+            var video = document.getElementById("miVideo");
+            video.pause();
+        }
         function pregunta1SI() {
             document.getElementById("pregunta1").style.display = "none";
             document.getElementById("form1").style.display = "block";
@@ -107,6 +111,32 @@
     </div>
     <div class="container" id="conta">
         <h3 class="text-center textocolorinfo font-weight-bold">Ingreso de Mudanza Completa</h3>
+        <br />
+        <i class="fa fa-hand-o-right font-weight-bold"></i>
+        <button type="button" class="btn btn-primary rounded" data-toggle="modal" data-target="#videoModal">
+            Ver Video Ayuda
+        </button>
+        <br />
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="videoModalLabel">Play para iniciar</h5>
+                        <button type="button" onclick="cerrarVideo()" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <video id="miVideo" width="100%" controls>
+                            <source src="../Diseño/videos/docmudanza.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="cerrarModalBtn" onclick="cerrarVideo()" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <td colspan="2">
             <asp:Label ID="lblMessage3" runat="server" Font-Bold="True" CssClass="form-control alert alert-danger" Visible="False"></asp:Label>
         </td>
@@ -130,13 +160,14 @@
                 </div>
             </div>
             <div id="pregunta1">
-                 <strong class="card-title textocolorinfo font-weight-bold">¿Tienes listos los siguientes documentos para adjuntar o tomarles foto? </strong>
+                <strong class="card-title textocolorinfo font-weight-bold">¿Tienes listos los siguientes documentos para adjuntar? </strong>
                 <p></p>
                 <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">NUMERO DE CELULAR INQUILINO NUEVO</i></p>
                 <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">NOMBRES COMPLETOS DE LAS PERSONAS QUE VAN HABITAR EL PREDIO</i></p>
-                <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">FOTO DE LA CEDULA DEL PROPIETARIO  <asp:Label ID="lblpro" runat="server" Font-Bold="true" CssClass="textocolorinfo" Text=""></asp:Label> en Formato Imagen png, jpg, jpeg, foto directa o captura de pantalla </i></p>
-                 <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">UN SOLO PDF con los siguientes documentos de las personas que van habitar el predio: </i></p>
-               
+                DOCUMENTOS:
+                <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">1. -FOTO DE LA CEDULA DEL PROPIETARIO  <asp:Label ID="lblpro" runat="server" Font-Bold="true" CssClass="textocolorinfo" Text=""></asp:Label> en Formato Imagen png, jpg, jpeg, foto directa o captura de pantalla </i></p>
+                <p class="card-title textocolorinfo font-weight-bold"><i class="fa fa-hand-o-right">2. -UN SOLO PDF con los siguientes documentos de las personas que van habitar el predio: </i></p>
+
                 <div class="alert alert-danger" id="error1" runat="server" style="margin-top: 10px;">
                     <span class="badge badge-pill badge-danger">Leer con Atención (PDF)</span>
                     <p></p>

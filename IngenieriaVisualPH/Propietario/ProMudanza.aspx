@@ -2,11 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="server">
 <link href="../Diseño/Color.css" rel="stylesheet" />
     <div class="container">
-        <div class="card-body">
-            <div class="card-title">
-                <h3 class="text-center textocolorinfo font-weight-bold">Solicitudes de Mudanzas, Articulos o Articulos de Construcción</h3>
-            </div>
-        </div>
         <form id="form1" runat="server">
              <asp:label ID="date2" runat="server" visible="false"></asp:label>
             <div class="col-lg-4 col-md-6">
@@ -41,7 +36,7 @@
                             </li></asp:LinkButton>
                                <br />
                               <asp:LinkButton ID="link5" runat="server" OnClick="link5_Click"><li class="list-group-item">
-                               <i class="fa fa-mail-forward"></i>Solicitud-Ingreso Materiales de Construcción<span class="badge badge-info pull-right r-activity">> Realizar Solicitud</span>
+                               <i class="fa fa-mail-forward"></i>Solicitud-Ingreso de Material y Personal de Construccion<span class="badge badge-info pull-right r-activity">> Realizar Solicitud</span>
                             </li></asp:LinkButton>
                                <br />
                         </ul>

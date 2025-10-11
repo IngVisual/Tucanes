@@ -40,7 +40,7 @@ namespace IngenieriaVisualPH.Propietario
                 lblfechasol.Text = dr["FechaSol"].ToString();
                 lblresp.Text = dr["Respuesta"].ToString();
                 lblfechres.Text = dr["FechaRes"].ToString();
-                fecha = Convert.ToDateTime(dr["Fecha"].ToString());
+                fecha = (dr["Fecha"] != DBNull.Value) ? Convert.ToDateTime(dr["Fecha"].ToString()) : DateTime.MinValue;
                 lblobserv.Text = dr["Observacion"].ToString();
                 lblfechapag.Text = dr["FechaPago"].ToString();
                 lblnombre.Text = dr["Nombre"].ToString();

@@ -75,7 +75,7 @@
                                     <h5 class="stat-text text-success">Fecha: &nbsp
                                                     <asp:Label ID="label1" runat="server" CssClass="text-secondary font-weight-bold"><%#Eval("FechaInicio","{0:d}") %></asp:Label></h5>
                                     <p></p>
-                                    <h5 class="stat-text text-success">Describción de la queja:&nbsp
+                                    <h5 class="stat-text text-success">Descripción de la queja:&nbsp
                                                     <asp:Label ID="label4" runat="server" CssClass="text-secondary font-weight-bold"><%#Eval("DescripcionPQR") %></asp:Label></h5>
                                     <h5 class="stat-text text-success">Observacion de Administracion:&nbsp
                                                     <asp:Label ID="label6" runat="server" CssClass="text-secondary font-weight-bold"><%#Eval("Respuesta") %></asp:Label></h5>

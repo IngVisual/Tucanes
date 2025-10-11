@@ -12,7 +12,7 @@ namespace Datos
     {
         private Conexion acceso = new Conexion();
         //Registrar tabla de ciclas
-        public void RegistroCicla(Modelo.EntidadBicicleta usuario)
+        public void RegistroCicla(Modelo.EntidadBicicleta usuario, Modelo.EntidadImagenes imagen)
         {
             List<SqlParameter> parameter = new List<SqlParameter>();
             parameter.Add(acceso.CrearParametro("@Codigo", usuario.Codigo));
@@ -21,6 +21,15 @@ namespace Datos
             parameter.Add(acceso.CrearParametro("@Tipo", usuario.Tipo));
             parameter.Add(acceso.CrearParametro("@Color", usuario.Color));
             parameter.Add(acceso.CrearParametro("@Persona", usuario.Persona));
+            parameter.Add(acceso.CrearParametro("@TipoSolicitante", usuario.TipoSolicitante));
+            parameter.Add(acceso.CrearParametro("@Serie", usuario.Serie));
+            parameter.Add(acceso.CrearParametro("@Nombre", usuario.Nombre));
+            parameter.Add(acceso.CrearParametro("@Respuesta", usuario.Respuesta));
+            parameter.Add(acceso.CrearParametro("@IdBicicleta", imagen.IdBicicleta));
+            parameter.Add(acceso.CrearParametro("@cc", imagen.cc));
+            parameter.Add(acceso.CrearParametro("@tp", imagen.tp));
+            parameter.Add(acceso.CrearParametro("@bicifoto", imagen.bicifoto));
+            parameter.Add(acceso.CrearParametro("@firmaBici", imagen.firmaBici));
             acceso.GuardarDatos("spcargar_Cicla", parameter);
         }
         //Mostrar Cicla
@@ -32,11 +41,63 @@ namespace Datos
             return dt;
         }
 
+        //Mostrar Cicla
+        public DataTable MostrarCiclaSolcitud(Modelo.EntidadUsuario Usuario)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(acceso.CrearParametro("@Codigo", Usuario.Codigo));
+            DataTable dt = acceso.Leer("MostrarSolBicicleta", parameters);
+            return dt;
+        }
+
+        public DataTable Mostrar_UnaSolBici(Modelo.EntidadBicicleta usuario)
+        {
+            List<SqlParameter> parameter = new List<SqlParameter>();
+            parameter.Add(acceso.CrearParametro("@Codigo", usuario.Codigo));
+            parameter.Add(acceso.CrearParametro("@Id", usuario.Id));
+            DataTable dt = acceso.Leer("Mostrar_UnaSolBici", parameter);
+            return dt;
+        }
+
+        public DataTable Mostrar_UnaSolBicicodigo(Modelo.EntidadBicicleta usuario)
+        {
+            List<SqlParameter> parameter = new List<SqlParameter>();
+            parameter.Add(acceso.CrearParametro("@Codigo", usuario.Codigo));
+            DataTable dt = acceso.Leer("sp_MostrarUnSolBiciCodigo", parameter);
+            return dt;
+        }
+        //mostrar tabla completa
+        public DataTable MostrarbiciTabla()
+        {
+            DataTable dt = acceso.Leer("sp_MostrarbiciTabla", null);
+            return dt;
+        }
+        public DataTable MostrarUnSolbiciID(Modelo.EntidadBicicleta usuario)
+        {
+            List<SqlParameter> parameter = new List<SqlParameter>();
+            parameter.Add(acceso.CrearParametro("@Id", usuario.Id));
+            DataTable dt = acceso.Leer("sp_MostrarUnSolbiciID", parameter);
+            return dt;
+        }
+
+        public DataTable ActualizarSolbici(Modelo.EntidadBicicleta usuario)
+        {
+            List<SqlParameter> parameter = new List<SqlParameter>();
+            parameter.Add(acceso.CrearParametro("@Id", usuario.Id));
+            parameter.Add(acceso.CrearParametro("@Respuesta", usuario.Respuesta));
+            parameter.Add(acceso.CrearParametro("@FechaRespuesta", usuario.FechaRespuesta));
+            parameter.Add(acceso.CrearParametro("@Estado", usuario.Estado));
+            parameter.Add(acceso.CrearParametro("@ObservacionAdm", usuario.ObservacionAdm));
+            parameter.Add(acceso.CrearParametro("@IdCorreo", usuario.IdCorreo));
+            DataTable dt = acceso.Leer("ActualizarBicicleta", parameter);
+            return dt;
+        }
+
         //Registrar visitas
         public void RegistroVisita(Modelo.EntidadVisitantes usuario)
         {
             List<SqlParameter> parameter = new List<SqlParameter>();
-            parameter.Add(acceso.CrearParametro("@Codigo", usuario.Codigo));    
+            parameter.Add(acceso.CrearParametro("@Codigo", usuario.Codigo));
             parameter.Add(acceso.CrearParametro("@PlacaVehiculo", usuario.PlacaVehiculo));
             parameter.Add(acceso.CrearParametro("@Vehiculo", usuario.Vehiculo));
             parameter.Add(acceso.CrearParametro("@FechaPro", usuario.FechaPro));
@@ -122,7 +183,6 @@ namespace Datos
         {
             DataTable dt = acceso.Leer("sp_MostrarArrien", null);
             return dt;
-        }
-
-    }
+        }    
+}
 }

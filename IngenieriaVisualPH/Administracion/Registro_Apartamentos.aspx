@@ -1,23 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administracion/Administracion.Master" AutoEventWireup="true" CodeBehind="Registro_Apartamentos.aspx.cs" Inherits="IngenieriaVisualPH.Administracion.Formulario_web11" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="c1" runat="server">
-     <style>
+ <style>
         body {
             background: rgb(249,244,242);
             background: linear-gradient(90deg, rgba(249,244,242,1) 0%, rgba(22,27,38,0.8267682072829132) 50%);
         }
      </style>
+        <style>
+        .linea-horizontal {
+  border: none; /* Elimina el borde predeterminado */
+  border-top: 2px solid gray; /* Establece el grosor y el color de la línea */
+  margin: 20px 0; /* Agrega espacio superior e inferior a la línea */
+}
+    </style>
     <link href="../Diseño/Banner.css" rel="stylesheet" />
     <link href="../Diseño/Video.css" rel="stylesheet" />
     <script>
         function DesactivarBoton() {
-             document.getElementById("conta").style.display = "none"
+            document.getElementById("conta").style.display = "none"
             document.getElementById("procesando").style.display = "block"
         }
         window.onbeforeunload = DesactivarBoton;
 
         function ShowVideo() {
-           document.getElementById("conta").style.display = "none"
-           document.getElementById("procesando").style.display = "none"
+            document.getElementById("conta").style.display = "none"
+            document.getElementById("procesando").style.display = "none"
         }
         function CloseVideo() {
             document.getElementById("conta").style.display = "block"
@@ -51,9 +58,9 @@
         <div class="alert alert-danger" id="div1" runat="server" style="margin-top: 10px; display: none">
             <span class="badge badge-pill badge-danger">Error</span>
             Ingrese un Codigo
-                                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                  <span aria-hidden="true">&times;</span>
-                                              </button>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <section class="content">
             <div class="row">
@@ -88,7 +95,7 @@
                                             <asp:Label ID="lblingresos" runat="server"></asp:Label></span>
                                     </div>
 
-                                    <small class="text-muted text-uppercase font-weight-bold">INGERSOS A LA APP</small>
+                                    <small class="text-muted text-uppercase font-weight-bold">INGRESOS A LA APP</small>
                                     <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 40%; height: 5px;"></div>
                                 </div>
                             </div>
@@ -166,47 +173,51 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="twt-write col-sm-12">
-                                        <h4 class="font-weight-bold text-success"><i class="fa fa-user">Propietario:&nbsp;</i><asp:Label ID="lblnombre" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></h4>
-                                        <h4 class="font-weight-bold text-success"><i class="fa fa-envelope">Correo:&nbsp;</i><asp:Label ID="lblcorreo" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></h4>
+                                    <div class="col-sm-12">
+                                        <small class="font-weight-bold textocolorinfo "><i class="fa fa-user">Propietario:&nbsp;</i><asp:Label ID="lblnombre" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
+                                        <small class="font-weight-bold textocolorinfo"><i class="fa fa-envelope">Correo:&nbsp;</i><asp:Label ID="lblcorreo" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
                                         <div class="row" style="margin-left: 1px">
-                                            <h4 class="font-weight-bold text-success"><i class="fa fa-building">Estado:&nbsp;</i><asp:Label ID="lblestado" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></h4>
+                                            <small class="font-weight-bold textocolorinfo"><i class="fa fa-building">Estado:&nbsp;</i><asp:Label ID="lblestado" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
                                             &nbsp;&nbsp;&nbsp;
-                      <h4 class="font-weight-bold text-success"><i class="fa fa-phone">Citofonia Arrendado:&nbsp;</i><asp:Label ID="lbltelarre" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></h4>
+                      <small class="font-weight-bold textocolorinfo"><i class="fa fa-phone">Citofonia Arrendado:&nbsp;</i><asp:Label ID="lbltelarre" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
                                         </div>
                                         <div class="row" style="margin-left: 1px">
-                                            <h4 class="font-weight-bold text-success"><i class="fa fa-phone">Citofonia Propietario:&nbsp;</i><asp:Label ID="lbltelpro1" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></h4>
+                                            <small class="font-weight-bold textocolorinfo"><i class="fa fa-phone">Citofonia Propietario:&nbsp;</i><asp:Label ID="lbltelpro1" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
                                             &nbsp;&nbsp;&nbsp;
-                      <h4 class="font-weight-bold text-success"><i class="fa fa-phone">&nbsp;</i><asp:Label ID="lbltelpro2" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></h4>
+                            <small class="font-weight-bold textocolorinfo"><i class="fa fa-phone">&nbsp;</i><asp:Label ID="lbltelpro2" Font-Size="Small" CssClass="font-weight-bold text-secondary" runat="server"></asp:Label></small>
+                                        </div>
+                                        <hr class="linea-horizontal">
+                                        <div class="row" style="left: 1px">
+                                            <asp:Repeater ID="r8" runat="server">
+                                                <ItemTemplate>
+                                                    <small class="font-weight-bold textocolorinfo" style="margin-left: 20px"><i class="fa fa-car">Informacion Parqueaderos:&nbsp;</i>
+                                                        &nbsp;&nbsp;#Parqueadero:&nbsp;<asp:Label ID="label53" CssClass="text-secondary font-weight-bold" runat="server"><%#Eval("Parqueadero") %></asp:Label>
+                                                        &nbsp;&nbsp;Placas:&nbsp<asp:Label ID="label1" CssClass="text-secondary font-weight-bold" runat="server"><%#Eval("PlacaVehiculo1") %></asp:Label>
+                                                        <asp:Label ID="label2" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("PlacaVehiculo2") %></asp:Label>
+                                                        <asp:Label ID="label3" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("PlacaVehiculo3") %></asp:Label>
+                                                        <asp:Label ID="label4" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("PlacaVehiculo4") %></asp:Label>
+                                                        &nbsp;&nbsp;Observaciones:&nbsp<asp:Label ID="label5" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("Obseravacion") %></asp:Label>
+                                                    </small>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </div>
+                                        <hr class="linea-horizontal">
+                                        <div class="row" style="left: 1px">
+                                            <asp:Repeater ID="r9" runat="server">
+                                                <ItemTemplate>
+                                                    <small class="font-weight-bold textocolorinfo" style="margin-left: 20px"><i class="fa fa-bicycle">Informacion Bicicletero:&nbsp;</i>
+                                                        &nbsp;&nbsp;Numero: &nbsp<asp:Label ID="label53" CssClass="text-secondary" runat="server"><%#Eval("ObservacionAdm") %></asp:Label>
+                                                        &nbsp;&nbsp;Solicitante: &nbsp<asp:Label ID="label17" CssClass="text-secondary" runat="server"><%#Eval("TipoSolicitante") %></asp:Label>
+                                                        &nbsp;&nbsp;Asignado a: &nbsp<asp:Label ID="label18" CssClass="text-secondary " runat="server"><%#Eval("Nombre") %></asp:Label>
+                                                        &nbsp;&nbsp;Marca: &nbsp<asp:Label ID="label1" CssClass="text-secondary " runat="server"><%#Eval("Marca") %></asp:Label>
+                                                        &nbsp;&nbsp;Tipo: &nbsp<asp:Label ID="label2" CssClass="text-secondary " runat="server"><%#Eval("Tipo") %></asp:Label>
+                                                        &nbsp;&nbsp;Color: &nbsp<asp:Label ID="label3" CssClass="text-secondary " runat="server"><%#Eval("Color") %></asp:Label>
+                                                    </small>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
                                         </div>
                                     </div>
-                                    <div>
 
-                                    </div>
-                                    <asp:Repeater ID="r8" runat="server">
-                                        <ItemTemplate>
-                                                <h4 class="font-weight-bold text-success" style="margin-left:20px"><i class="fa fa-car">Informacion Parqueaderos:&nbsp;</i>
-                                                 &nbsp;&nbsp;#:&nbsp;<asp:Label ID="label53" CssClass="text-secondary font-weight-bold" runat="server"><%#Eval("Parqueadero") %></asp:Label>
-                                                 &nbsp;&nbsp;Placas:&nbsp<asp:Label ID="label1" CssClass="text-secondary font-weight-bold" runat="server"><%#Eval("PlacaVehiculo1") %></asp:Label>
-                                                 <asp:Label ID="label2" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("PlacaVehiculo2") %></asp:Label>
-                                                 <asp:Label ID="label3" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("PlacaVehiculo3") %></asp:Label>
-                                                 <asp:Label ID="label4" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("PlacaVehiculo4") %></asp:Label>
-                                                 <asp:Label ID="label5" CssClass="text-secondary font-weight-bold" runat="server">&nbsp;&nbsp;<%#Eval("Obseravacion") %></asp:Label>
-                                             </h4>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                                 <asp:Repeater ID="r9" runat="server">
-                                        <ItemTemplate>
-                                                <h4 class="font-weight-bold text-success" style="margin-left:20px"><i class="fa fa-bicycle">Informacion Bicicletas:&nbsp;</i>
-                                                 Marca:&nbsp;<asp:Label ID="label63" CssClass="text-secondary font-weight-bold"  runat="server"><%#Eval("Marca") %></asp:Label>
-                                                 Color:&nbsp;<asp:Label ID="label41" CssClass="text-secondary font-weight-bold"  runat="server"><%#Eval("Color") %></asp:Label>
-                                                 Tipo:&nbsp;<asp:Label ID="label42" CssClass="text-secondary font-weight-bold" runat="server"><%#Eval("Tipo") %></asp:Label>
-                                                 Tamaño:&nbsp;<asp:Label ID="label43" CssClass="text-secondary font-weight-bold" runat="server"><%#Eval("Persona") %></asp:Label>
-                                             </h4> 
-                                              
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                                    <p></p>
                                <asp:Repeater ID="r10" Visible="false" runat="server">
                                         <ItemTemplate>
                                       &nbsp;&nbsp;<footer class="font-weight-bold text-danger">
@@ -223,6 +234,20 @@
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-4">
+                     <div class="col-lg-6 col-lg-12">
+                        <div class="card" style="border-radius: 7px">
+                            <div class="card-body">
+                                <h6 class="font-weight-bold">Ultimos 3 Ingresos a la App</h6>
+                                <div>
+                                          <asp:Repeater ID="R1registro" runat="server">
+                                               <ItemTemplate>
+                                              <h6 class="text-success"><%#Eval("FechaIngreso","{0:dd/MM/yyyy hh:mm tt}") %></h6>   
+                                               </ItemTemplate>
+                                          </asp:Repeater>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-6 col-lg-12">
                         <div class="card" style="border-radius: 7px">
                             <div class="card-body">
@@ -300,7 +325,7 @@
                                                       <td><a href="VerPQR.aspx?Id=<%#Eval("Id")%>">
                                                           <button class="btn btn-danger font-weight-bold" type="button" style="border-radius: 5px" title="Actualizar"><i class="fa fa-edit">&nbsp;Editar</i></button>
                                                       </a></td>
-                                                      <td><%#Eval("FechaInicio","{0:d}") %></td>
+                                                      <td><%#Eval("FechaInicio","{0:dd/MM/yyyy}") %></td>
                                                       <td>
                                                           <small class="text-secondary"><i class="fa fa-dot-circle-o">&nbsp;<%#Eval("Tipo") %></i></small>
                                                       </td>
@@ -354,7 +379,7 @@
                                                     <td><a href="VerPQR.aspx?Id=<%#Eval("Id")%>">
                                                         <button class="btn btn-danger font-weight-bold" type="button" style="border-radius: 5px" title="Actualizar"><i class="fa fa-edit">&nbsp;Editar</i></button>
                                                     </a></td>
-                                                    <td><%#Eval("FechaInicio","{0:d}") %></td>
+                                                    <td><%#Eval("FechaInicio","{0:dd/MM/yyyy}") %></td>
                                                     <td>
                                                         <small class="text-secondary"><i class="fa fa-dot-circle-o">&nbsp;<%#Eval("Tipo") %></i></small>
                                                     </td>
@@ -412,16 +437,16 @@
                                                     <td><a href="VerMudanza.aspx?Id=<%#Eval("Id")%>">
                                                         <button class="btn btn-danger font-weight-bold" type="button" style="border-radius: 5px" title="Actualizar"><i class="fa fa-edit">&nbsp;Editar</i></button>
                                                     </a></td>
-                                                    <td><%#Eval("FechaSol","{0:d}") %></td>
+                                                    <td><%#Eval("FechaSol","{0:dd/MM/yyyy}") %></td>
                                                     <td>
                                                         <small class="text-secondary"><i class="fa fa-dot-circle-o">&nbsp;<%#Eval("Tipo") %></i></small>
                                                     </td>
                                                     <td>
                                                         <small class="text-success"><%#Eval("Estado") %></i></small></td>
                                                     <td>
-                                                        <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("FechaIniMud","{0:d}") %></i></small></td>
+                                                        <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("FechaIniMud","{0:dd/MM/yyyy}") %></i></small></td>
                                                     <td>
-                                                        <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("FechaFinMud","{0:d}") %></i></small></td>
+                                                        <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("FechaFinMud","{0:dd/MM/yyyy}") %></i></small></td>
                                                     <td>
                                                         <small><%#Eval("Observacion") %></small></td>
                                                     <td>
@@ -447,7 +472,7 @@
                         <div class="col-md-12">
                             <div class="card" style="border-radius: 7px">
                                 <div class="card-header">
-                                    <strong class="card-title">SALON COMUNAL</strong>
+                                    <strong class="card-title">SALON SOCIAL</strong>
                                 </div>
                                 <div class="card-body">
                                     <table class="table">
@@ -473,16 +498,16 @@
                                                     <td><a href="VerSC.aspx?Id=<%#Eval("Id")%>">
                                                         <button class="btn btn-danger font-weight-bold" type="button" style="border-radius: 5px" title="Actualizar"><i class="fa fa-edit">&nbsp;Editar</i></button>
                                                     </a></td>
-                                                    <td><%#Eval("FechaSol","{0:d}") %></td>
+                                                    <td><%#Eval("FechaSol","{0:dd/MM/yyyy}") %></td>
                                                     <td>
                                                         <small class="text-secondary"><i class="fa fa-dot-circle-o">&nbsp;<%#Eval("SalCom") %></i></small>
                                                     </td>
                                                     <td>
                                                         <small class="text-success"><%#Eval("Estado") %></i></small></td>
                                                     <td>
-                                                        <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("Fecha","{0:d}") %></i></small></td>
+                                                        <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("Fecha","{0:dd/MM/yyyy}") %></i></small></td>
                                                     <td>
-                                                        <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("FechaPago") %></i></small></td>
+                                                        <small class="text-danger"><i class="fa fa-calendar">&nbsp;<%#Eval("FechaPago","{0:dd/MM/yyyy}") %></i></small></td>
                                                     <td>
                                                         <small class="text-primary"><i class="fa fa-user"><%#Eval("Nombre") %></small></td>
                                                     <td>
@@ -529,7 +554,7 @@
                                                     <td><a href="VerNovedad.aspx?Id=<%#Eval("Id")%>">
                                                         <button class="btn btn-danger font-weight-bold" type="button" style="border-radius: 5px" title="Actualizar"><i class="fa fa-edit">&nbsp;Editar</i></button>
                                                     </a></td>
-                                                    <td><%#Eval("Fecha","{0:d}") %></td>
+                                                    <td><%#Eval("Fecha","{0:dd/MM/yyyy}") %></td>
                                                     <td>
                                                         <small class="text-success"><%#Eval("Estado") %></i></small></td>
                                                     <td>
@@ -579,7 +604,7 @@
                                                     <td><a href="VerDocumento.aspx?Id=<%#Eval("Id")%>">
                                                         <button class="btn btn-danger font-weight-bold" type="button" style="border-radius: 5px" title="Actualizar"><i class="fa fa-edit">&nbsp;Editar</i></button>
                                                     </a></td>
-                                                    <td><%#Eval("Fecha","{0:d}") %></td>
+                                                    <td><%#Eval("Fecha","{0:dd/MM/yyyy}") %></td>
                                                     <td>
                                                         <small class="text-success"><%#Eval("Estado") %></i></small></td>
                                                     <td>
@@ -637,7 +662,7 @@
                                                       <td><a href="VerChip.aspx?Id=<%#Eval("Id")%>">
                                                           <button class="btn btn-danger font-weight-bold" type="button" style="border-radius: 5px" title="Actualizar"><i class="fa fa-edit">&nbsp;Editar</i></button>
                                                       </a></td>
-                                                      <td><%#Eval("Fecha","{0:d}") %></td>
+                                                      <td><%#Eval("Fecha","{0:dd/MM/yyyy}") %></td>
                                                       <td>
                                                           <small class="text-success"><%#Eval("Estado") %></i></small></td>
                                                       <td>
@@ -654,6 +679,116 @@
                                                           <small><%#Eval("Respuesta") %></small></td>
                                                       <td>
                                                           <img class="card-img-top" src="../Chip/Documento/<%#Eval("DocIdent") %>" style="border-radius: 5px" width="40" height="60" alt="Card image cap"></td>
+                                                  </tr>
+                                              </ItemTemplate>
+                                          </asp:Repeater>
+                                              </table>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- .animated -->
+          </section>
+           <section id="tabbici" >
+              <div class="content mt-3">
+                  <div class="animated fadeIn">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="card" style="border-radius: 7px">
+                                  <div class="card-header">
+                                      <strong class="card-title">SOLICITUDES DE BICICLETERO</strong>
+                                  </div>
+                                  <div class="card-body">
+                                      <table class="table">
+                                          <asp:Repeater ID="rcicla" runat="server">
+                                              <HeaderTemplate>
+                                                  <thead class="thead-dark" style="border-radius: 5px">
+                                                      <tr>
+                                                          <th>Editar</th>
+                                                          <th>Fecha Solicitud</th>
+                                                          <th>Estado</th>
+                                                          <th>Tipo</th>
+                                                          <th>Marca:</th>
+                                                          <th>Solicitante</th>
+                                                          <th>Respuesta</th>
+                                                          <th>Foto Cicla</th>
+                                                      </tr>
+                                                  </thead>
+                                              </HeaderTemplate>
+                                              <ItemTemplate>
+                                                  <tr>
+                                                      <td><a href="VerBicicleta.aspx?Id=<%#Eval("Id")%>">
+                                                          <button class="btn btn-danger font-weight-bold" type="button" style="border-radius: 5px" title="Actualizar"><i class="fa fa-edit">&nbsp;Editar</i></button>
+                                                      </a></td>
+                                                      <td><%#Eval("Fecha","{0:dd/MM/yyyy}") %></td>
+                                                      <td>
+                                                          <small class="text-success"><%#Eval("Estado") %></i></small></td>
+                                                      <td>
+                                                          <small class="text-primary"><i class="fa fa-dot-circle-o">&nbsp;<%#Eval("Tipo") %></i></small></td>
+                                                      <td>
+                                                          <small class="text-danger"><i class="fa fa-user">&nbsp;<%#Eval("Marca") %></i></small></td>
+                                                      <td>
+                                                          <small class="text-danger"><i class="fa fa-user">&nbsp;<%#Eval("TipoSolicitante") %></i></small></td>
+                                                      <td>
+                                                          <small><%#Eval("Respuesta") %></small></td>
+                                                      <td>
+                                                          <img class="card-img-top" src="../SC/Bicicleta/bicifoto/<%#Eval("bicifoto") %>" style="border-radius: 5px" width="40" height="60" alt="Card image cap"></td>
+                                                  </tr>
+                                              </ItemTemplate>
+                                          </asp:Repeater>
+                                              </table>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- .animated -->
+          </section>
+            <section id="tabmasco" >
+              <div class="content mt-3">
+                  <div class="animated fadeIn">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="card" style="border-radius: 7px">
+                                  <div class="card-header">
+                                      <strong class="card-title">REGISTROS DE MASCOTAS</strong>
+                                  </div>
+                                  <div class="card-body">
+                                      <table class="table">
+                                          <asp:Repeater ID="rmascota" runat="server">
+                                              <HeaderTemplate>
+                                                  <thead class="thead-dark" style="border-radius: 5px">
+                                                      <tr>
+                                                          <th>Editar</th>
+                                                          <th>Estado</th>
+                                                          <th>Raza</th>
+                                                          <th>Especie</th>
+                                                          <th>Nombre</th>
+                                                          <th>Carnet</th>
+                                                          <th>Foto Mascota</th>
+                                                      </tr>
+                                                  </thead>
+                                              </HeaderTemplate>
+                                              <ItemTemplate>
+                                                  <tr>
+                                                      <td><a href="VerMascota.aspx?Id=<%#Eval("Id")%>">
+                                                          <button class="btn btn-danger font-weight-bold" type="button" style="border-radius: 5px" title="Actualizar"><i class="fa fa-edit">&nbsp;Editar</i></button>
+                                                      </a></td>
+                                                      <td>
+                                                          <small class="text-success"><%#Eval("Estado") %></i></small></td>
+                                                      <td>
+                                                          <small class="text-danger"><i class="fa fa-dot-circle-o">&nbsp;<%#Eval("Raza") %></i></small></td>
+                                                      <td>
+                                                          <small class="text-danger"><i class="fa fa-dot-circle-o">&nbsp;<%#Eval("Especie") %></i></small></td>
+                                                      <td>
+                                                          <small class="text-danger"><i class="fa fa-dot-circle-o">&nbsp;<%#Eval("Nombre") %></i></small></td>
+                                                      <td>
+                                                          <img class="card-img-top" src="../SC/Mascota/Carnet/<%#Eval("Carnet") %>" style="border-radius: 5px" width="40" height="60" alt="Card image cap"></td>
+                                                       <td>
+                                                          <img class="card-img-top" src="../SC/Mascota/FotoMascota/<%#Eval("FotoMascota") %>" style="border-radius: 5px" width="40" height="60" alt="Card image cap"></td>
                                                   </tr>
                                               </ItemTemplate>
                                           </asp:Repeater>

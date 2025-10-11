@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace IngenieriaVisualPH.Propietario {
-    
-    
-    public partial class Formulario_web1 {
-        
+namespace IngenieriaVisualPH.Propietario
+{
+
+
+    public partial class Formulario_web1
+    {
+
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Control lbleditar.
         /// </summary>
@@ -29,7 +31,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbleditar;
-        
+
         /// <summary>
         /// Control Label12.
         /// </summary>
@@ -38,7 +40,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label12;
-        
+
         /// <summary>
         /// Control lblnombre.
         /// </summary>
@@ -47,7 +49,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblnombre;
-        
+
         /// <summary>
         /// Control lblcorreo.
         /// </summary>
@@ -56,7 +58,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblcorreo;
-        
+
         /// <summary>
         /// Control lblestado.
         /// </summary>
@@ -65,7 +67,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblestado;
-        
+
         /// <summary>
         /// Control lbltelarre.
         /// </summary>
@@ -74,7 +76,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbltelarre;
-        
+
         /// <summary>
         /// Control lbltelpro1.
         /// </summary>
@@ -83,7 +85,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbltelpro1;
-        
+
         /// <summary>
         /// Control lbltelpro2.
         /// </summary>
@@ -92,7 +94,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbltelpro2;
-        
+
         /// <summary>
         /// Control r8.
         /// </summary>
@@ -101,7 +103,16 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater r8;
-        
+
+        /// <summary>
+        /// Control r9.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater r9;
+
         /// <summary>
         /// Control r2.
         /// </summary>
@@ -110,7 +121,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater r2;
-        
+
         /// <summary>
         /// Control Label1.
         /// </summary>
@@ -119,7 +130,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// Control Label2.
         /// </summary>
@@ -128,7 +139,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// Control Label3.
         /// </summary>
@@ -137,7 +148,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// Control Label13.
         /// </summary>
@@ -146,7 +157,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label13;
-        
+
         /// <summary>
         /// Control Label4.
         /// </summary>
@@ -155,7 +166,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// Control Label5.
         /// </summary>
@@ -164,7 +175,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-        
+
         /// <summary>
         /// Control Label6.
         /// </summary>
@@ -173,7 +184,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
-        
+
         /// <summary>
         /// Control Label7.
         /// </summary>
@@ -182,7 +193,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-        
+
         /// <summary>
         /// Control Label8.
         /// </summary>
@@ -191,7 +202,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-        
+
         /// <summary>
         /// Control Label9.
         /// </summary>
@@ -200,7 +211,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-        
+
         /// <summary>
         /// Control Label10.
         /// </summary>
@@ -209,7 +220,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label10;
-        
+
         /// <summary>
         /// Control Label11.
         /// </summary>
@@ -218,7 +229,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label11;
-        
+
         /// <summary>
         /// Control Label14.
         /// </summary>
@@ -227,7 +238,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label14;
-        
+
         /// <summary>
         /// Control Label15.
         /// </summary>
@@ -236,7 +247,7 @@ namespace IngenieriaVisualPH.Propietario {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label15;
-        
+
         /// <summary>
         /// Control Label16.
         /// </summary>

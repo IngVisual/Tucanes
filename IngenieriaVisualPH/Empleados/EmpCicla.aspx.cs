@@ -21,11 +21,12 @@ namespace IngenieriaVisualPH.Empleados
         protected void Button2_Click(object sender, EventArgs e)
         {
             try
-            { 
-            usuario.Codigo = int.Parse(txtbuscar.Text);
-            DataTable dt = mapeo.MostrarCicla(usuario);
-            r1.DataSource = dt;
-            r1.DataBind();
+            {
+                usuario.Codigo = int.Parse(txtbuscar.Text);
+                DataTable dt = mapeo.Mostrar_UnaSolBicicodigo(usuario);
+                var result = dt.AsEnumerable().Where(myRow => myRow.Field<string>("Estado") == "Autorizado").AsDataView();
+                r1.DataSource = result;
+                r1.DataBind();
             }
             catch (Exception)
             {

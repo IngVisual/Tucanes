@@ -93,8 +93,6 @@ namespace IngenieriaVisualPH.Propietario
                 if(lbltp.Text!=txttarjeta.Text)
                 {
                     mapeoparq.GuardarDatosParque(vehiculo, imag);
-                    MostrarEmail();
-                    Servicios.Email email = new Servicios.Email(Email, StrCodigo, lblmsg.Text, asunto, conjunto);
                     Response.Redirect("ProTabResPar.aspx");
                 }
                 else
@@ -294,17 +292,7 @@ namespace IngenieriaVisualPH.Propietario
                 applicationid = id + 1;
             }
         }
-        public void MostrarEmail()
-        {
-            Datos.MapeoUsuarios mapeoEmail = new Datos.MapeoUsuarios();
-            Modelo.EntidadUsuario usuario = new Modelo.EntidadUsuario();
-            usuario.Codigo = codigo;
-            DataTable dt= mapeoEmail.LeerUsuario(usuario);
-            foreach (DataRow item in dt.Rows)
-            {
-                Email = item["Email"].ToString();
-            }
-        }
+
         public void BuscarTP()
         {
             DataTable dt = mapeoparq.MostrarSolParqTabla();

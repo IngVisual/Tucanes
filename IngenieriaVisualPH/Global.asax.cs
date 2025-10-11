@@ -11,7 +11,12 @@ namespace IngenieriaVisualPH
     {
         protected void Application_Start()
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+
+        }
+        void Session_End(object sender, EventArgs e)
+        {
+            // Redirige al usuario a la página de inicio de sesión
+            Response.Redirect("Login.aspx");
         }
     }
 }

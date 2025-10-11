@@ -83,7 +83,7 @@ namespace IngenieriaVisualPH.Registro
                 int fila = mapeo.ActualizarUsuario(usuario);
                 if (fila == 1)
                 {
-                    Servicios.Email email = new Servicios.Email(usuario.Email, lblcodigo.Text ,lblmensaje1.Text,lblasunto.Text,lblconjunto.Text);
+                    //Servicios.Email email = new Servicios.Email(usuario.Email, lblcodigo.Text ,lblmensaje1.Text,lblasunto.Text,lblconjunto.Text);
                     Response.Redirect("~/Login.aspx");
                 }
             }

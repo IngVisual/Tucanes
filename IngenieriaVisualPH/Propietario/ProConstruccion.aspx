@@ -100,7 +100,7 @@
         <h5 class="text-right text-center font-weight-bold">Por favor espere un momento, Cargando Solicitud.....</h5>
     </div>
     <div class="container" id="conta">
-        <h3 class="text-center textocolorinfo font-weight-bold">Ingreso Material de Construccion</h3>
+        <h3 class="text-center textocolorinfo font-weight-bold">Ingreso de Personal y Material de Construccion</h3>
         <td colspan="2">
             <asp:Label ID="lblMessage3" runat="server" Font-Bold="True" CssClass="form-control alert alert-danger" Visible="False"></asp:Label>
         </td>
@@ -112,17 +112,6 @@
         </td>
         <br />
         <form id="fo1" runat="server">
-            <div id="mensaje" runat="server" style="display: none">
-                <div class="col-lg-6">
-                    <div class="alert alert-warning">
-                        <span class="badge badge-pill badge-secondary">Importante</span>
-                        <strong>
-                            <asp:Label ID="lblmsg22" runat="server"></asp:Label>
-                        </strong>
-                        <br />
-                    </div>
-                </div>
-            </div>
             <div id="pregunta1">
                  <strong class="card-title textocolorinfo font-weight-bold">¿Tienes listos los siguientes documentos para adjuntar o tomarles foto? </strong>
                 <p></p>

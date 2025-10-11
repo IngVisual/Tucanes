@@ -11,7 +11,7 @@
             <aside class="profile-nav alt">
                 <a href="Perfil_Propietario.aspx">
                     <section class="card">
-                        <div class="card-header user-header alt bgcolor">
+                        <div class="card-header user-header alt bgcolor" style="height:120px">
                             <div class="media">
                                 <img class="align-self-center bg-light rounded-circle mr-3" style="width: 85px; height: 85px;" alt="" src="../Diseño/Imagenes/apa.png">
                                 <div class="media-body">
@@ -25,27 +25,10 @@
                     </section>
                 </a>
             </aside>
-            <aside class="profile-nav alt">
-                <a href="ProCicla.aspx">
-                    <section class="card">
-                        <div class="card-header user-header alt bgcolor">
-                            <div class="media">
-                                <img class="align-self-center bg-light rounded-circle mr-3" style="width: 85px; height: 85px;" alt="" src="../Diseño/Imagenes/bici.png">
-                                <div class="media-body">
-                                    <h3 class="text-light display-6">Bicicletas</h3>
-                                    <p>
-                                        <asp:Label ID="Label2" runat="server" Text="Registro" ForeColor="White"></asp:Label></p>
-                                     <p><span class="badge badge-dark pull-right">> Ver Ventana</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </a>
-            </aside>
              <aside class="profile-nav alt">
                 <a href="ProProVis.aspx">
                     <section class="card">
-                        <div class="card-header user-header alt bgcolor">
+                        <div class="card-header user-header alt bgcolor" style="height:120px">
                             <div class="media">
                                 <img class="align-self-center bg-light rounded-circle mr-3" style="width: 85px; height: 85px;" alt="" src="../Diseño/Imagenes/progr.png">
                                 <div class="media-body">
@@ -62,7 +45,7 @@
               <aside class="profile-nav alt">
                 <a href="ProRegistroVisitantes.aspx">
                     <section class="card">
-                        <div class="card-header user-header alt bgcolor">
+                        <div class="card-header user-header alt bgcolor" style="height:120px">
                             <div class="media">
                                 <img class="align-self-center bg-light rounded-circle mr-3" style="width: 85px; height: 85px;" alt="" src="../Diseño/Imagenes/regi.png">
                                 <div class="media-body">
@@ -79,7 +62,7 @@
             <aside class="profile-nav alt">
                 <a href="ProRegGen.aspx">
                     <section class="card">
-                        <div class="card-header user-header alt bgcolor">
+                        <div class="card-header user-header alt bgcolor" style="height:120px">
                             <div class="media">
                                 <img class="align-self-center bg-light rounded-circle mr-3" style="width: 85px; height: 85px;" alt="" src="../Diseño/Imagenes/registrarse.png">
                                 <div class="media-body">

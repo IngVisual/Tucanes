@@ -66,7 +66,7 @@ namespace IngenieriaVisualPH.Registro
                     smtpClient.EnableSsl = true;
                     smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtpClient.UseDefaultCredentials = false;
-                    smtpClient.Credentials = new NetworkCredential("propiedadhorizontal@ingenieriavisualph.com", "mfdddzuwwvifnjhj");
+                    smtpClient.Credentials = new NetworkCredential("propiedadhorizontal@ingenieriavisualph.com", "rxwfescezuhkmifn");
                     smtpClient.Send(mailMensaje);
                 }
             }

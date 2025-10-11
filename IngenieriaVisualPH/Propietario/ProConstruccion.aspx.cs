@@ -30,7 +30,7 @@ namespace IngenieriaVisualPH.Propietario
         string estado = "Solicitud";
         string respuesta = "Pendiente";
         static Int32 applicationid = 0;
-        static Int32 idMudanza = 2;
+        static Int32 idMudanza = 7;
         bool error3, error2;
         string conjunto;
         string asunto = "POLITICA Y COMPROMISO DE MUDANZAS";
@@ -70,17 +70,6 @@ namespace IngenieriaVisualPH.Propietario
         {
             Datos.MapeoMsg mapeomsg = new Datos.MapeoMsg();
             Modelo.EntidadMsg msg = new Modelo.EntidadMsg();
-            msg._Id = 1;
-            DataTable dt = mapeomsg.MostrarMsg(msg);
-            foreach (DataRow item in dt.Rows)
-            {
-                lblmsg22.Text = item["MsgMud"].ToString();
-            }
-            if (lblmsg22.Text != "")
-            {
-                mensaje.Style.Add("display", "block");
-            }
-            else { mensaje.Style.Add("display", "none"); }
         }
 
         public void PoliticaMudanza()
