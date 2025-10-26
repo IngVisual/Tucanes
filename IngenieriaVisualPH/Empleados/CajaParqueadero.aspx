@@ -26,6 +26,8 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body">
+                                           <asp:Label ID="lblmsg" runat="server" CssClass=" text-danger font-weight-bold"></asp:Label>
+                                            <br />
                                         <div class="clearfix">
                                             <i class="fa fa-car bg-flat-color-5 p-3 font-2xl mr-3 float-left text-light"></i>
                                             <div class="h2 text-danger mb-0 mt-1">$&nbsp;<asp:Label ID="lbltotal" runat="server"></asp:Label></div>

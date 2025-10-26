@@ -34,5 +34,6 @@ namespace Modelo.AlquilerParqueadero
         public bool Activo { get; set; }
 
         public int tipConsulta { get; set; }
+        public int msg { get; set; }
     }
 }

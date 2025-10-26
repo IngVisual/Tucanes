@@ -167,5 +167,13 @@ namespace Datos
             acceso.GuardarDatos("sp_GuardarTransferencia", parameters);
         }
 
+        public DataTable ValidarAlquilerDia(Alquiler modparametro)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(acceso.CrearParametro("@Placa", modparametro.Placa));
+            parameters.Add(acceso.CrearParametro("@FechaIni", modparametro.FechaIni));
+            var dt = acceso.Leer("sp_ParqueaderoValidarAlquilerDia", parameters);
+            return dt;
+        }
     }
 }

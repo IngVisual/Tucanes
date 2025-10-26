@@ -54,25 +54,26 @@ namespace LogicaNeg
                 TarifaHoraFija = int.Parse(item["TarifaHoraFija"].ToString());
             }
             return listPago = AtributosAsociadosTipoAlquiler(Codigo, IDTipoAlq, FechaIni, Fechafina, Dias, Horas, tipoAlquiler, TipoParqueadero,
-                TipoVehiculo, Tarifa, TipoTarifa, TipoDia, FreeHora, TarifaHoraFija);
+                TipoVehiculo, Tarifa, TipoTarifa, TipoDia, FreeHora, TarifaHoraFija, Placa);
 
         }
 
         public List<TipoAlquiler> AtributosAsociadosTipoAlquiler(int Codigo, int IDTipoAlq, DateTime FechaIni, DateTime Fechafin, int Dias,
              int Horas, string tipoAlquiler, string TipoParqueadero, string TipoVehiculo, int Tarifa, string TipoTarifa,
-             string TipoDia, int FreeHora, int TarifaHoraFija)
+             string TipoDia, int FreeHora, int TarifaHoraFija, string Placa)
         {
             List<TipoAlquiler> listPago = new List<TipoAlquiler>();
 
             cantDias = CalculaFechas(Fechafin, FechaIni);
             cantHoras = CalcularHoras(Fechafin, FechaIni);
-            var Pagar = CalculoConTarifa(TipoTarifa, cantHoras, Tarifa, TarifaHoraFija, Fechafin, FechaIni, FreeHora);
+            var Pagar = CalculoConTarifa(TipoTarifa, cantHoras, Tarifa, TarifaHoraFija, Fechafin, FechaIni, FreeHora, Placa);
 
             listPago.Add(new TipoAlquiler()
             {
                 Total = Convert.ToInt32(Pagar.Total),
                 Dias = Convert.ToInt32(cantDias),
                 Horas = Convert.ToInt32(Pagar.Hora),
+                msg = Convert.ToInt32(Pagar.IngrMult),
                 FechaFin = Fechafin,
                 FechaIni = FechaIni,
                 Placa = Placa,
@@ -102,7 +103,7 @@ namespace LogicaNeg
             return Horas;
         }
 
-        public HorasTotales CalculoConTarifa(string tipoTarifa, double TotalHoras, int tarifa, int TarifaHoraFija, DateTime ff, DateTime fi, int FreeHora)
+        public HorasTotales CalculoConTarifa(string tipoTarifa, double TotalHoras, int tarifa, int TarifaHoraFija, DateTime ff, DateTime fi, int FreeHora, string placa)
         {
 
             int HoraDe6ama6pmCarro = 1000;
@@ -121,20 +122,22 @@ namespace LogicaNeg
             TimeSpan DifFechas = ff - fi;
             double resultHorasRedondeado = DifFechas.TotalHours;
             int resultHoras = (int)Math.Ceiling(resultHorasRedondeado);
-            if (tipoTarifa == "HORARIA")
+
+            //validar si existe mas de un ingresio en un dia
+            DateTime utcNow = DateTime.UtcNow;
+            TimeZoneInfo colombiaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SA Pacific Standard Time");
+            DateTime colombiaTime = TimeZoneInfo.ConvertTimeFromUtc(utcNow, colombiaTimeZone);
+
+            MapeoAlquilerParqueadero mapeo = new MapeoAlquilerParqueadero();
+            Conexion con = new Conexion();
+            Alquiler modAlq = new Alquiler();
+            modAlq.Placa = placa;
+            modAlq.FechaIni = colombiaTime;
+            var dt = mapeo.ValidarAlquilerDia(modAlq);
+            if (dt.Rows.Count > 1)
             {
-                if (resultHoras < 1)
+                if (tipoTarifa == "HORARIA")
                 {
-                    A_pagar = 0;
-                }
-                else if (resultHoras < 2)
-                {
-                    A_pagar = 0;
-                }
-                else
-                {
-                    resultHoras = resultHoras - 2;
-                    fi = fi.AddHours(2);
                     int x = 0;
                     int dia = 1;
                     for (int y = 1; y <= resultHoras; y++)
@@ -242,18 +245,157 @@ namespace LogicaNeg
                     }
                     totalpagar = Acumulado1 + Acumulado2;
                 }
+                var tothoras = DifFechas.TotalHours;
+                double Horas;
+                if (tothoras < 0) { Horas = 0; } else { Horas = tothoras; };
+                var Total = Horas;
+                double pago = 0;
+                if (totalpagar < 0) { pago = 0; } else { pago = totalpagar; };
+                var TotalPago = pago;
+                totalRedondeo = Math.Ceiling(Total);
+                A_pagar = TotalPago;
+                horasTotales.Total = A_pagar;
+                horasTotales.Hora = totalRedondeo;
+                horasTotales.IngrMult = 1;
+
             }
-            var tothoras = DifFechas.TotalHours;
-            double Horas;
-            if (tothoras < 0) { Horas = 0; } else { Horas = tothoras; };
-            var Total = Horas;
-            double pago = 0;
-            if (totalpagar < 0) { pago = 0; } else { pago = totalpagar; };
-            var TotalPago = pago;
-            totalRedondeo = Math.Ceiling(Total);
-            A_pagar = TotalPago;
-            horasTotales.Total = A_pagar;
-            horasTotales.Hora = totalRedondeo;
+            else
+            {
+                if (tipoTarifa == "HORARIA")
+                {
+                    if (resultHoras < 1)
+                    {
+                        A_pagar = 0;
+                    }
+                    else if (resultHoras < 2)
+                    {
+                        A_pagar = 0;
+                    }
+                    else
+                    {
+                        resultHoras = resultHoras - 2;
+                        fi = fi.AddHours(2);
+                        int x = 0;
+                        int dia = 1;
+                        for (int y = 1; y <= resultHoras; y++)
+                        {
+                            if (dia == 1)
+                            {
+                                hora = fi.Hour + x;
+                            }
+                            else
+                            {
+                                hora = cambioHora + x;
+                            }
+                            x++;
+
+                            if (hora <= 24)
+                            {
+                                switch (hora)
+                                {
+                                    case 1:
+                                        tarifa1 = tarifa1 + PlenaDe6pm6amCarro;
+                                        break;
+                                    case 2:
+                                        tarifa1 = tarifa1 + PlenaDe6pm6amCarro;
+                                        break;
+                                    case 3:
+                                        tarifa1 = tarifa1 + PlenaDe6pm6amCarro;
+                                        break;
+                                    case 4:
+                                        tarifa1 = tarifa1 + PlenaDe6pm6amCarro;
+                                        break;
+                                    case 5:
+                                        tarifa1 = tarifa1 + PlenaDe6pm6amCarro;
+                                        break;
+                                    case 6:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 7:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 8:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 9:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 10:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 11:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 12:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 13:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 14:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 15:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 16:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 17:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 18:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 19:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 20:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 21:
+                                        tarifa2 = tarifa2 + HoraDe6ama6pmCarro;
+                                        break;
+                                    case 22:
+                                        tarifa1 = tarifa1 + PlenaDe6pm6amCarro;
+                                        break;
+                                    case 23:
+                                        tarifa1 = tarifa1 + PlenaDe6pm6amCarro;
+                                        break;
+                                    case 24:
+                                        tarifa1 = tarifa1 + PlenaDe6pm6amCarro;
+                                        break;
+                                }
+                                Acumulado1 = tarifa1 + tarifa2;
+                            }
+                            else
+                            {
+                                dia++;
+                                cambioHora = 0;
+                                x = 1;
+                                Acumulado2 = Acumulado2 + Acumulado1;
+                                Acumulado1 = 0;
+                                tarifa1 = 0;
+                                tarifa2 = 0;
+                                resultHoras = resultHoras + 1;
+                            }
+                        }
+                        totalpagar = Acumulado1 + Acumulado2;
+                    }
+                }
+                var tothoras = DifFechas.TotalHours;
+                double Horas;
+                if (tothoras < 0) { Horas = 0; } else { Horas = tothoras; };
+                var Total = Horas;
+                double pago = 0;
+                if (totalpagar < 0) { pago = 0; } else { pago = totalpagar; };
+                var TotalPago = pago;
+                totalRedondeo = Math.Ceiling(Total);
+                A_pagar = TotalPago;
+                horasTotales.Total = A_pagar;
+                horasTotales.Hora = totalRedondeo;
+                horasTotales.IngrMult = 0;
+            }
             return horasTotales;
         }
 
@@ -309,8 +451,8 @@ namespace LogicaNeg
         {
             public double Total { get; set; }
             public double Hora { get; set; }
-
-        }      
+            public int IngrMult { get; set; }
+        }
 
     }
 }

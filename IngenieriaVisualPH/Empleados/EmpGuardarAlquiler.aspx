@@ -47,7 +47,7 @@
                             &nbsp;&nbsp;&nbsp;
                         </div>
                         <label for="" class="control-label mb-1 font-weight-bold">Placa</label>
-                        <asp:TextBox ID="txtplaca" runat="server" CssClass="form-control" MaxLength="7"></asp:TextBox>
+                        <asp:TextBox ID="txtplaca" runat="server" CssClass="form-control" MaxLength="6"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic"
                             ErrorMessage="# placa requerida" ForeColor="Red" ControlToValidate="txtplaca" Text="*Requerido">
                         </asp:RequiredFieldValidator>
@@ -57,9 +57,6 @@
                         <p></p>
                         <label for="" class="control-label mb-1 font-weight-bold">Nombre</label>
                         <asp:TextBox ID="txtnombre" runat="server" CssClass="form-control" MaxLength="49"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" Display="Dynamic"
-                            ErrorMessage="Nombre requerida" ForeColor="Red" ControlToValidate="txtnombre" Text="*Requerido">
-                        </asp:RequiredFieldValidator>
                         <div class="card-body">
                              <label for="" class="control-label mb-1 font-weight-bold">N° Parqueadero</label>
                             <asp:DropDownList ID="ddnumparq" runat="server" CssClass="form-control" DataSourceID="SqlDataSource2" DataTextField="NumParqueadero" DataValueField="NumParqueadero">

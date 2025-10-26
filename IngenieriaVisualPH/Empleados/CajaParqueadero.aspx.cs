@@ -38,6 +38,14 @@ namespace IngenieriaVisualPH.Empleados
                 lblfechini.Text = item.FechaIni.ToString();
                 lblhoras.Text = item.Horas.ToString();
                 lblcodigo.Text = item.Codigo.ToString();
+                if (item.msg.ToString() == "1")
+                {
+                    lblmsg.Text = "No aplica el descuento de las horas gratis para este vehículo porque ya tiene mas de un ingreso el día de hoy.";
+                }
+                else if (item.msg.ToString() == "0")
+                {
+                    lblmsg.Text = string.Empty;
+                }
             }
         }
 

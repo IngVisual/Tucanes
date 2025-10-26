@@ -51,7 +51,7 @@ namespace IngenieriaVisualPH.Empleados
                 modAlq.Codigo = int.Parse(Strcodigo);
                 modAlq.IDtipoAlq = id;
                 modAlq.FechaIni = fe;
-                modAlq.Placa = txtplaca.Text.Trim();
+                modAlq.Placa = txtplaca.Text.ToUpper().Trim();
                 modAlq.Marca = txtmarca.Text.Trim();
                 modAlq.Nombre = txtnombre.Text.Trim();
                 modAlq.Dias = dias;
